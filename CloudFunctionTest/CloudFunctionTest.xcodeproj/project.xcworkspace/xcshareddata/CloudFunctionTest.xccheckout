@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C3E09E8D-CDB6-45BA-BF0D-7FFEC5A18EBC</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>CloudFunctionTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D233073B76D869EAF3207E5EB1F740B1EF110C19</key>
 		<string>https://github.com/adityachugh/Announcements-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CloudFunctionTest/CloudFunctionTest.xcodeproj/project.xcworkspace</string>
+	<string>CloudFunctionTest/CloudFunctionTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D233073B76D869EAF3207E5EB1F740B1EF110C19</key>

@@ -14,24 +14,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PFCloud.callFunctionInBackground("hello", withParameters: nil) {
+//        PFCloud.callFunctionInBackground("hello", withParameters: nil) {
+//            (res, error) -> Void in
+//            println(res as! String)
+//        }
+    
+//        PFUser.logInWithUsername("chughrajiv", password: "password")
+        
+        var dictionary = ["startIndex":0, "numberOfPosts": 1, "date": NSDate()]
+        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: nil) {
             (res, error) -> Void in
-            println(res as! String)
+            if (error != nil) {
+                println((error!).description)
+            } else {
+                println(res as! [PFObject])
+            }
         }
-        
-        var dictionary = ["name":"Aditya", "age":11]
-        PFCloud.callFunctionInBackground("testWithParameters", withParameters: dictionary) {
-            (res, error) -> Void in
-            println(res as! String)
-        }
-        
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
