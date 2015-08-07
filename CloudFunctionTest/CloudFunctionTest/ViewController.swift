@@ -20,15 +20,18 @@ class ViewController: UIViewController {
 //        }
     
 //        PFUser.logInWithUsername("chughrajiv", password: "password")
+//
         
-        var dictionary = ["startIndex":0, "numberOfPosts": 1, "date": NSDate()]
-        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: nil) {
+        var dictionary = ["organizationObjectId": "twC3ANQIMX", "enteredAccessCode": 3465]
+        PFCloud.callFunctionInBackground("privateOrganizationAccessCodeEntered", withParameters: dictionary) {
             (res, error) -> Void in
             if (error != nil) {
                 println((error!).description)
             } else {
-                println(res as! [PFObject])
+                println(res as! Bool)
             }
         }
     }
+    
+    
 }

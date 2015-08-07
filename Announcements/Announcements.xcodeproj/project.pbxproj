@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38232C401B75123B00789340 /* TodayTableViewController.swift */; };
+		38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38232C491B75190500789340 /* PostTableViewCell.swift */; };
+		38232C4C1B75192400789340 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38232C4B1B75192400789340 /* PostTableViewCell.xib */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
-		38FD45411B54527300896403 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD45401B54527300896403 /* ViewController.swift */; };
 		38FD45441B54527300896403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45421B54527300896403 /* Main.storyboard */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
@@ -26,10 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38232C401B75123B00789340 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
+		38232C491B75190500789340 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		38232C4B1B75192400789340 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		38FD45391B54527300896403 /* Announcements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Announcements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38FD45401B54527300896403 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38FD45431B54527300896403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38FD45451B54527300896403 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		38FD45481B54527300896403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38232C481B75182B00789340 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				38FD45421B54527300896403 /* Main.storyboard */,
+				38FD45471B54527300896403 /* LaunchScreen.xib */,
+				38232C4B1B75192400789340 /* PostTableViewCell.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
 		38FD45301B54527300896403 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +91,10 @@
 		38FD453B1B54527300896403 /* Announcements */ = {
 			isa = PBXGroup;
 			children = (
-				38FD453E1B54527300896403 /* AppDelegate.swift */,
-				38FD45401B54527300896403 /* ViewController.swift */,
-				38FD45421B54527300896403 /* Main.storyboard */,
+				38232C481B75182B00789340 /* User Interface */,
+				38232C401B75123B00789340 /* TodayTableViewController.swift */,
+				38232C491B75190500789340 /* PostTableViewCell.swift */,
 				38FD45451B54527300896403 /* Images.xcassets */,
-				38FD45471B54527300896403 /* LaunchScreen.xib */,
 				38FD453C1B54527300896403 /* Supporting Files */,
 			);
 			path = Announcements;
@@ -90,6 +103,7 @@
 		38FD453C1B54527300896403 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				38FD453E1B54527300896403 /* AppDelegate.swift */,
 				38FD453D1B54527300896403 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,6 +209,7 @@
 				38FD45441B54527300896403 /* Main.storyboard in Resources */,
 				38FD45491B54527300896403 /* LaunchScreen.xib in Resources */,
 				38FD45461B54527300896403 /* Images.xcassets in Resources */,
+				38232C4C1B75192400789340 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FD45411B54527300896403 /* ViewController.swift in Sources */,
 				38FD453F1B54527300896403 /* AppDelegate.swift in Sources */,
+				38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */,
+				38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Announcements/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Announcements/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +427,7 @@
 				38FD455A1B54527300896403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38FD455B1B54527300896403 /* Build configuration list for PBXNativeTarget "AnnouncementsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +436,7 @@
 				38FD455D1B54527300896403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
