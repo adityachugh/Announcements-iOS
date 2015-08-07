@@ -9,12 +9,12 @@
         <scene sceneID="BaJ-2f-H1d">
             <objects>
                 <tableViewController id="7MS-Hn-ktk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="193" sectionHeaderHeight="22" sectionFooterHeight="22" id="9di-hG-6m2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="9di-hG-6m2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="193" id="K6B-eZ-F4y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Post" rowHeight="40" id="K6B-eZ-F4y" customClass="PostTableViewCell" customModule="Announcements" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K6B-eZ-F4y" id="MsE-4o-f4A">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -32,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="1871" y="304"/>
         </scene>
-        <!--Today-->
+        <!--Navigation Controller-->
         <scene sceneID="Mzs-b8-xkr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r4Z-6F-Azy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" id="k2v-tQ-uZf"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="k2v-tQ-uZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xKo-8M-mbf" userLabel="1ABC9C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -64,7 +64,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="D80-Y4-R7h">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="r4Z-6F-Azy" kind="relationship" relationship="viewControllers" id="iWq-pc-Ww0"/>
