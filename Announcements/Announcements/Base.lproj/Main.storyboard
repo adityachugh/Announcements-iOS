@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xLD-Nc-jz5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O1i-6r-2g9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -8,11 +8,11 @@
         <!--Today-->
         <scene sceneID="BaJ-2f-H1d">
             <objects>
-                <tableViewController id="7MS-Hn-ktk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="9di-hG-6m2">
+                <tableViewController id="7MS-Hn-ktk" customClass="TodayTableViewController" customModule="Announcements" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="9di-hG-6m2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Post" rowHeight="40" id="K6B-eZ-F4y" customClass="PostTableViewCell" customModule="Announcements" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -30,13 +30,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06G-Qe-2H6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="304"/>
+            <point key="canvasLocation" x="2683" y="304"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Today-->
         <scene sceneID="Mzs-b8-xkr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r4Z-6F-Azy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="k2v-tQ-uZf"/>
+                    <tabBarItem key="tabBarItem" title="Today" id="k2v-tQ-uZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xKo-8M-mbf" userLabel="1ABC9C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -54,25 +54,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEG-8k-kGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="304"/>
+            <point key="canvasLocation" x="1871" y="304"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="DB8-7B-hCE">
+        <scene sceneID="4og-LZ-VJl">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xLD-Nc-jz5" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O1i-6r-2g9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="D80-Y4-R7h">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="SEZ-e3-xuN">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="r4Z-6F-Azy" kind="relationship" relationship="viewControllers" id="iWq-pc-Ww0"/>
+                        <segue destination="r4Z-6F-Azy" kind="relationship" relationship="viewControllers" id="iuA-3O-lhi"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X0A-ho-On9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26L-C2-J4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="304"/>
+            <point key="canvasLocation" x="1059" y="304"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>

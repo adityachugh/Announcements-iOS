@@ -11,11 +11,11 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -32,6 +32,5 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setup() {
-        label.text = "Hello"
     }
 }
