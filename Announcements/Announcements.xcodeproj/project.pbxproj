@@ -11,6 +11,7 @@
 		38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38232C491B75190500789340 /* PostTableViewCell.swift */; };
 		38232C4C1B75192400789340 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38232C4B1B75192400789340 /* PostTableViewCell.xib */; };
 		386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */; };
+		389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45441B54527300896403 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45421B54527300896403 /* Main.storyboard */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
@@ -33,6 +34,7 @@
 		38232C491B75190500789340 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		38232C4B1B75192400789340 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Announcements-iOS.swift"; sourceTree = "<group>"; };
+		389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-1421757295538-9c80958e75b0.jpeg"; sourceTree = "<group>"; };
 		38FD45391B54527300896403 /* Announcements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Announcements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				38232C491B75190500789340 /* PostTableViewCell.swift */,
 				386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */,
 				38FD45451B54527300896403 /* Images.xcassets */,
+				389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */,
 				38FD453C1B54527300896403 /* Supporting Files */,
 			);
 			path = Announcements;
@@ -173,6 +176,7 @@
 		38FD45311B54527300896403 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Mindbend Studio";
 				TargetAttributes = {
@@ -209,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */,
 				38FD45441B54527300896403 /* Main.storyboard in Resources */,
 				38FD45491B54527300896403 /* LaunchScreen.xib in Resources */,
 				38FD45461B54527300896403 /* Images.xcassets in Resources */,

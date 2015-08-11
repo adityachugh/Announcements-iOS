@@ -11,7 +11,7 @@ import UIKit
 class TodayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
-//        self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "Post")
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -34,6 +34,9 @@ class TodayTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Post", forIndexPath: indexPath) as! PostTableViewCell
         cell.backgroundColor = UIColor.clearColor()
+        
+        println(cell.view.frame.width)
+        cell.view.frame = CGRectMake(cell.view.frame.origin.x, cell.view.frame.origin.y, self.view.frame.size.width, cell.view.frame.size.height)
         
         return cell
     }

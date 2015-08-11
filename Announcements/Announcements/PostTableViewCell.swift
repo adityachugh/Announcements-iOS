@@ -16,6 +16,10 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        self.autoresizesSubviews = true
+        
+//        self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.frame.width, height: self.view.frame.height)
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

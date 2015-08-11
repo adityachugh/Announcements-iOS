@@ -11,16 +11,17 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="180" selectionStyle="none" indentationWidth="10" reuseIdentifier="Post" rowHeight="180" id="mwS-Fp-JMw">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Post" rowHeight="180" id="mwS-Fp-JMw">
             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mwS-Fp-JMw" id="LPD-1m-Nm9">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrO-UP-7va">
                         <rect key="frame" x="0.0" y="8" width="320" height="171.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-Fy-43z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-Fy-43z">
                                 <rect key="frame" x="8" y="8" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="dcQ-RV-g0X"/>
@@ -30,13 +31,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-Gf-4QD">
                                 <rect key="frame" x="48" y="27" width="23" height="12.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-Ld-oho">
                                 <rect key="frame" x="48" y="8" width="133" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-M9-Wow">
@@ -46,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Tec-M9-Wow" firstAttribute="top" secondItem="bhc-Fy-43z" secondAttribute="top" id="4z8-4o-vxR"/>
                             <constraint firstItem="bhc-Fy-43z" firstAttribute="leading" secondItem="hrO-UP-7va" secondAttribute="leading" constant="8" id="56w-D4-0Pt"/>
@@ -63,11 +64,10 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <color key="tintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="hrO-UP-7va" secondAttribute="centerX" id="IHm-gq-A8V"/>
-                    <constraint firstAttribute="trailing" secondItem="hrO-UP-7va" secondAttribute="trailing" id="gze-l0-del"/>
-                    <constraint firstAttribute="bottom" secondItem="hrO-UP-7va" secondAttribute="bottom" id="i2g-s3-cOB"/>
-                    <constraint firstItem="hrO-UP-7va" firstAttribute="leading" secondItem="LPD-1m-Nm9" secondAttribute="leading" id="j7G-7f-sfN"/>
-                    <constraint firstItem="hrO-UP-7va" firstAttribute="top" secondItem="LPD-1m-Nm9" secondAttribute="top" constant="8" id="rWh-5d-vAY"/>
+                    <constraint firstAttribute="trailing" secondItem="hrO-UP-7va" secondAttribute="trailing" id="Ebv-ij-OZq"/>
+                    <constraint firstItem="hrO-UP-7va" firstAttribute="top" secondItem="LPD-1m-Nm9" secondAttribute="top" constant="8" id="ehQ-Jj-D7o"/>
+                    <constraint firstItem="hrO-UP-7va" firstAttribute="leading" secondItem="LPD-1m-Nm9" secondAttribute="leading" id="gFe-nD-vjB"/>
+                    <constraint firstAttribute="bottom" secondItem="hrO-UP-7va" secondAttribute="bottom" id="gb7-C3-KDW"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -75,4 +75,7 @@
             <point key="canvasLocation" x="177" y="374"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="photo-1421757295538-9c80958e75b0.jpeg" width="4133" height="2745"/>
+    </resources>
 </document>
