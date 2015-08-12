@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Announcements.xcodeproj">
+      location = "self:/Users/AdityaChugh/GitHub Repos/Announcements-iOS/Announcements/infor[me].xcodeproj">
    </FileRef>
 </Workspace>

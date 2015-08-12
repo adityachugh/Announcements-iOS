@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38FD45381B54527300896403"
-               BuildableName = "Announcements.app"
-               BlueprintName = "Announcements"
-               ReferencedContainer = "container:Announcements.xcodeproj">
+               BuildableName = "infor[me].app"
+               BlueprintName = "infor[me]"
+               ReferencedContainer = "container:infor[me].xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38FD454D1B54527300896403"
-               BuildableName = "AnnouncementsTests.xctest"
-               BlueprintName = "AnnouncementsTests"
-               ReferencedContainer = "container:Announcements.xcodeproj">
+               BuildableName = "infor[me]Tests.xctest"
+               BlueprintName = "infor[me]Tests"
+               ReferencedContainer = "container:infor[me].xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38FD454D1B54527300896403"
-               BuildableName = "AnnouncementsTests.xctest"
-               BlueprintName = "AnnouncementsTests"
-               ReferencedContainer = "container:Announcements.xcodeproj">
+               BuildableName = "infor[me]Tests.xctest"
+               BlueprintName = "infor[me]Tests"
+               ReferencedContainer = "container:infor[me].xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38FD45381B54527300896403"
-            BuildableName = "Announcements.app"
-            BlueprintName = "Announcements"
-            ReferencedContainer = "container:Announcements.xcodeproj">
+            BuildableName = "infor[me].app"
+            BlueprintName = "infor[me]"
+            ReferencedContainer = "container:infor[me].xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38FD45381B54527300896403"
-            BuildableName = "Announcements.app"
-            BlueprintName = "Announcements"
-            ReferencedContainer = "container:Announcements.xcodeproj">
+            BuildableName = "infor[me].app"
+            BlueprintName = "infor[me]"
+            ReferencedContainer = "container:infor[me].xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "38FD45381B54527300896403"
-            BuildableName = "Announcements.app"
-            BlueprintName = "Announcements"
-            ReferencedContainer = "container:Announcements.xcodeproj">
+            BuildableName = "infor[me].app"
+            BlueprintName = "infor[me]"
+            ReferencedContainer = "container:infor[me].xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

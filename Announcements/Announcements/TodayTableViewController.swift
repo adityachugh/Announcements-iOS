@@ -11,7 +11,7 @@ import UIKit
 class TodayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
-        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -19,7 +19,7 @@ class TodayTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 180
+        return 300
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,9 +34,6 @@ class TodayTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Post", forIndexPath: indexPath) as! PostTableViewCell
         cell.backgroundColor = UIColor.clearColor()
-        
-        println(cell.view.frame.width)
-        cell.view.frame = CGRectMake(cell.view.frame.origin.x, cell.view.frame.origin.y, self.view.frame.size.width, cell.view.frame.size.height)
         
         return cell
     }
