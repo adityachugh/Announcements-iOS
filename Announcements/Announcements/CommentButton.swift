@@ -11,6 +11,7 @@ import UIKit
 class CommentButton: UIView {
 
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var containerView: UIView!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,6 +19,7 @@ class CommentButton: UIView {
         // Drawing code
     }
     */
+    
     @IBOutlet weak var commentCountLabel: UILabel!
     var commentCount: Int? {
         get {
@@ -28,26 +30,31 @@ class CommentButton: UIView {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        NSBundle.mainBundle().loadNibNamed("CommentButton", owner: self, options: nil)
-        self.bounds = self.view.bounds
-        self.addSubview(view)
+    override func awakeFromNib() {
         setup()
     }
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("CommentButton", owner: self, options: nil)
-        self.addSubview(view)
-        setup()
-    }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        NSBundle.mainBundle().loadNibNamed("CommentButton", owner: self, options: nil)
+//        self.bounds = self.view.bounds
+//        self.addSubview(view)
+//        setup()
+//    }
+//
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        NSBundle.mainBundle().loadNibNamed("CommentButton", owner: self, options: nil)
+//        self.addSubview(view)
+//        setup()
+//    }
     
     @IBAction func viewTapped(sender: UITapGestureRecognizer) {
         println("Hello!")
     }
     
     func setup() {
-        commentCount = 12
+//        commentCount = 12
+//        containerView.center = view.center
     }
 }
