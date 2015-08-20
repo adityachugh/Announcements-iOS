@@ -28,10 +28,8 @@ class PostTableViewCell: UITableViewCell {
         organizationImageView.layer.masksToBounds = true;
         organizationImageView.layer.cornerRadius = organizationImageView.frame.height/2
         
-//        contentView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).CGColor
-//        contentView.layer.shadowRadius = 8
-//        contentView.layer.shadowOpacity = 0.1
         self.postContentTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.postContentTextView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
     }
     
@@ -40,11 +38,15 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
-        println("Comment Tapped!")
+        Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+            return toViewController
+        }
     }
     
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
-        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController)
+        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+            return toViewController
+        }
     }
     
     

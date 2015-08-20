@@ -21,11 +21,6 @@ class OrganizationViewController: UIViewController, PostTableViewScrollingDelega
         postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self)
         postTableViewManager.scrollingDelegate = self
         
-        followButton.backgroundColor = UIColor.clearColor()
-        followButton.layer.cornerRadius = followButton.frame.size.height/2
-        followButton.layer.borderWidth = 2
-        followButton.layer.borderColor = UIColor.AccentColor().CGColor
-        
         organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.size.height/2
         organizationProfilePictureImageView.layer.masksToBounds = true
     }

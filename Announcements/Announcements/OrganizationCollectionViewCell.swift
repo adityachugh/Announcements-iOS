@@ -8,12 +8,21 @@
 
 import UIKit
 
-class OrganizationCollectionViewCell: UICollectionViewCell {
+@IBDesignable class OrganizationCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var organizationProfilePictureImageView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.width/2
+        organizationProfilePictureImageView.layer.masksToBounds = true
+        
+        followButton.backgroundColor = UIColor.clearColor()
+        followButton.layer.cornerRadius = followButton.frame.size.height/2
+        followButton.layer.borderWidth = 2
+        followButton.layer.borderColor = UIColor.AccentColor().CGColor
+    }
+    
+    @IBOutlet var organizationProfilePictureImageView: UIImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
-//    @IBOutlet weak var followButton: UIButton!
-//    @IBAction func followButtonTapped(sender: AnyObject) {
-//        
-//    }
+    @IBOutlet weak var followButton: FollowButton!
 }

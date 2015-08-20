@@ -211,11 +211,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Dl5-j8-NeE"/>
                                 <exclude reference="8qH-Pk-3Br"/>
+                                <exclude reference="Dl5-j8-NeE"/>
                                 <exclude reference="RnM-aQ-2jL"/>
-                                <exclude reference="ceY-rB-u5S"/>
                                 <exclude reference="DAM-AT-7TY"/>
+                                <exclude reference="ceY-rB-u5S"/>
                             </mask>
                         </variation>
                     </view>

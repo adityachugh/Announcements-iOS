@@ -14,6 +14,7 @@ class CommentTableViewCell: UITableViewCell {
         super.awakeFromNib()
     // Initialization code
         commentTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        commentTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         userProfilePictureImageView.layer.cornerRadius = userProfilePictureImageView.frame.size.width/2
         userProfilePictureImageView.layer.masksToBounds = true
         

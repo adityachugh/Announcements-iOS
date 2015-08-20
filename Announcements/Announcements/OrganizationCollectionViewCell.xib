@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -10,43 +11,31 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrganizationCollectionViewCell" customModule="infor_me_" customModuleProvider="target">
-            <connections>
-                <outlet property="organizationNameLabel" destination="GHJ-vY-tbC" id="hqO-iM-fSG"/>
-                <outlet property="organizationProfilePictureImageView" destination="5gt-bU-hyk" id="Gsk-fn-YXG"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Pbr-UD-hc0">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="TwZ-2G-9pf" customClass="OrganizationCollectionViewCell" customModule="infor_me_" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="148" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="148" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-bU-hyk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="77M-GV-3Zb">
                         <rect key="frame" x="37" y="8" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="75" id="IL5-FB-Kdv"/>
-                            <constraint firstAttribute="width" constant="75" id="kcw-i2-aId"/>
+                            <constraint firstAttribute="width" secondItem="77M-GV-3Zb" secondAttribute="height" multiplier="1:1" id="s3f-tH-S3R"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEM-h2-E6x">
-                        <rect key="frame" x="34" y="120" width="80" height="25"/>
-                        <color key="backgroundColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSm-Ny-gm1" customClass="FollowButton" customModule="infor_me_" customModuleProvider="target">
+                        <rect key="frame" x="34" y="127" width="80" height="25"/>
+                        <color key="backgroundColor" red="0.92941182850000004" green="0.34117648010000001" blue="0.61568629740000003" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="la4-VJ-Sad"/>
-                            <constraint firstAttribute="width" constant="80" id="tdN-Nl-0mc"/>
+                            <constraint firstAttribute="width" constant="80" id="ej4-wU-Dqt"/>
+                            <constraint firstAttribute="height" constant="25" id="poc-Sb-r9M"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                        <color key="tintColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Follow">
-                            <color key="titleColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHJ-vY-tbC">
-                        <rect key="frame" x="8" y="91" width="132" height="24"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-8i-WXF">
+                        <rect key="frame" x="8" y="98" width="132" height="24"/>
                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -56,18 +45,23 @@
             </view>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="CEM-h2-E6x" secondAttribute="centerX" id="68k-Q6-sl3"/>
-                <constraint firstItem="5gt-bU-hyk" firstAttribute="top" secondItem="Pbr-UD-hc0" secondAttribute="topMargin" id="AmZ-J4-XTf"/>
-                <constraint firstItem="CEM-h2-E6x" firstAttribute="top" secondItem="GHJ-vY-tbC" secondAttribute="bottom" constant="5.5" id="JU5-rB-EIY"/>
-                <constraint firstAttribute="centerX" secondItem="5gt-bU-hyk" secondAttribute="centerX" id="LoA-aB-Liy"/>
-                <constraint firstItem="GHJ-vY-tbC" firstAttribute="top" secondItem="5gt-bU-hyk" secondAttribute="bottom" constant="8" id="PBT-vG-CKF"/>
-                <constraint firstAttribute="bottom" secondItem="CEM-h2-E6x" secondAttribute="bottom" constant="15" id="SS9-9S-5w4"/>
-                <constraint firstItem="GHJ-vY-tbC" firstAttribute="leading" secondItem="Pbr-UD-hc0" secondAttribute="leadingMargin" id="ZsB-eN-Uh1"/>
-                <constraint firstItem="GHJ-vY-tbC" firstAttribute="trailing" secondItem="Pbr-UD-hc0" secondAttribute="trailingMargin" id="d3w-r8-JXE"/>
-                <constraint firstAttribute="centerX" secondItem="GHJ-vY-tbC" secondAttribute="centerX" id="ncB-2e-eZJ"/>
+                <constraint firstItem="BSm-Ny-gm1" firstAttribute="top" secondItem="8Ww-8i-WXF" secondAttribute="bottom" constant="12" id="7Pf-qq-4KM"/>
+                <constraint firstAttribute="centerX" secondItem="77M-GV-3Zb" secondAttribute="centerX" id="87c-Rs-Roj"/>
+                <constraint firstItem="8Ww-8i-WXF" firstAttribute="top" secondItem="77M-GV-3Zb" secondAttribute="bottom" constant="8" id="CRj-cO-czb"/>
+                <constraint firstAttribute="centerX" secondItem="BSm-Ny-gm1" secondAttribute="centerX" id="Oh4-3J-TGG"/>
+                <constraint firstItem="8Ww-8i-WXF" firstAttribute="leading" secondItem="TwZ-2G-9pf" secondAttribute="leadingMargin" id="Th1-4U-a88"/>
+                <constraint firstItem="77M-GV-3Zb" firstAttribute="top" secondItem="TwZ-2G-9pf" secondAttribute="top" constant="8" id="fLx-C4-KPJ"/>
+                <constraint firstAttribute="centerY" secondItem="8Ww-8i-WXF" secondAttribute="centerY" id="kG8-8b-UA8"/>
+                <constraint firstItem="8Ww-8i-WXF" firstAttribute="trailing" secondItem="TwZ-2G-9pf" secondAttribute="trailingMargin" id="l3g-Vk-yJr"/>
+                <constraint firstAttribute="centerX" secondItem="8Ww-8i-WXF" secondAttribute="centerX" id="mnD-7a-DWu"/>
             </constraints>
             <size key="customSize" width="148" height="160"/>
-            <point key="canvasLocation" x="153" y="310"/>
+            <connections>
+                <outlet property="followButton" destination="BSm-Ny-gm1" id="wqN-om-cJP"/>
+                <outlet property="organizationNameLabel" destination="8Ww-8i-WXF" id="HcQ-pD-VTH"/>
+                <outlet property="organizationProfilePictureImageView" destination="77M-GV-3Zb" id="nsE-3r-4Aq"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="673"/>
         </collectionViewCell>
     </objects>
     <resources>

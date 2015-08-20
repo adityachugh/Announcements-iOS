@@ -35,10 +35,14 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
-        println("Comment Tapped!")
+        Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+            return toViewController
+        }
     }
     
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
-        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController)
+        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+            return toViewController
+        }
     }
 }
