@@ -84,6 +84,7 @@ class FollowButton: UIView {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("FollowButton", owner: self, options: nil)
         self.addSubview(view)
+        self.hideActivityIndicator()
     }
     
     override init(frame: CGRect) {
@@ -91,7 +92,12 @@ class FollowButton: UIView {
         NSBundle.mainBundle().loadNibNamed("FollowButton", owner: self, options: nil)
         self.bounds = self.view.bounds
         self.addSubview(view)
+        self.hideActivityIndicator()
     }
     
+//    func loadViewFromNib() -> UIView {
+//        let bundle = NSBundle(forClass: self.dynamicType)
+//        UINib(nibName: "FollowButton", bundle: bundle)
+//    }
     
 }

@@ -25,6 +25,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setup() {
+        self.backgroundColor = UIColor.clearColor()
         organizationImageView.layer.masksToBounds = true;
         organizationImageView.layer.cornerRadius = organizationImageView.frame.height/2
         

@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirNext.ttc">
@@ -23,19 +22,22 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="77M-GV-3Zb">
                         <rect key="frame" x="37" y="8" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="77M-GV-3Zb" secondAttribute="height" multiplier="1:1" id="s3f-tH-S3R"/>
+                            <constraint firstAttribute="width" secondItem="77M-GV-3Zb" secondAttribute="height" multiplier="1:1" id="Qko-DI-rPB"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSm-Ny-gm1" customClass="FollowButton" customModule="infor_me_" customModuleProvider="target">
                         <rect key="frame" x="34" y="127" width="80" height="25"/>
                         <color key="backgroundColor" red="0.92941182850000004" green="0.34117648010000001" blue="0.61568629740000003" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="ej4-wU-Dqt"/>
-                            <constraint firstAttribute="height" constant="25" id="poc-Sb-r9M"/>
+                            <constraint firstAttribute="width" constant="80" id="NUV-q8-HsK"/>
+                            <constraint firstAttribute="height" constant="25" id="ktW-e6-YOU"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-8i-WXF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Ww-8i-WXF">
                         <rect key="frame" x="8" y="98" width="132" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="X34-Xm-JIq"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,15 +47,16 @@
             </view>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="BSm-Ny-gm1" firstAttribute="top" secondItem="8Ww-8i-WXF" secondAttribute="bottom" constant="12" id="7Pf-qq-4KM"/>
-                <constraint firstAttribute="centerX" secondItem="77M-GV-3Zb" secondAttribute="centerX" id="87c-Rs-Roj"/>
-                <constraint firstItem="8Ww-8i-WXF" firstAttribute="top" secondItem="77M-GV-3Zb" secondAttribute="bottom" constant="8" id="CRj-cO-czb"/>
-                <constraint firstAttribute="centerX" secondItem="BSm-Ny-gm1" secondAttribute="centerX" id="Oh4-3J-TGG"/>
-                <constraint firstItem="8Ww-8i-WXF" firstAttribute="leading" secondItem="TwZ-2G-9pf" secondAttribute="leadingMargin" id="Th1-4U-a88"/>
-                <constraint firstItem="77M-GV-3Zb" firstAttribute="top" secondItem="TwZ-2G-9pf" secondAttribute="top" constant="8" id="fLx-C4-KPJ"/>
-                <constraint firstAttribute="centerY" secondItem="8Ww-8i-WXF" secondAttribute="centerY" id="kG8-8b-UA8"/>
-                <constraint firstItem="8Ww-8i-WXF" firstAttribute="trailing" secondItem="TwZ-2G-9pf" secondAttribute="trailingMargin" id="l3g-Vk-yJr"/>
-                <constraint firstAttribute="centerX" secondItem="8Ww-8i-WXF" secondAttribute="centerX" id="mnD-7a-DWu"/>
+                <constraint firstAttribute="centerY" secondItem="8Ww-8i-WXF" secondAttribute="centerY" constant="-30" id="0ZH-Vh-pJ4"/>
+                <constraint firstItem="BSm-Ny-gm1" firstAttribute="top" secondItem="8Ww-8i-WXF" secondAttribute="bottom" constant="5" id="0hQ-D0-0ex"/>
+                <constraint firstAttribute="centerX" secondItem="77M-GV-3Zb" secondAttribute="centerX" id="7iF-4b-5Vf"/>
+                <constraint firstAttribute="centerX" secondItem="8Ww-8i-WXF" secondAttribute="centerX" id="Aqw-ID-MCm"/>
+                <constraint firstAttribute="centerX" secondItem="BSm-Ny-gm1" secondAttribute="centerX" id="Tx9-pn-bd6"/>
+                <constraint firstAttribute="bottom" secondItem="BSm-Ny-gm1" secondAttribute="bottom" constant="8" id="lqP-8k-YvD"/>
+                <constraint firstItem="8Ww-8i-WXF" firstAttribute="leading" secondItem="TwZ-2G-9pf" secondAttribute="leading" constant="8" id="nFD-cW-Vgj"/>
+                <constraint firstItem="8Ww-8i-WXF" firstAttribute="top" secondItem="77M-GV-3Zb" secondAttribute="bottom" constant="15" id="pwy-6C-CHO"/>
+                <constraint firstItem="77M-GV-3Zb" firstAttribute="top" secondItem="TwZ-2G-9pf" secondAttribute="top" constant="8" id="qXb-2s-in7"/>
+                <constraint firstAttribute="trailing" secondItem="8Ww-8i-WXF" secondAttribute="trailing" constant="8" id="wrs-pa-69T"/>
             </constraints>
             <size key="customSize" width="148" height="160"/>
             <connections>
@@ -61,7 +64,7 @@
                 <outlet property="organizationNameLabel" destination="8Ww-8i-WXF" id="HcQ-pD-VTH"/>
                 <outlet property="organizationProfilePictureImageView" destination="77M-GV-3Zb" id="nsE-3r-4Aq"/>
             </connections>
-            <point key="canvasLocation" x="133" y="673"/>
+            <point key="canvasLocation" x="214" y="391"/>
         </collectionViewCell>
     </objects>
     <resources>

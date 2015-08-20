@@ -17,7 +17,6 @@ class CommentTableViewCell: UITableViewCell {
         commentTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         userProfilePictureImageView.layer.cornerRadius = userProfilePictureImageView.frame.size.width/2
         userProfilePictureImageView.layer.masksToBounds = true
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -33,6 +33,8 @@ class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate
         }
     }
     
+    //PopoverDatePicker
+    
     func setupDatePicker() {
         var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurView = UIVisualEffectView(effect: blurEffect)
@@ -47,9 +49,7 @@ class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate
         blurView.frame = window.bounds
         datePicker.center = window.center
     }
-    
-    //PopoverDatePicker
-    
+
     func didCancelDateSelection() {
         window?.addSubview(blurView)
         window?.addSubview(datePicker)

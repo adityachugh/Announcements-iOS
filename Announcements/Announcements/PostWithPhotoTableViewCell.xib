@@ -220,11 +220,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="qbK-ak-Brt"/>
                                 <exclude reference="Rh5-BC-saw"/>
                                 <exclude reference="kaq-6S-Par"/>
-                                <exclude reference="chs-A3-pyV"/>
+                                <exclude reference="qbK-ak-Brt"/>
                                 <exclude reference="AqX-vf-ssf"/>
+                                <exclude reference="chs-A3-pyV"/>
                             </mask>
                         </variation>
                     </view>
