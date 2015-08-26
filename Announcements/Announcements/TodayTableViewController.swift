@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate {
     
@@ -21,6 +22,16 @@ class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate
     override func viewDidLoad() {
         postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self)
         setupDatePicker()
+        getData()
+    }
+    
+    func getData() {
+        var parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": NSDate()]
+        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
+            (results, error) -> Void in
+            self.postTableViewManager.data = results as! [Post]
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParseUI
 
 class PostWithPhotoTableViewCell: UITableViewCell {
     
@@ -16,6 +17,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var postContentTextView: UITextView!
     @IBOutlet weak var postCommentsCountLabel: UILabel!
+    @IBOutlet weak var postImageView: PFImageView!
     
     var parentViewController: UIViewController!
     

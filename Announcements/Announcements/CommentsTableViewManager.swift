@@ -65,6 +65,7 @@ class CommentsTableViewManager: NSObject, UITableViewDataSource, UITableViewDele
             cell.postContentTextView.text = content[0]
             cell.parentViewController = parentViewController
             
+            
             if cell.respondsToSelector("setSeparatorInset:") {
                 cell.separatorInset = UIEdgeInsetsZero
             }
@@ -80,6 +81,7 @@ class CommentsTableViewManager: NSObject, UITableViewDataSource, UITableViewDele
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("Comment", forIndexPath: indexPath) as! CommentTableViewCell
             cell.commentTextView.text = content[indexPath.row]
+            cell.parentViewController = parentViewController
             
             if cell.respondsToSelector("setSeparatorInset:") {
                 cell.separatorInset = UIEdgeInsetsZero

@@ -26,6 +26,25 @@
 		383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */; };
 		383E76561B85548300A75432 /* FollowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383E76551B85548300A75432 /* FollowButton.xib */; };
 		383E76581B8555B600A75432 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76571B8555B600A75432 /* FollowButton.swift */; };
+		3867009E1B8664D800193355 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009D1B8664D800193355 /* UserViewController.swift */; };
+		386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */; };
+		386700A21B8D461900193355 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386700A11B8D461900193355 /* Post.swift */; };
+		386700A51B8D4A3000193355 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700A31B8D4A3000193355 /* Bolts.framework */; };
+		386700A61B8D4A3000193355 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700A41B8D4A3000193355 /* Parse.framework */; };
+		386700A81B8D4A3B00193355 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700A71B8D4A3B00193355 /* ParseCrashReporting.framework */; };
+		386700AA1B8D4A4900193355 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700A91B8D4A4900193355 /* ParseUI.framework */; };
+		386700AC1B8D4A6C00193355 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700AB1B8D4A6C00193355 /* AudioToolbox.framework */; };
+		386700AE1B8D4A7200193355 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700AD1B8D4A7200193355 /* CFNetwork.framework */; };
+		386700B01B8D4A7B00193355 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700AF1B8D4A7B00193355 /* CoreGraphics.framework */; };
+		386700B21B8D4A9400193355 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700B11B8D4A9400193355 /* CoreLocation.framework */; };
+		386700B41B8D4A9C00193355 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700B31B8D4A9C00193355 /* QuartzCore.framework */; };
+		386700B61B8D4AA300193355 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700B51B8D4AA300193355 /* Security.framework */; };
+		386700B81B8D4AAA00193355 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700B71B8D4AAA00193355 /* StoreKit.framework */; };
+		386700BA1B8D4AB500193355 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700B91B8D4AB500193355 /* SystemConfiguration.framework */; };
+		386700BC1B8D4AC100193355 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700BB1B8D4AC100193355 /* libz.dylib */; };
+		386700BE1B8D4ACE00193355 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700BD1B8D4ACE00193355 /* libsqlite3.dylib */; };
+		386700C01B8D4AD400193355 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700BF1B8D4AD400193355 /* Accounts.framework */; };
+		386700C21B8D4ADB00193355 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386700C11B8D4ADB00193355 /* Social.framework */; };
 		3869BDD21B7D37E3007C97AE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869BDD11B7D37E3007C97AE /* Utilities.swift */; };
 		3869BDD41B7D487B007C97AE /* PostWithPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */; };
 		386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */; };
@@ -55,6 +74,26 @@
 		383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewManager.swift; sourceTree = "<group>"; };
 		383E76551B85548300A75432 /* FollowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowButton.xib; sourceTree = "<group>"; };
 		383E76571B8555B600A75432 /* FollowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		3867009D1B8664D800193355 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewManager.swift; sourceTree = "<group>"; };
+		386700A11B8D461900193355 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		386700A31B8D4A3000193355 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		386700A41B8D4A3000193355 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		386700A71B8D4A3B00193355 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		386700A91B8D4A4900193355 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		386700AB1B8D4A6C00193355 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		386700AD1B8D4A7200193355 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		386700AF1B8D4A7B00193355 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		386700B11B8D4A9400193355 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		386700B31B8D4A9C00193355 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		386700B51B8D4AA300193355 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		386700B71B8D4AAA00193355 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		386700B91B8D4AB500193355 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		386700BB1B8D4AC100193355 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		386700BD1B8D4ACE00193355 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		386700BF1B8D4AD400193355 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		386700C11B8D4ADB00193355 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		386700C41B8D518800193355 /* infor[me]-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "infor[me]-Bridging-Header.h"; sourceTree = "<group>"; };
 		3869BDD11B7D37E3007C97AE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWithPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Announcements-iOS.swift"; sourceTree = "<group>"; };
@@ -71,6 +110,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386700C21B8D4ADB00193355 /* Social.framework in Frameworks */,
+				386700C01B8D4AD400193355 /* Accounts.framework in Frameworks */,
+				386700BE1B8D4ACE00193355 /* libsqlite3.dylib in Frameworks */,
+				386700BC1B8D4AC100193355 /* libz.dylib in Frameworks */,
+				386700BA1B8D4AB500193355 /* SystemConfiguration.framework in Frameworks */,
+				386700B81B8D4AAA00193355 /* StoreKit.framework in Frameworks */,
+				386700B61B8D4AA300193355 /* Security.framework in Frameworks */,
+				386700B41B8D4A9C00193355 /* QuartzCore.framework in Frameworks */,
+				386700B21B8D4A9400193355 /* CoreLocation.framework in Frameworks */,
+				386700B01B8D4A7B00193355 /* CoreGraphics.framework in Frameworks */,
+				386700AE1B8D4A7200193355 /* CFNetwork.framework in Frameworks */,
+				386700AC1B8D4A6C00193355 /* AudioToolbox.framework in Frameworks */,
+				386700A61B8D4A3000193355 /* Parse.framework in Frameworks */,
+				386700A81B8D4A3B00193355 /* ParseCrashReporting.framework in Frameworks */,
+				386700AA1B8D4A4900193355 /* ParseUI.framework in Frameworks */,
+				386700A51B8D4A3000193355 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +147,7 @@
 			children = (
 				382AEF971B7EEB64002A330D /* PostTableViewManager.swift */,
 				38232C4B1B75192400789340 /* PostTableViewCell.xib */,
+				386700A11B8D461900193355 /* Post.swift */,
 				38232C491B75190500789340 /* PostTableViewCell.swift */,
 				383E764E1B84F4D300A75432 /* PostWithPhotoTableViewCell.xib */,
 				3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */,
@@ -110,9 +166,33 @@
 			name = CommentTableView;
 			sourceTree = "<group>";
 		};
+		386700C31B8D4AE300193355 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				386700C11B8D4ADB00193355 /* Social.framework */,
+				386700BF1B8D4AD400193355 /* Accounts.framework */,
+				386700BD1B8D4ACE00193355 /* libsqlite3.dylib */,
+				386700BB1B8D4AC100193355 /* libz.dylib */,
+				386700B91B8D4AB500193355 /* SystemConfiguration.framework */,
+				386700B71B8D4AAA00193355 /* StoreKit.framework */,
+				386700B51B8D4AA300193355 /* Security.framework */,
+				386700B31B8D4A9C00193355 /* QuartzCore.framework */,
+				386700B11B8D4A9400193355 /* CoreLocation.framework */,
+				386700AF1B8D4A7B00193355 /* CoreGraphics.framework */,
+				386700AD1B8D4A7200193355 /* CFNetwork.framework */,
+				386700AB1B8D4A6C00193355 /* AudioToolbox.framework */,
+				386700A91B8D4A4900193355 /* ParseUI.framework */,
+				386700A71B8D4A3B00193355 /* ParseCrashReporting.framework */,
+				386700A31B8D4A3000193355 /* Bolts.framework */,
+				386700A41B8D4A3000193355 /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		38FD45301B54527300896403 = {
 			isa = PBXGroup;
 			children = (
+				386700C31B8D4AE300193355 /* Frameworks */,
 				38FD453B1B54527300896403 /* Announcements */,
 				38FD453A1B54527300896403 /* Products */,
 			);
@@ -130,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
+				3867009D1B8664D800193355 /* UserViewController.swift */,
 				383E76501B850A4800A75432 /* PostTableView */,
 				383E76511B850AA100A75432 /* CommentTableView */,
 				38232C481B75182B00789340 /* User Interface */,
@@ -138,6 +219,7 @@
 				383E76571B8555B600A75432 /* FollowButton.swift */,
 				38232C401B75123B00789340 /* TodayTableViewController.swift */,
 				383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */,
+				3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */,
 				382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */,
 				382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */,
 				38FD453C1B54527300896403 /* Supporting Files */,
@@ -148,6 +230,7 @@
 		38FD453C1B54527300896403 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				386700C41B8D518800193355 /* infor[me]-Bridging-Header.h */,
 				3869BDD11B7D37E3007C97AE /* Utilities.swift */,
 				382AEF9B1B7EF3C2002A330D /* TabBarController.swift */,
 				386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */,
@@ -243,6 +326,7 @@
 				386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */,
 				383E764B1B84ECB000A75432 /* CommentsTableViewController.swift in Sources */,
 				38FD453F1B54527300896403 /* AppDelegate.swift in Sources */,
+				3867009E1B8664D800193355 /* UserViewController.swift in Sources */,
 				382AEF9C1B7EF3C2002A330D /* TabBarController.swift in Sources */,
 				3869BDD41B7D487B007C97AE /* PostWithPhotoTableViewCell.swift in Sources */,
 				38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */,
@@ -252,7 +336,9 @@
 				383E76451B841CCD00A75432 /* OrganizationCollectionViewCell.swift in Sources */,
 				383E76581B8555B600A75432 /* FollowButton.swift in Sources */,
 				383E764D1B84ED2500A75432 /* CommentTableViewCell.swift in Sources */,
+				386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */,
 				383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */,
+				386700A21B8D461900193355 /* Post.swift in Sources */,
 				382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,11 +442,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Announcements/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "infor[me]";
+				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -369,11 +462,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Announcements/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "infor[me]";
+				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

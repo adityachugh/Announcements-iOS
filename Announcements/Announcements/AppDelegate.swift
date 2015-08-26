@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        
+        Parse.setApplicationId("S1dL5D6QCSqsC1FyYTiyS5V4Yv2zcK47TeybVtEf",
+            clientKey: "llxS4kjhRdSv46DvGi9HyPapsRaFDoU9155Nh88V")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         setupBarButtonItemFont()
         
-        // Override point for customization after application launch.
+        if PFUser.currentUser() == nil {
+            PFUser.logInWithUsernameInBackground("chughrajiv", password: "password") {
+                (user, error) -> Void in
+                println("User Logged In!")
+            }
+        }
         return true
     }
 

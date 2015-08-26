@@ -44,14 +44,29 @@
                             <constraint firstAttribute="width" constant="32" id="eNb-PY-fbK"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-yE-kle">
+                        <rect key="frame" x="8" y="8" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="cOz-0Z-kBs"/>
+                            <constraint firstAttribute="width" constant="32" id="tZg-vf-DSM"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="userProfilePictureButtonTapped:" destination="Ovy-r7-de8" eventType="touchUpInside" id="ov9-A7-H2N"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="qY2-yE-kle" firstAttribute="leading" secondItem="m1T-Rv-VZg" secondAttribute="leadingMargin" id="9cv-7g-gFw"/>
                     <constraint firstItem="80k-6s-fc0" firstAttribute="top" secondItem="m1T-Rv-VZg" secondAttribute="topMargin" id="AhN-cx-v0g"/>
                     <constraint firstItem="pA1-ol-2uu" firstAttribute="top" secondItem="uxt-WX-MPM" secondAttribute="bottom" constant="8" id="Ch9-6O-B3R"/>
                     <constraint firstItem="uxt-WX-MPM" firstAttribute="leading" secondItem="m1T-Rv-VZg" secondAttribute="leadingMargin" id="I3w-ka-Yac"/>
                     <constraint firstItem="pA1-ol-2uu" firstAttribute="leading" secondItem="m1T-Rv-VZg" secondAttribute="leading" constant="8" id="Ke3-bb-fr5"/>
                     <constraint firstItem="80k-6s-fc0" firstAttribute="trailing" secondItem="m1T-Rv-VZg" secondAttribute="trailingMargin" id="LvE-kX-d7v"/>
                     <constraint firstItem="G8j-HC-Vx9" firstAttribute="centerY" secondItem="uxt-WX-MPM" secondAttribute="centerY" id="Tl4-tr-P8B"/>
+                    <constraint firstItem="qY2-yE-kle" firstAttribute="top" secondItem="m1T-Rv-VZg" secondAttribute="topMargin" id="fkT-a7-bsF"/>
                     <constraint firstAttribute="trailing" secondItem="pA1-ol-2uu" secondAttribute="trailing" constant="8" id="qXf-Ka-RZr"/>
                     <constraint firstAttribute="bottom" secondItem="pA1-ol-2uu" secondAttribute="bottom" constant="8" id="tgU-Tp-syQ"/>
                     <constraint firstItem="G8j-HC-Vx9" firstAttribute="leading" secondItem="uxt-WX-MPM" secondAttribute="trailing" constant="8" id="wbh-LU-kK5"/>

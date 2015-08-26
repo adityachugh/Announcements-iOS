@@ -65,7 +65,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-WP-Vkh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-WP-Vkh" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="109" width="400" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="bAW-l4-J1P"/>
@@ -242,6 +242,7 @@
                 <outlet property="organizationNameLabel" destination="QOV-c4-kJk" id="C3H-OK-LXp"/>
                 <outlet property="postCommentsCountLabel" destination="Oum-W6-lWV" id="Hpk-Kv-DXS"/>
                 <outlet property="postContentTextView" destination="TkM-7t-vsO" id="JK7-PS-Dyd"/>
+                <outlet property="postImageView" destination="JSV-WP-Vkh" id="6Xw-do-19L"/>
                 <outlet property="postTitleLabel" destination="JLk-aT-5sx" id="a0R-MA-wfh"/>
                 <outlet property="timeLabel" destination="s6c-f9-aRG" id="Zs4-e2-Vbk"/>
             </connections>

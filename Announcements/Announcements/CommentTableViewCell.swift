@@ -29,4 +29,13 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
+    var parentViewController: UIViewController!
+    
+    @IBAction func userProfilePictureButtonTapped(sender: AnyObject) {
+        Utilities.presentViewControllerVithStoryboardIdentifier("User", parentViewController: parentViewController) {
+            (toViewController) -> UIViewController in
+            return toViewController
+        }
+    }
+    
 }
