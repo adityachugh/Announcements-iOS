@@ -13,7 +13,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var organizationNameLabel: UILabel!
-    @IBOutlet weak var organizationImageView: UIImageView!
+    @IBOutlet weak var organizationImageView: PFImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var postContentTextView: UITextView!
     @IBOutlet weak var postCommentsCountLabel: UILabel!

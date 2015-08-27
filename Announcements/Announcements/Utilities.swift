@@ -10,10 +10,25 @@ import UIKit
 
 class Utilities {
     
+    static let iOS7 = floor(NSFoundationVersionNumber) <= floor(NSFoundationVersionNumber_iOS_7_1)
+    static let iOS8 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
+    
     class func presentViewControllerVithStoryboardIdentifier(identifier: String, parentViewController: UIViewController, modifications:((toViewController: UIViewController) -> UIViewController)) {
         var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        
         viewController = modifications(toViewController: viewController)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    class func presentViewControllerModallyVithStoryboardIdentifier(identifier: String, parentViewController: UIViewController, modifications:((toViewController: UIViewController) -> UIViewController)) {
+        var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        if iOS8 {
+            viewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        } else {
+            viewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        }
+        viewController = modifications(toViewController: viewController)
+        parentViewController.tabBarController?.presentViewController(viewController, animated: false, completion: nil)
     }
     
     class func calculcateHeightForPostCell(view:UIView, bodyText:String, finalModification:(height:CGFloat)->(CGFloat)) -> CGFloat {
@@ -21,7 +36,7 @@ class Utilities {
         calculationBodyView.attributedText = NSAttributedString(string: bodyText)
         calculationBodyView.font = UIFont(name: "AvenirNext-Regular", size: 12.5)
         calculationBodyView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
-//        calculationBodyView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        //        calculationBodyView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         var size:CGSize = CGSize()
         size = calculationBodyView.sizeThatFits(CGSize(width: view.frame.width-16, height: CGFloat.max))
         var height = finalModification(height: size.height)
@@ -53,4 +68,18 @@ class Utilities {
             ),
             dispatch_get_main_queue(), closure)
     }
+}
+
+public extension UIWindow {
+    
+    func capture() -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(self.frame.size, self.opaque, 0.0)
+        self.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
 }

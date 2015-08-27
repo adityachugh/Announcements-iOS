@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Post.swift
 //  infor[me]
 //
 //  Created by Aditya Chugh on 8/25/15.
@@ -11,8 +11,8 @@ import Parse
 
 class Post: PFObject, PFSubclassing {
     
-    @NSManaged var Organization: PFObject
-    @NSManaged var CreateUser: PFUser
+    @NSManaged var organization: Organization
+    @NSManaged var createUser: PFUser
     @NSManaged var title: String
     @NSManaged var body: String
     @NSManaged var image: PFFile?

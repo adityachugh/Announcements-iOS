@@ -15,6 +15,8 @@
 		382AEF9C1B7EF3C2002A330D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF9B1B7EF3C2002A330D /* TabBarController.swift */; };
 		382AEF9E1B7EF643002A330D /* PopoverDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 382AEF9D1B7EF643002A330D /* PopoverDatePicker.xib */; };
 		382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */; };
+		38302D291B8E24CA002A548A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D281B8E24CA002A548A /* Organization.swift */; };
+		38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */; };
 		383E763F1B83D7AD00A75432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383E763E1B83D7AD00A75432 /* Main.storyboard */; };
 		383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */; };
 		383E76451B841CCD00A75432 /* OrganizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */; };
@@ -63,6 +65,8 @@
 		382AEF9B1B7EF3C2002A330D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		382AEF9D1B7EF643002A330D /* PopoverDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverDatePicker.xib; sourceTree = "<group>"; };
 		382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePicker.swift; sourceTree = "<group>"; };
+		38302D281B8E24CA002A548A /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		383E763E1B83D7AD00A75432 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,9 +141,19 @@
 			children = (
 				38FD45471B54527300896403 /* LaunchScreen.xib */,
 				382AEF9D1B7EF643002A330D /* PopoverDatePicker.xib */,
+				38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */,
 				383E76461B84DFDC00A75432 /* OrganizationCollectionViewCell.xib */,
 			);
 			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		38302D271B8E2435002A548A /* Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+				386700A11B8D461900193355 /* Post.swift */,
+				38302D281B8E24CA002A548A /* Organization.swift */,
+			);
+			name = "Data Classes";
 			sourceTree = "<group>";
 		};
 		383E76501B850A4800A75432 /* PostTableView */ = {
@@ -147,7 +161,6 @@
 			children = (
 				382AEF971B7EEB64002A330D /* PostTableViewManager.swift */,
 				38232C4B1B75192400789340 /* PostTableViewCell.xib */,
-				386700A11B8D461900193355 /* Post.swift */,
 				38232C491B75190500789340 /* PostTableViewCell.swift */,
 				383E764E1B84F4D300A75432 /* PostWithPhotoTableViewCell.xib */,
 				3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */,
@@ -211,6 +224,7 @@
 			children = (
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
 				3867009D1B8664D800193355 /* UserViewController.swift */,
+				38302D271B8E2435002A548A /* Data Classes */,
 				383E76501B850A4800A75432 /* PostTableView */,
 				383E76511B850AA100A75432 /* CommentTableView */,
 				38232C481B75182B00789340 /* User Interface */,
@@ -323,6 +337,7 @@
 			files = (
 				383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */,
 				382AEF981B7EEB64002A330D /* PostTableViewManager.swift in Sources */,
+				38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */,
 				386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */,
 				383E764B1B84ECB000A75432 /* CommentsTableViewController.swift in Sources */,
 				38FD453F1B54527300896403 /* AppDelegate.swift in Sources */,
@@ -339,6 +354,7 @@
 				386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */,
 				383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */,
 				386700A21B8D461900193355 /* Post.swift in Sources */,
+				38302D291B8E24CA002A548A /* Organization.swift in Sources */,
 				382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -452,6 +469,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "infor[me]";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,6 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -472,6 +491,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "infor[me]";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

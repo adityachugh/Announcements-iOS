@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate {
+class TodayTableViewController: UITableViewController, PostTableViewRefreshDelegate, DatePickerViewControllerDelegate {
     
     var postTableViewManager: PostTableViewManager!
     var date = NSDate()
@@ -20,90 +20,44 @@ class TodayTableViewController: UITableViewController, PopoverDatePickerDelegate
     var datePickerIsShowing = false
     
     override func viewDidLoad() {
-        postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self)
-        setupDatePicker()
-        getData()
-    }
-    
-    func getData() {
-        var parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": NSDate()]
-        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
-            (results, error) -> Void in
-            self.postTableViewManager.data = results as! [Post]
-            self.tableView.reloadData()
-        }
+        postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
     }
     
     override func viewDidAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
-    func orientationChanged (notification: NSNotification) {
-        if datePickerIsShowing {
-            fixDatePickerWhenShowing()
+    func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
+        var parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": date]
+        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
+            (results, error) -> Void in
+            self.postTableViewManager.data = results as! [Post]
+            tableView.reloadData()
+            refreshControl.endRefreshing()
         }
     }
     
-    //PopoverDatePicker
-    
-    func setupDatePicker() {
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        blurView = UIVisualEffectView(effect: blurEffect)
-        window = UIApplication.sharedApplication().keyWindow
-        blurView.frame = window.bounds
-        datePicker.delegate = self
-        datePicker.center = window.center
-        datePicker.frame = CGRectOffset(datePicker.frame, 0, -self.view.bounds.size.height)
+    func addData() {
+        
     }
     
-    func fixDatePickerWhenShowing() {
-        blurView.frame = window.bounds
-        datePicker.center = window.center
-    }
-
     func didCancelDateSelection() {
-        window?.addSubview(blurView)
-        window?.addSubview(datePicker)
-        Utilities.animateWithCompletion({ (
-            ) -> () in
-            self.blurView.alpha = 0
-            self.datePicker.frame = CGRectOffset(self.datePicker.frame, 0, -self.view.frame.size.height)
-            }, completion: {
-                () -> () in
-                self.datePickerIsShowing = false
-                self.blurView.removeFromSuperview()
-                self.datePicker.removeFromSuperview()
-        })
+        
     }
     
     func didSelectDate(date: NSDate) {
-        
-        window?.addSubview(blurView)
-        window?.addSubview(datePicker)
         self.date = date
-        Utilities.animateWithCompletion({ () -> () in
-            self.blurView.alpha = 0
-            self.datePicker.frame = CGRectOffset(self.datePicker.frame, 0, -self.view.frame.size.height)
-        }, completion: { () -> () in
-           self.datePickerIsShowing = false
-            self.blurView.removeFromSuperview()
-            self.datePicker.removeFromSuperview()
-        })
+        self.postTableViewManager.refreshTop()
     }
     
     @IBAction func dateButtonTapped(sender: UIBarButtonItem) {
-        setupDatePicker()
-        datePickerIsShowing = true
-        blurView.alpha = 0
-        window?.addSubview(blurView)
-        window?.addSubview(datePicker)
-        Utilities.animate { () -> () in
-            self.blurView.alpha = 1
-            self.datePicker.center = self.view.center
-            
-            
+        Utilities.presentViewControllerModallyVithStoryboardIdentifier("DatePicker", parentViewController: self) { (toViewController) -> UIViewController in
+            var datePickerViewController = toViewController as! DatePickerViewController
+            datePickerViewController.delegate = self
+            datePickerViewController.date = self.date
+            datePickerViewController.maximumDate = NSDate()
+            return datePickerViewController
         }
-        
     }
     
     //Misc

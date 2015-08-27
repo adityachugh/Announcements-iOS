@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class PopoverDatePicker: UIView {
+class PopoverDatePicker: UIView {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet var view: UIView!

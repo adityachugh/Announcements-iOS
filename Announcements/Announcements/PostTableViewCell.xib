@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYB-PS-JkY">
                         <rect key="frame" x="0.0" y="8" width="400" height="357"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="3N8-aS-vmd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="3N8-aS-vmd" customClass="PFImageView">
                                 <rect key="frame" x="8" y="8" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="KG8-fv-gzR"/>

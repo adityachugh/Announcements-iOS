@@ -37,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 println("User Logged In!")
             }
         }
+        
+        //Register subclasses
+        
+        Post.registerSubclass()
+        Organization.registerSubclass()
+        
         return true
     }
 

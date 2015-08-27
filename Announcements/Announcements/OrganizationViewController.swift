@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrganizationViewController: UIViewController, PostTableViewScrollingDelegate {
+class OrganizationViewController: UIViewController, PostTableViewScrollingDelegate, PostTableViewRefreshDelegate {
     
     @IBOutlet weak var organizationFollowCountLabel: UILabel!
     @IBOutlet weak var organizationProfilePictureImageView: UIImageView!
@@ -18,7 +18,7 @@ class OrganizationViewController: UIViewController, PostTableViewScrollingDelega
     var postTableViewManager: PostTableViewManager!
     
     override func viewDidLoad() {
-        postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self)
+        postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
         postTableViewManager.scrollingDelegate = self
         
         organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.size.height/2
@@ -28,6 +28,13 @@ class OrganizationViewController: UIViewController, PostTableViewScrollingDelega
     @IBOutlet weak var topViewContentOffset: NSLayoutConstraint!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
+    func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
+        
+    }
+    
+    func addData() {
+        
+    }
     
     func didScroll(scrollView: UIScrollView) {
 //        var contentOffset = scrollView.contentOffset.y
