@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ParseUI
+//import ParseUI
 
 class PostWithPhotoTableViewCell: UITableViewCell {
     

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize Parse.
         
+        
+        
         Parse.setApplicationId("S1dL5D6QCSqsC1FyYTiyS5V4Yv2zcK47TeybVtEf",
             clientKey: "llxS4kjhRdSv46DvGi9HyPapsRaFDoU9155Nh88V")
         
         // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         setupBarButtonItemFont()

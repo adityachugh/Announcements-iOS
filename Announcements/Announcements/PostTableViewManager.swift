@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+//import Parse
 
 class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     
@@ -38,11 +38,19 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         refreshControl.addTarget(self, action: "refreshTop", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.beginRefreshing()
         refreshTop()
+        
+        tableView.bottomRefreshControl = bottomRefreshControl
+        bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
+        bottomRefreshControl.triggerVerticalOffset = 50
     }
     
     func refreshTop() {
         refreshControl.beginRefreshing()
         refreshDelegate?.refreshData(refreshControl, tableView: tableView)
+    }
+    
+    func refreshBottom() {
+        println("Bottom")
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -72,7 +80,10 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         if let imageFile = data[indexPath.row].image {
             let cell = tableView.dequeueReusableCellWithIdentifier("PostWithPhoto") as! PostWithPhotoTableViewCell
             cell.postImageView.file = imageFile
-            cell.postImageView.loadInBackground()
+            cell.postImageView.loadInBackground({
+                (image, error) -> Void in
+                
+            })
             cell.postContentTextView.text = data[indexPath.row].body
             cell.postTitleLabel.text = data[indexPath.row].title
             cell.parentViewController = parentViewController
@@ -80,7 +91,10 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
             cell.organizationNameLabel.text =  data[indexPath.row].organization.name
             if let organizationImageFile = data[indexPath.row].organization.image {
                 cell.organizationImageView.file = organizationImageFile
-                cell.organizationImageView.loadInBackground()
+                cell.organizationImageView.loadInBackground({
+                    (image, error) -> Void in
+                    
+                })
             }
             return cell
         }
@@ -94,7 +108,10 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         cell.organizationNameLabel.text =  data[indexPath.row].organization.name
         if let organizationImageFile = data[indexPath.row].organization.image {
             cell.organizationImageView.file = organizationImageFile
-            cell.organizationImageView.loadInBackground()
+            cell.organizationImageView.loadInBackground({
+                (image, error) -> Void in
+                
+            })
         }
         
         return cell

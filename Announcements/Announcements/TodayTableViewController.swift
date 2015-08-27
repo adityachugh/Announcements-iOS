@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+//import Parse
 
 class TodayTableViewController: UITableViewController, PostTableViewRefreshDelegate, DatePickerViewControllerDelegate {
     
@@ -16,15 +16,10 @@ class TodayTableViewController: UITableViewController, PostTableViewRefreshDeleg
     var blurView: UIVisualEffectView!
     var window: UIWindow!
     var datePicker = PopoverDatePicker(frame: CGRectMake(0, 0, 300, 200))
-    var orientations:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
     var datePickerIsShowing = false
     
     override func viewDidLoad() {
         postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
