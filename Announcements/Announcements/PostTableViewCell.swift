@@ -11,6 +11,23 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
+    var post: Post! {
+        didSet {
+            self.postContentTextView.text = post.body
+            self.postTitleLabel.text = post.title
+            self.postCommentsCountLabel.text = "\(post.commentsCount)"
+            self.organizationNameLabel.text =  post.organization.name
+            self.timeLabel.text = post.postStartDate.timeAgoSinceNow()
+            if let organizationImageFile = post.organization.image {
+                self.organizationImageView.file = organizationImageFile
+                self.organizationImageView.loadInBackground({
+                    (image, error) -> Void in
+                    
+                })
+            }
+            
+        }
+    }
     @IBOutlet weak var organizationImageView: PFImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
@@ -41,20 +58,27 @@ class PostTableViewCell: UITableViewCell {
     
     @IBAction func commentButtonTapped(sender: UIButton) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            return toViewController
+            var viewController = toViewController as! CommentsTableViewController
+            println(self.post)
+            viewController.post = self.post
+            return viewController
         }
     }
     
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
-        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            return toViewController
+        if !parentViewController.isKindOfClass(OrganizationViewController) {
+            Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+                var viewController = toViewController as! OrganizationViewController
+                viewController.organization = self.post.organization
+                return viewController
+            }
         }
     }
     
     
     override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-
+        //        super.setSelected(selected, animated: animated)
+        
         // Configure the view for the selected state
     }
 }

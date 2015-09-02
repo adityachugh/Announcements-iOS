@@ -12,24 +12,55 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     
     var collectionView: UICollectionView!
     var parentViewController: UIViewController!
+    var refreshDelegate: CollectionViewRefreshDelegate?
+    var refreshControl = UIRefreshControl()
+    var bottomRefreshControl = UIRefreshControl()
+    var startIndex = 0
+    var numberOfOrganizations = 10
+    var data: [Organization] = []
     
-    init(collectionView: UICollectionView, parentViewController: UIViewController) {
+    
+    init(collectionView: UICollectionView, parentViewController: UIViewController, refreshDelegate: CollectionViewRefreshDelegate) {
         self.collectionView = collectionView
         self.parentViewController = parentViewController
+        self.refreshDelegate = refreshDelegate
         
         super.init()
         var nib = UINib(nibName: "OrganizationCollectionViewCell", bundle: NSBundle.mainBundle())
         self.collectionView!.registerNib(nib, forCellWithReuseIdentifier: "Organization")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        collectionView.alwaysBounceVertical = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
         for cell in collectionView.visibleCells() as! [OrganizationCollectionViewCell] {
             cell.organizationProfilePictureImageView.layer.cornerRadius = cell.organizationProfilePictureImageView.bounds.width/2
         }
+        
+        collectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "refreshTop", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.beginRefreshing()
+        refreshTop()
+        
+        collectionView.bottomRefreshControl = bottomRefreshControl
+        bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
+        bottomRefreshControl.triggerVerticalOffset = 80
     }
+    
+    func refreshTop() {
+        startIndex = 0
+        refreshControl.beginRefreshing()
+        refreshDelegate?.refreshData(refreshControl, collectionView: collectionView)
+    }
+    
+    func refreshBottom() {
+        bottomRefreshControl.beginRefreshing()
+        startIndex = data.count
+        refreshDelegate?.addData(bottomRefreshControl, collectionView: collectionView, startIndex: startIndex, numberOfOrganizations: numberOfOrganizations)
+    }
+
     
     func orientationChanged (notification: NSNotification) {
         collectionView.reloadData()
@@ -45,7 +76,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return data.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -53,7 +84,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Organization", forIndexPath: indexPath) as! OrganizationCollectionViewCell
         cell.backgroundColor = UIColor.whiteColor()
         cell.organizationProfilePictureImageView.layer.cornerRadius = cell.organizationProfilePictureImageView.bounds.width/2
-        cell.organizationNameLabel.text = "Organization: \(indexPath.row+1)"
+        cell.organization = data[indexPath.row]
         
         return cell
     }
@@ -61,8 +92,15 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) {
             (toViewController) -> UIViewController in
-            return toViewController
+            var viewController = toViewController as! OrganizationViewController
+            viewController.organization = self.data[indexPath.row]
+            return viewController
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        var collectionViewCell = cell as! OrganizationCollectionViewCell
+        collectionViewCell.organizationProfilePictureImageView.layer.cornerRadius = collectionViewCell.organizationProfilePictureImageView.bounds.width/2
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -79,4 +117,9 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
+}
+
+protocol CollectionViewRefreshDelegate {
+    func refreshData(refreshControl: UIRefreshControl, collectionView: UICollectionView)
+    func addData(refreshControl: UIRefreshControl, collectionView: UICollectionView, startIndex: Int, numberOfOrganizations: Int)
 }

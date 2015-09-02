@@ -80,7 +80,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="gg3-Nw-eRX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="gg3-Nw-eRX" customClass="PFImageView">
                                                     <rect key="frame" x="263" y="16" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="UDc-HV-cEI"/>
@@ -327,8 +327,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9F-aq-RC3">
-                                                    <rect key="frame" x="278" y="98" width="45" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#Library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9F-aq-RC3">
+                                                    <rect key="frame" x="278" y="97" width="45" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="FCX-iL-hTc"/>
                                                     </constraints>
@@ -345,7 +345,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="dEZ-xF-wfN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="dEZ-xF-wfN" customClass="PFImageView">
                                                     <rect key="frame" x="263" y="16" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="qxY-G1-8uk"/>
@@ -406,6 +406,9 @@
                     <navigationItem key="navigationItem" title="Library" id="pq8-sF-hwD"/>
                     <connections>
                         <outlet property="collectionView" destination="aat-3z-eCc" id="MUr-5F-G0b"/>
+                        <outlet property="organizationsCountLabel" destination="hPm-Vm-uA9" id="bzC-Pz-aOy"/>
+                        <outlet property="userHandleLabel" destination="V9F-aq-RC3" id="eZM-Ta-JOa"/>
+                        <outlet property="userProfilePictureImageView" destination="dEZ-xF-wfN" id="VXf-oh-siN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeP-U9-I9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,7 +440,7 @@
                                             <rect key="frame" x="150" y="200" width="300" height="200"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="t2D-JI-tZb">
-                                                    <rect key="frame" x="0.0" y="36.5" width="300" height="162"/>
+                                                    <rect key="frame" x="0.0" y="37" width="300" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="461305437.530662">
                                                         <!--2015-08-15 04:23:57 +0000-->
                                                     </date>

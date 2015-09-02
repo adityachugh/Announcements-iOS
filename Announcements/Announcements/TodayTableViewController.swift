@@ -9,7 +9,7 @@
 import UIKit
 //import Parse
 
-class TodayTableViewController: UITableViewController, PostTableViewRefreshDelegate, DatePickerViewControllerDelegate {
+class TodayTableViewController: UITableViewController, RefreshDelegate, DatePickerViewControllerDelegate {
     
     var postTableViewManager: PostTableViewManager!
     var date = NSDate()
@@ -32,8 +32,18 @@ class TodayTableViewController: UITableViewController, PostTableViewRefreshDeleg
         }
     }
     
-    func addData() {
-        
+    func addData(refreshControl: UIRefreshControl, tableView: UITableView, startIndex: Int, numberOfPosts: Int) {
+        var parameters: Dictionary = ["startIndex": startIndex, "numberOfPosts": numberOfPosts, "date": date]
+        PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
+            (results, error) -> Void in
+            if results != nil {
+                for result in results as! [Post] {
+                    self.postTableViewManager.data.append(result)
+                }
+            }
+            tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
     }
     
     func didCancelDateSelection() {

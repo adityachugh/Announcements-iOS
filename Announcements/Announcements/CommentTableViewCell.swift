@@ -10,6 +10,21 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
 
+    var comment: Comment! {
+        didSet {
+            if let profilePhotoFile = comment.createUser.profilePhoto {
+                userProfilePictureImageView.file = profilePhotoFile
+                userProfilePictureImageView.loadInBackground({
+                    (image, error) -> Void in
+                    
+                })
+            }
+            userNameLabel.text = "\(comment.createUser.firstName) \(comment.createUser.lastName)"
+            timeLabel.text = comment.createdAt?.timeAgoSinceNow()
+            commentTextView.text = comment.comment
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     // Initialization code
@@ -25,7 +40,7 @@ class CommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBOutlet weak var userProfilePictureImageView: UIImageView!
+    @IBOutlet weak var userProfilePictureImageView: PFImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
@@ -34,7 +49,9 @@ class CommentTableViewCell: UITableViewCell {
     @IBAction func userProfilePictureButtonTapped(sender: AnyObject) {
         Utilities.presentViewControllerVithStoryboardIdentifier("User", parentViewController: parentViewController) {
             (toViewController) -> UIViewController in
-            return toViewController
+            var viewController = toViewController as! UserViewController
+            viewController.user = self.comment.createUser
+            return viewController
         }
     }
     

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import ParseUI
 
 class PostWithPhotoTableViewCell: UITableViewCell {
     
@@ -18,6 +17,26 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var postContentTextView: UITextView!
     @IBOutlet weak var postCommentsCountLabel: UILabel!
     @IBOutlet weak var postImageView: PFImageView!
+    var post: Post! {
+        didSet {
+            self.postImageView.file = post.image
+            self.postImageView.loadInBackground({ (image, error) -> Void in })
+            self.postContentTextView.text = post.body
+            self.postTitleLabel.text = post.title
+            self.postCommentsCountLabel.text = "\(post.commentsCount)"
+            self.organizationNameLabel.text =  post.organization.name
+            self.timeLabel.text = post.postStartDate.timeAgoSinceNow()
+            if let organizationImageFile = post.organization.image {
+                self.organizationImageView.file = organizationImageFile
+                self.organizationImageView.loadInBackground({
+                    (image, error) -> Void in
+                    
+                })
+            }
+        }
+    }
+    
+    
     
     var parentViewController: UIViewController!
     
@@ -39,13 +58,20 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     
     @IBAction func commentButtonTapped(sender: UIButton) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            return toViewController
+            var viewController = toViewController as! CommentsTableViewController
+            viewController.post = self.post
+            println(self.post)
+            return viewController
         }
     }
     
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
-        Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            return toViewController
+        if !parentViewController.isKindOfClass(OrganizationViewController) {
+            Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+                var viewController = toViewController as! OrganizationViewController
+                viewController.organization = self.post.organization
+                return viewController
+            }
         }
     }
 }

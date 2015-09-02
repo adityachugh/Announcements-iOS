@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import Parse
 
 class Organization: PFObject, PFSubclassing {
     
@@ -31,7 +30,6 @@ class Organization: PFObject, PFSubclassing {
     
     override class func initialize() {
         super.initialize()
-        self.registerSubclass()
     }
     static func parseClassName() -> String {
         return "Organization"

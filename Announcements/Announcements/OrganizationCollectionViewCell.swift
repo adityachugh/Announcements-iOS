@@ -10,6 +10,18 @@ import UIKit
 
 @IBDesignable class OrganizationCollectionViewCell: UICollectionViewCell {
     
+    var organization: Organization! {
+        didSet {
+            if let imageFile = organization.image {
+                organizationProfilePictureImageView.file = imageFile
+                organizationProfilePictureImageView.loadInBackground({ (image, error) -> Void in })
+            } else {
+                organizationProfilePictureImageView.file = nil
+            }
+            organizationNameLabel.text = organization.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,7 +34,7 @@ import UIKit
         followButton.layer.borderColor = UIColor.AccentColor().CGColor
     }
     
-    @IBOutlet var organizationProfilePictureImageView: UIImageView!
+    @IBOutlet var organizationProfilePictureImageView: PFImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var followButton: FollowButton!
 }

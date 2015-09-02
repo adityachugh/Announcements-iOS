@@ -7,12 +7,11 @@
 //
 
 import Foundation
-//import Parse
 
 class Post: PFObject, PFSubclassing {
     
     @NSManaged var organization: Organization
-    @NSManaged var createUser: PFUser
+    @NSManaged var createUser: User
     @NSManaged var title: String
     @NSManaged var body: String
     @NSManaged var image: PFFile?
@@ -28,7 +27,6 @@ class Post: PFObject, PFSubclassing {
     
     override class func initialize() {
         super.initialize()
-        self.registerSubclass()
     }
     static func parseClassName() -> String {
         return "Post"

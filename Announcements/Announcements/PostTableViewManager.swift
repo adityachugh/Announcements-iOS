@@ -7,19 +7,21 @@
 //
 
 import UIKit
-//import Parse
 
 class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var scrollingDelegate: PostTableViewScrollingDelegate?
-    var refreshDelegate: PostTableViewRefreshDelegate?
+    var refreshDelegate: RefreshDelegate?
     var parentViewController: UIViewController!
     var tableView: UITableView!
     var refreshControl = UIRefreshControl()
     var bottomRefreshControl = UIRefreshControl()
-    var data:[Post] = []
     
-    init(tableView: UITableView, parentViewController: UIViewController, refreshDelegate: PostTableViewRefreshDelegate) {
+    var data:[Post] = []
+    var startIndex = 0
+    var numberOfPosts = 10
+    
+    init(tableView: UITableView, parentViewController: UIViewController, refreshDelegate: RefreshDelegate) {
         self.tableView = tableView
         self.parentViewController = parentViewController
         self.refreshDelegate = refreshDelegate
@@ -28,11 +30,9 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        //Register Nibs
-        self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "Post")
-        self.tableView.registerNib(UINib(nibName: "PostWithPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PostWithPhoto")
+        registerNibs()
         
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: "refreshTop", forControlEvents: UIControlEvents.ValueChanged)
@@ -41,16 +41,26 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         
         tableView.bottomRefreshControl = bottomRefreshControl
         bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
-        bottomRefreshControl.triggerVerticalOffset = 50
+        bottomRefreshControl.triggerVerticalOffset = 80
+    }
+    
+    func registerNibs() {
+        tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "Post")
+        tableView.registerNib(UINib(nibName: "PostWithPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PostWithPhoto")
+        
+        
     }
     
     func refreshTop() {
+        startIndex = 0
         refreshControl.beginRefreshing()
         refreshDelegate?.refreshData(refreshControl, tableView: tableView)
     }
     
     func refreshBottom() {
-        println("Bottom")
+        bottomRefreshControl.beginRefreshing()
+        startIndex = data.count
+        refreshDelegate?.addData(bottomRefreshControl, tableView: tableView, startIndex: startIndex, numberOfPosts: numberOfPosts)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -79,47 +89,25 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         
         if let imageFile = data[indexPath.row].image {
             let cell = tableView.dequeueReusableCellWithIdentifier("PostWithPhoto") as! PostWithPhotoTableViewCell
-            cell.postImageView.file = imageFile
-            cell.postImageView.loadInBackground({
-                (image, error) -> Void in
-                
-            })
-            cell.postContentTextView.text = data[indexPath.row].body
-            cell.postTitleLabel.text = data[indexPath.row].title
+            cell.post = data[indexPath.row]
             cell.parentViewController = parentViewController
-            cell.postCommentsCountLabel.text = "\(data[indexPath.row].commentsCount)"
-            cell.organizationNameLabel.text =  data[indexPath.row].organization.name
-            if let organizationImageFile = data[indexPath.row].organization.image {
-                cell.organizationImageView.file = organizationImageFile
-                cell.organizationImageView.loadInBackground({
-                    (image, error) -> Void in
-                    
-                })
-            }
+
             return cell
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Post") as! PostTableViewCell
-        
-        cell.postContentTextView.text = data[indexPath.row].body
-        cell.postTitleLabel.text = data[indexPath.row].title
-        cell.postCommentsCountLabel.text = "\(data[indexPath.row].commentsCount)"
+
+        cell.post = data[indexPath.row]
         cell.parentViewController = parentViewController
-        cell.organizationNameLabel.text =  data[indexPath.row].organization.name
-        if let organizationImageFile = data[indexPath.row].organization.image {
-            cell.organizationImageView.file = organizationImageFile
-            cell.organizationImageView.loadInBackground({
-                (image, error) -> Void in
-                
-            })
-        }
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            return toViewController
+            var viewController = toViewController as! CommentsTableViewController
+            viewController.post = self.data[indexPath.row]
+            return viewController
         }
     }
 }
@@ -128,7 +116,7 @@ protocol PostTableViewScrollingDelegate {
     func didScroll(scrollView: UIScrollView)
 }
 
-protocol PostTableViewRefreshDelegate {
+protocol RefreshDelegate {
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView)
-    func addData()
+    func addData(refreshControl: UIRefreshControl, tableView: UITableView, startIndex: Int, numberOfPosts: Int)
 }

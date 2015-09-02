@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="148" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="77M-GV-3Zb">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-1421757295538-9c80958e75b0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="77M-GV-3Zb" customClass="PFImageView">
                         <rect key="frame" x="37" y="8" width="75" height="75"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="77M-GV-3Zb" secondAttribute="height" multiplier="1:1" id="Qko-DI-rPB"/>
