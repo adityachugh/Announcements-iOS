@@ -15,6 +15,10 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="TwZ-2G-9pf" customClass="OrganizationCollectionViewCell" customModule="infor_me_" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="148" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
+            <userGuides>
+                <userLayoutGuide location="80" affinity="minY"/>
+                <userLayoutGuide location="74" affinity="minX"/>
+            </userGuides>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="148" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +68,7 @@
                 <outlet property="organizationNameLabel" destination="8Ww-8i-WXF" id="HcQ-pD-VTH"/>
                 <outlet property="organizationProfilePictureImageView" destination="77M-GV-3Zb" id="nsE-3r-4Aq"/>
             </connections>
-            <point key="canvasLocation" x="214" y="391"/>
+            <point key="canvasLocation" x="456" y="393"/>
         </collectionViewCell>
     </objects>
     <resources>

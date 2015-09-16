@@ -42,6 +42,10 @@ class PostTableViewCell: UITableViewCell {
         setup()
     }
     
+    deinit {
+        println("Deinit \(self.post)")
+    }
+    
     func setup() {
         self.backgroundColor = UIColor.clearColor()
         organizationImageView.layer.masksToBounds = true;
@@ -57,11 +61,22 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
-        Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            var viewController = toViewController as! CommentsTableViewController
-            println(self.post)
-            viewController.post = self.post
-            return viewController
+        if let parentVC = parentViewController as? CommentsTableViewController {
+            Utilities.presentViewControllerModallyVithStoryboardIdentifier("TextViewController", parentViewController: parentVC) {
+                (toViewController) -> UIViewController in
+                var viewController = toViewController as! TextViewController
+                viewController.delegate = parentVC
+                viewController.maxCharacterCount = 1000
+                return viewController
+            }
+
+        } else {
+            Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
+                var viewController = toViewController as! CommentsTableViewController
+                viewController.post = self.post
+                println("CommentTableView creation: \(viewController.post)")
+                return viewController
+            }
         }
     }
     

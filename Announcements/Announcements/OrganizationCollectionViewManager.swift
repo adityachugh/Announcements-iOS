@@ -17,7 +17,9 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     var bottomRefreshControl = UIRefreshControl()
     var startIndex = 0
     var numberOfOrganizations = 10
+    var collectionViewTopInset = 8
     var data: [Organization] = []
+    var scrollingDelegate: ScrollingDelegate?
     
     
     init(collectionView: UICollectionView, parentViewController: UIViewController, refreshDelegate: CollectionViewRefreshDelegate) {
@@ -115,7 +117,11 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        return UIEdgeInsets(top: CGFloat(collectionViewTopInset), left: 8, bottom: 8, right: 8)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        scrollingDelegate?.didScroll(scrollView)
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrganizationViewController: UIViewController, PostTableViewScrollingDelegate, RefreshDelegate {
+class OrganizationViewController: UIViewController, ScrollingDelegate, RefreshDelegate {
     
     @IBOutlet weak var organizationFollowCountLabel: UILabel!
     @IBOutlet weak var organizationProfilePictureImageView: PFImageView!

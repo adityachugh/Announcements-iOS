@@ -10,16 +10,15 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
     var date: NSDate?
     var minimumDate: NSDate?
     var maximumDate: NSDate?
-    @IBOutlet weak var blurView: UIVisualEffectView!
+    var delegate: DatePickerViewControllerDelegate?
+    var backgroundImage: UIImage?
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var datePickerView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    var delegate: DatePickerViewControllerDelegate?
-    var orientations:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
-    var backgroundImage: UIImage?
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.clearColor()
@@ -30,29 +29,26 @@ class DatePickerViewController: UIViewController {
         }
         datePicker.minimumDate = self.minimumDate
         datePicker.maximumDate = self.maximumDate
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         hide()
     }
     
     override func viewDidAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
         Utilities.animate {
             () -> () in
             self.show()
         }
     }
     
-    func orientationChanged (notification: NSNotification) {
-        show()
-    }
-    
     func hide() {
-        blurView.alpha = 0
+        backgroundView.alpha = 0
         datePickerView.frame = CGRectOffset(datePicker.frame, 0, -view.bounds.size.height)
     }
     
     func show() {
-        self.blurView.alpha = 1
+        self.backgroundView.alpha = 1
         self.datePickerView.center = self.view.center
         
     }
@@ -82,6 +78,6 @@ class DatePickerViewController: UIViewController {
 }
 
 protocol DatePickerViewControllerDelegate {
-    func didCancelDateSelection() -> ()
-    func didSelectDate(date: NSDate) -> ()
+    func didCancelDateSelection()
+    func didSelectDate(date: NSDate)
 }

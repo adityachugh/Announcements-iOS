@@ -25,10 +25,14 @@ class Utilities {
         if iOS8 {
             viewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         } else {
-            viewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+            parentViewController.tabBarController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         }
         viewController = modifications(toViewController: viewController)
         parentViewController.tabBarController?.presentViewController(viewController, animated: false, completion: nil)
+    }
+    
+    class func getViewControllerWithStoryboardIdentifier(identifier: String, parentViewController: UIViewController) -> UIViewController {
+        return parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
     }
     
     class func calculcateHeightForPostCell(view:UIView, bodyText:String, finalModification:(height:CGFloat)->(CGFloat)) -> CGFloat {
@@ -82,4 +86,27 @@ public extension UIWindow {
         return image
     }
     
+}
+
+public extension UIImage {
+    func resize(scale:CGFloat)-> UIImage {
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: size.width*scale, height: size.height*scale)))
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+    func resizeToWidth(width:CGFloat)-> UIImage {
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -30,8 +31,8 @@
                         <color key="textColor" red="0.71372549019999998" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-ol-2uu">
-                        <rect key="frame" x="8" y="48" width="304" height="207"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-ol-2uu">
+                        <rect key="frame" x="8" y="48" width="304" height="206"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12.5"/>
@@ -45,7 +46,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-yE-kle">
-                        <rect key="frame" x="8" y="8" width="32" height="32"/>
+                        <rect key="frame" x="8" y="8" width="125" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="cOz-0Z-kBs"/>
                             <constraint firstAttribute="width" constant="32" id="tZg-vf-DSM"/>
@@ -53,6 +54,11 @@
                         <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tZg-vf-DSM"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <action selector="userProfilePictureButtonTapped:" destination="Ovy-r7-de8" eventType="touchUpInside" id="ov9-A7-H2N"/>
                         </connections>
@@ -67,6 +73,7 @@
                     <constraint firstItem="80k-6s-fc0" firstAttribute="trailing" secondItem="m1T-Rv-VZg" secondAttribute="trailingMargin" id="LvE-kX-d7v"/>
                     <constraint firstItem="G8j-HC-Vx9" firstAttribute="centerY" secondItem="uxt-WX-MPM" secondAttribute="centerY" id="Tl4-tr-P8B"/>
                     <constraint firstItem="qY2-yE-kle" firstAttribute="top" secondItem="m1T-Rv-VZg" secondAttribute="topMargin" id="fkT-a7-bsF"/>
+                    <constraint firstItem="G8j-HC-Vx9" firstAttribute="trailing" secondItem="qY2-yE-kle" secondAttribute="trailing" id="meJ-2h-ydZ"/>
                     <constraint firstAttribute="trailing" secondItem="pA1-ol-2uu" secondAttribute="trailing" constant="8" id="qXf-Ka-RZr"/>
                     <constraint firstAttribute="bottom" secondItem="pA1-ol-2uu" secondAttribute="bottom" constant="8" id="tgU-Tp-syQ"/>
                     <constraint firstItem="G8j-HC-Vx9" firstAttribute="leading" secondItem="uxt-WX-MPM" secondAttribute="trailing" constant="8" id="wbh-LU-kK5"/>
@@ -80,7 +87,7 @@
                 <outlet property="userNameLabel" destination="G8j-HC-Vx9" id="d15-c1-AQu"/>
                 <outlet property="userProfilePictureImageView" destination="uxt-WX-MPM" id="20y-P2-LjM"/>
             </connections>
-            <point key="canvasLocation" x="443" y="545.5"/>
+            <point key="canvasLocation" x="390" y="406.5"/>
         </tableViewCell>
     </objects>
     <resources>

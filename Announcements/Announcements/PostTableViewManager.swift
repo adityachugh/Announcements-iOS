@@ -10,7 +10,7 @@ import UIKit
 
 class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     
-    var scrollingDelegate: PostTableViewScrollingDelegate?
+    var scrollingDelegate: ScrollingDelegate?
     var refreshDelegate: RefreshDelegate?
     var parentViewController: UIViewController!
     var tableView: UITableView!
@@ -20,6 +20,8 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     var data:[Post] = []
     var startIndex = 0
     var numberOfPosts = 10
+    var previousOffset = CGPoint()
+    var isScrollingDown = true
     
     init(tableView: UITableView, parentViewController: UIViewController, refreshDelegate: RefreshDelegate) {
         self.tableView = tableView
@@ -74,6 +76,12 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > previousOffset.y {
+            isScrollingDown = true
+        } else {
+            isScrollingDown = false
+        }
+        previousOffset = scrollView.contentOffset
         scrollingDelegate?.didScroll(scrollView)
     }
     
@@ -91,16 +99,30 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCellWithIdentifier("PostWithPhoto") as! PostWithPhotoTableViewCell
             cell.post = data[indexPath.row]
             cell.parentViewController = parentViewController
-
+            
             return cell
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Post") as! PostTableViewCell
-
+        
         cell.post = data[indexPath.row]
         cell.parentViewController = parentViewController
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var offset:CGFloat = -200.0
+        if isScrollingDown {
+            offset = 200.0
+        }
+        cell.alpha = 0
+        cell.frame = CGRectOffset(cell.frame, 0, offset)
+        Utilities.animate {
+            () -> () in
+            cell.alpha = 1
+            cell.frame = CGRectOffset(cell.frame, 0, -offset)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -112,7 +134,7 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     }
 }
 
-protocol PostTableViewScrollingDelegate {
+protocol ScrollingDelegate {
     func didScroll(scrollView: UIScrollView)
 }
 

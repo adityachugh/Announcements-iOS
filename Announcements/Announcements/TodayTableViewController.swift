@@ -19,7 +19,12 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     var datePickerIsShowing = false
     
     override func viewDidLoad() {
-        postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if postTableViewManager == nil {
+            postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
+        }
     }
     
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {

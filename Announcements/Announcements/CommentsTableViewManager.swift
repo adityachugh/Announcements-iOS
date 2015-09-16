@@ -51,7 +51,11 @@ class CommentsTableViewManager: PostTableViewManager {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        println("\(indexPath.section): \(indexPath.row)")
         if indexPath.section == 0 {
+//            println("Comments: \(comments.count)")
+//            println(post)
+            
             return Utilities.calculcateHeightForPostCell(tableView, bodyText: post.body) {
                 (height) -> (CGFloat) in
                 if let imageFile = self.post.image {
@@ -84,38 +88,38 @@ class CommentsTableViewManager: PostTableViewManager {
             
             return cell
             
-//            if cell.respondsToSelector("setSeparatorInset:") {
-//                cell.separatorInset = UIEdgeInsetsZero
-//            }
-//            if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
-//                cell.preservesSuperviewLayoutMargins = false
-//            }
-//            if cell.respondsToSelector("setLayoutMargins:") {
-//                cell.layoutMargins = UIEdgeInsetsZero
-//            }
+            //            if cell.respondsToSelector("setSeparatorInset:") {
+            //                cell.separatorInset = UIEdgeInsetsZero
+            //            }
+            //            if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
+            //                cell.preservesSuperviewLayoutMargins = false
+            //            }
+            //            if cell.respondsToSelector("setLayoutMargins:") {
+            //                cell.layoutMargins = UIEdgeInsetsZero
+            //            }
             
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("Comment", forIndexPath: indexPath) as! CommentTableViewCell
             cell.comment = comments[indexPath.row]
             cell.parentViewController = parentViewController
             
-//            if cell.respondsToSelector("setSeparatorInset:") {
-//                cell.separatorInset = UIEdgeInsetsZero
-//            }
-//            if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
-//                cell.preservesSuperviewLayoutMargins = false
-//            }
-//            if cell.respondsToSelector("setLayoutMargins:") {
-//                cell.layoutMargins = UIEdgeInsetsZero
-//            }
-
+            //            if cell.respondsToSelector("setSeparatorInset:") {
+            //                cell.separatorInset = UIEdgeInsetsZero
+            //            }
+            //            if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
+            //                cell.preservesSuperviewLayoutMargins = false
+            //            }
+            //            if cell.respondsToSelector("setLayoutMargins:") {
+            //                cell.layoutMargins = UIEdgeInsetsZero
+            //            }
+            
             
             return cell
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
-
+    
 }

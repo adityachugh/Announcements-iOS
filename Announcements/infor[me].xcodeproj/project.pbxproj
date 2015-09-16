@@ -42,6 +42,7 @@
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
+		38FF93281B9938C500A98FC1 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF93271B9938C500A98FC1 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,16 @@
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38FD45451B54527300896403 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		38FD45481B54527300896403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		38FF93151B97905C00A98FC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		38FF93171B97908000A98FC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		38FF93191B9790B300A98FC1 /* libBolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBolts.a; path = "Pods/../build/Debug-iphoneos/libBolts.a"; sourceTree = "<group>"; };
+		38FF931A1B9790B300A98FC1 /* libCCBottomRefreshControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCCBottomRefreshControl.a; path = "Pods/../build/Debug-iphoneos/libCCBottomRefreshControl.a"; sourceTree = "<group>"; };
+		38FF931B1B9790B300A98FC1 /* libDateTools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDateTools.a; path = "Pods/../build/Debug-iphoneos/libDateTools.a"; sourceTree = "<group>"; };
+		38FF931C1B9790B300A98FC1 /* libMasonry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMasonry.a; path = "Pods/../build/Debug-iphoneos/libMasonry.a"; sourceTree = "<group>"; };
+		38FF931D1B9790B400A98FC1 /* libParse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libParse.a; path = "Pods/../build/Debug-iphoneos/libParse.a"; sourceTree = "<group>"; };
+		38FF931E1B9790B400A98FC1 /* libParseUI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libParseUI.a; path = "Pods/../build/Debug-iphoneos/libParseUI.a"; sourceTree = "<group>"; };
+		38FF931F1B9790B400A98FC1 /* libRSKImageCropper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRSKImageCropper.a; path = "Pods/../build/Debug-iphoneos/libRSKImageCropper.a"; sourceTree = "<group>"; };
+		38FF93271B9938C500A98FC1 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		63411F50EE4F7B3C4A997AFD /* Pods-infor[me].debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infor[me].debug.xcconfig"; path = "Pods/Target Support Files/Pods-infor[me]/Pods-infor[me].debug.xcconfig"; sourceTree = "<group>"; };
 		B3E92282B7CEF11ACA07BC61 /* libPods-infor[me].a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-infor[me].a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,15 +119,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		38232C481B75182B00789340 /* User Interface */ = {
+		38232C481B75182B00789340 /* Misc User Interface */ = {
 			isa = PBXGroup;
 			children = (
 				38FD45471B54527300896403 /* LaunchScreen.xib */,
+				383E76571B8555B600A75432 /* FollowButton.swift */,
+				383E76551B85548300A75432 /* FollowButton.xib */,
+				382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */,
 				382AEF9D1B7EF643002A330D /* PopoverDatePicker.xib */,
 				38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */,
-				383E76461B84DFDC00A75432 /* OrganizationCollectionViewCell.xib */,
 			);
-			name = "User Interface";
+			name = "Misc User Interface";
 			sourceTree = "<group>";
 		};
 		38302D271B8E2435002A548A /* Data Classes */ = {
@@ -134,6 +147,8 @@
 		383E76501B850A4800A75432 /* PostTableView */ = {
 			isa = PBXGroup;
 			children = (
+				38232C401B75123B00789340 /* TodayTableViewController.swift */,
+				382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */,
 				382AEF971B7EEB64002A330D /* PostTableViewManager.swift */,
 				38232C4B1B75192400789340 /* PostTableViewCell.xib */,
 				38232C491B75190500789340 /* PostTableViewCell.swift */,
@@ -157,6 +172,15 @@
 		386700C31B8D4AE300193355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38FF93191B9790B300A98FC1 /* libBolts.a */,
+				38FF931A1B9790B300A98FC1 /* libCCBottomRefreshControl.a */,
+				38FF931B1B9790B300A98FC1 /* libDateTools.a */,
+				38FF931C1B9790B300A98FC1 /* libMasonry.a */,
+				38FF931D1B9790B400A98FC1 /* libParse.a */,
+				38FF931E1B9790B400A98FC1 /* libParseUI.a */,
+				38FF931F1B9790B400A98FC1 /* libRSKImageCropper.a */,
+				38FF93171B97908000A98FC1 /* Foundation.framework */,
+				38FF93151B97905C00A98FC1 /* UIKit.framework */,
 				B3E92282B7CEF11ACA07BC61 /* libPods-infor[me].a */,
 			);
 			name = Frameworks;
@@ -184,19 +208,14 @@
 			isa = PBXGroup;
 			children = (
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
-				3867009D1B8664D800193355 /* UserViewController.swift */,
+				38FF93271B9938C500A98FC1 /* TextViewController.swift */,
+				3869BDD11B7D37E3007C97AE /* Utilities.swift */,
+				382AEF9B1B7EF3C2002A330D /* TabBarController.swift */,
 				38302D271B8E2435002A548A /* Data Classes */,
 				383E76501B850A4800A75432 /* PostTableView */,
 				383E76511B850AA100A75432 /* CommentTableView */,
-				38232C481B75182B00789340 /* User Interface */,
-				383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */,
-				383E76551B85548300A75432 /* FollowButton.xib */,
-				383E76571B8555B600A75432 /* FollowButton.swift */,
-				38232C401B75123B00789340 /* TodayTableViewController.swift */,
-				383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */,
-				3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */,
-				382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */,
-				382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */,
+				38232C481B75182B00789340 /* Misc User Interface */,
+				38FF93141B976CAB00A98FC1 /* OrganizationCollectionView */,
 				38FD453C1B54527300896403 /* Supporting Files */,
 			);
 			path = Announcements;
@@ -206,8 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				386700C41B8D518800193355 /* infor[me]-Bridging-Header.h */,
-				3869BDD11B7D37E3007C97AE /* Utilities.swift */,
-				382AEF9B1B7EF3C2002A330D /* TabBarController.swift */,
 				386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */,
 				38FD453E1B54527300896403 /* AppDelegate.swift */,
 				38FD45451B54527300896403 /* Images.xcassets */,
@@ -215,6 +232,18 @@
 				38FD453D1B54527300896403 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38FF93141B976CAB00A98FC1 /* OrganizationCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */,
+				3867009D1B8664D800193355 /* UserViewController.swift */,
+				3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */,
+				383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */,
+				383E76461B84DFDC00A75432 /* OrganizationCollectionViewCell.xib */,
+			);
+			name = OrganizationCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +380,7 @@
 				386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */,
 				383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */,
 				3877EE471B96B63D00433E60 /* Follower.swift in Sources */,
+				38FF93281B9938C500A98FC1 /* TextViewController.swift in Sources */,
 				386700A21B8D461900193355 /* Post.swift in Sources */,
 				38302D291B8E24CA002A548A /* Organization.swift in Sources */,
 				382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */,
@@ -389,7 +419,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -411,6 +442,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -433,7 +465,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -448,6 +481,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -458,18 +492,23 @@
 			baseConfigurationReference = 63411F50EE4F7B3C4A997AFD /* Pods-infor[me].debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Announcements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "infor[me]";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,18 +520,23 @@
 			baseConfigurationReference = 1F99AE053E58EF24F8DD1A40 /* Pods-infor[me].release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Announcements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "infor[me]";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
