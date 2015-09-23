@@ -14,7 +14,7 @@ class PopoverDatePicker: UIView {
     @IBOutlet var view: UIView!
     var delegate: PopoverDatePickerDelegate!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("PopoverDatePicker", owner: self, options: nil)
         self.addSubview(view)

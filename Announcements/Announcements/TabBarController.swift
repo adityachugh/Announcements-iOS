@@ -15,11 +15,11 @@ class TabBarController: UITabBarController {
     }
     
     override func viewDidLoad() {
-        var controllers = (viewControllers as! [UIViewController])
-        var more = controllers[2]
+        var controllers = viewControllers!
+        let more = controllers[2]
         
-        var me = Utilities.getViewControllerWithStoryboardIdentifier("User", parentViewController: self)
-        var navigationController = Utilities.getViewControllerWithStoryboardIdentifier("NavigationController", parentViewController: self) as! UINavigationController
+        let me = Utilities.getViewControllerWithStoryboardIdentifier("User", parentViewController: self)
+        let navigationController = Utilities.getViewControllerWithStoryboardIdentifier("NavigationController", parentViewController: self) as! UINavigationController
         navigationController.pushViewController(me, animated: false)
         
         controllers[2] = navigationController

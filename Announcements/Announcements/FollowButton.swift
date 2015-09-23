@@ -80,7 +80,7 @@ class FollowButton: UIView {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSBundle.mainBundle().loadNibNamed("FollowButton", owner: self, options: nil)
         self.addSubview(view)

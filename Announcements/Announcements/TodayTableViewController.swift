@@ -13,7 +13,6 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     
     var postTableViewManager: PostTableViewManager!
     var date = NSDate()
-    var blurView: UIVisualEffectView!
     var window: UIWindow!
     var datePicker = PopoverDatePicker(frame: CGRectMake(0, 0, 300, 200))
     var datePickerIsShowing = false
@@ -28,7 +27,7 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     }
     
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
-        var parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": date]
+        let parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": date]
         PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
             (results, error) -> Void in
             self.postTableViewManager.data = results as! [Post]
@@ -38,7 +37,7 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     }
     
     func addData(refreshControl: UIRefreshControl, tableView: UITableView, startIndex: Int, numberOfPosts: Int) {
-        var parameters: Dictionary = ["startIndex": startIndex, "numberOfPosts": numberOfPosts, "date": date]
+        let parameters: Dictionary = ["startIndex": startIndex, "numberOfPosts": numberOfPosts, "date": date]
         PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
             (results, error) -> Void in
             if results != nil {
@@ -62,7 +61,7 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     
     @IBAction func dateButtonTapped(sender: UIBarButtonItem) {
         Utilities.presentViewControllerModallyVithStoryboardIdentifier("DatePicker", parentViewController: self) { (toViewController) -> UIViewController in
-            var datePickerViewController = toViewController as! DatePickerViewController
+            let datePickerViewController = toViewController as! DatePickerViewController
             datePickerViewController.delegate = self
             datePickerViewController.date = self.date
             datePickerViewController.maximumDate = NSDate()

@@ -43,7 +43,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     deinit {
-        println("Deinit \(self.post)")
+        print("Deinit \(self.post)")
     }
     
     func setup() {
@@ -57,14 +57,14 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func shareButtonTapped(sender: UIButton) {
-        println("Share Tapped!")
+        print("Share Tapped!")
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
         if let parentVC = parentViewController as? CommentsTableViewController {
             Utilities.presentViewControllerModallyVithStoryboardIdentifier("TextViewController", parentViewController: parentVC) {
                 (toViewController) -> UIViewController in
-                var viewController = toViewController as! TextViewController
+                let viewController = toViewController as! TextViewController
                 viewController.delegate = parentVC
                 viewController.maxCharacterCount = 1000
                 return viewController
@@ -72,9 +72,9 @@ class PostTableViewCell: UITableViewCell {
 
         } else {
             Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-                var viewController = toViewController as! CommentsTableViewController
+                let viewController = toViewController as! CommentsTableViewController
                 viewController.post = self.post
-                println("CommentTableView creation: \(viewController.post)")
+                print("CommentTableView creation: \(viewController.post)")
                 return viewController
             }
         }
@@ -83,7 +83,7 @@ class PostTableViewCell: UITableViewCell {
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
         if !parentViewController.isKindOfClass(OrganizationViewController) {
             Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-                var viewController = toViewController as! OrganizationViewController
+                let viewController = toViewController as! OrganizationViewController
                 viewController.organization = self.post.organization
                 return viewController
             }

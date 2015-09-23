@@ -37,7 +37,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     }
     
     deinit {
-        println("Deinit \(self.post)")
+        print("Deinit \(self.post)")
     }
     
     var parentViewController: UIViewController!
@@ -55,7 +55,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     }
     
     @IBAction func shareButtonTapped(sender: UIButton) {
-        println("Share Tapped!")
+        print("Share Tapped!")
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
@@ -63,7 +63,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
             
         } else {
             Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-                var viewController = toViewController as! CommentsTableViewController
+                let viewController = toViewController as! CommentsTableViewController
                 viewController.post = self.post
                 return viewController
             }
@@ -75,7 +75,7 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {
         if !parentViewController.isKindOfClass(OrganizationViewController) {
             Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-                var viewController = toViewController as! OrganizationViewController
+                let viewController = toViewController as! OrganizationViewController
                 viewController.organization = self.post.organization
                 return viewController
             }

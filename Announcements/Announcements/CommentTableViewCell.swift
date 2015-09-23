@@ -49,7 +49,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBAction func userProfilePictureButtonTapped(sender: AnyObject) {
         Utilities.presentViewControllerVithStoryboardIdentifier("User", parentViewController: parentViewController) {
             (toViewController) -> UIViewController in
-            var viewController = toViewController as! UserViewController
+            let viewController = toViewController as! UserViewController
             viewController.user = self.comment.createUser
             return viewController
         }

@@ -71,13 +71,13 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
         delegate?.didEnterText(self, text: textView.text)
-        println((delegate as! CommentsTableViewController).post)
+        print((delegate as! CommentsTableViewController).post)
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        currentCharacterCount = count(textView.text) + count(text) - range.length
+        currentCharacterCount = textView.text.characters.count + text.characters.count - range.length
         if maxCharacterCount != nil {
-            if (range.length + range.location > count(textView.text) )
+            if (range.length + range.location > textView.text.characters.count )
             {
                 return false;
             }

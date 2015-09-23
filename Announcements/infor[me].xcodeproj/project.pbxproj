@@ -274,8 +274,9 @@
 		38FD45311B54527300896403 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Mindbend Studio";
 				TargetAttributes = {
 					38FD45381B54527300896403 = {
@@ -424,6 +425,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -507,6 +509,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "infor[me]";
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
@@ -535,6 +538,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "infor[me]";
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";

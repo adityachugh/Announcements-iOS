@@ -28,9 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         setupBarButtonItemFont()
+
         
-        PFUser.logInWithUsername("chughrajiv", password: "password")
         
+        PFUser.logInWithUsernameInBackground("chughrajiv", password: "password") {
+            (aUser, error) -> Void in
+            
+        }
+        sleep(2)
         
         //Register subclasses
         
@@ -59,12 +64,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         if application.respondsToSelector("registerUserNotificationSettings:") {
-            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
+            
+            
+            if #available(iOS 8.0, *) {
+                let userNotificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
+                let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+                application.registerUserNotificationSettings(settings)
+                application.registerForRemoteNotifications()
+                
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
-            let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
+            let types: UIRemoteNotificationType = [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound]
             application.registerForRemoteNotificationTypes(types)
         }
         
@@ -80,9 +92,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         if error.code == 3010 {
-            println("Push notifications are not supported in the iOS Simulator.")
+            print("Push notifications are not supported in the iOS Simulator.")
         } else {
-            println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
         }
     }
     
@@ -116,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupBarButtonItemFont() {
-        var dictionary = [NSFontAttributeName as NSObject: UIFont(name: "AvenirNext-Regular", size: 19) as! AnyObject]
+        let dictionary = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 19) as! AnyObject]
         UIBarButtonItem.appearance().setTitleTextAttributes(dictionary, forState: UIControlState.Normal)
     }
     

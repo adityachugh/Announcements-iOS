@@ -35,7 +35,7 @@ class OrganizationViewController: UIViewController, ScrollingDelegate, RefreshDe
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
-        var parameters: NSDictionary = ["startIndex": 0, "numberOfPosts": 10, "organizationObjectId": organization.objectId!]
+        let parameters: NSDictionary = ["startIndex": 0, "numberOfPosts": 10, "organizationObjectId": organization.objectId!]
         PFCloud.callFunctionInBackground("getPostsOfOrganizationInRange", withParameters: parameters as [NSObject : AnyObject]) {
             (results, error) -> Void in
             self.postTableViewManager.data = results as! [Post]
@@ -45,7 +45,7 @@ class OrganizationViewController: UIViewController, ScrollingDelegate, RefreshDe
     }
     
     func addData(refreshControl: UIRefreshControl, tableView: UITableView, startIndex: Int, numberOfPosts: Int) {
-        var parameters: NSDictionary = ["startIndex": startIndex, "numberOfPosts": numberOfPosts, "organizationObjectId": organization.objectId!]
+        let parameters: NSDictionary = ["startIndex": startIndex, "numberOfPosts": numberOfPosts, "organizationObjectId": organization.objectId!]
         PFCloud.callFunctionInBackground("getPostsOfOrganizationInRange", withParameters: parameters as [NSObject : AnyObject]) {
             (results, error) -> Void in
             for result in results as! [Post] {

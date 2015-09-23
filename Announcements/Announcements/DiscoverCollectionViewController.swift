@@ -25,7 +25,7 @@ class DiscoverCollectionViewController: UICollectionViewController, UICollection
     }
     
     func refreshData(refreshControl: UIRefreshControl, collectionView: UICollectionView) {
-        var parameters: Dictionary = ["startIndex": 0, "numberOfOrganizations": 10, "userObjectId": PFUser.currentUser()!.objectId!]  as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": 0, "numberOfOrganizations": 10, "userObjectId": PFUser.currentUser()!.objectId!]  as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getOrganizationsForDiscoverTabInRange", withParameters: parameters) {
             (results, error) -> Void in
             if let organizations = results as? [Organization] {
@@ -37,7 +37,7 @@ class DiscoverCollectionViewController: UICollectionViewController, UICollection
     }
     
     func addData(refreshControl: UIRefreshControl, collectionView: UICollectionView, startIndex: Int, numberOfOrganizations: Int) {
-        var parameters: Dictionary = ["startIndex": startIndex, "numberOfOrganizations": numberOfOrganizations, "userObjectId": PFUser.currentUser()!.objectId!]  as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": startIndex, "numberOfOrganizations": numberOfOrganizations, "userObjectId": PFUser.currentUser()!.objectId!]  as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getOrganizationsForDiscoverTabInRange", withParameters: parameters) {
             (results, error) -> Void in
             if results != nil {

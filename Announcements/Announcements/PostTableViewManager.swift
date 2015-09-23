@@ -127,7 +127,7 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
-            var viewController = toViewController as! CommentsTableViewController
+            let viewController = toViewController as! CommentsTableViewController
             viewController.post = self.data[indexPath.row]
             return viewController
         }

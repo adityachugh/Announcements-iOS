@@ -14,48 +14,50 @@ class Utilities {
     static let iOS8 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
     
     class func presentViewControllerVithStoryboardIdentifier(identifier: String, parentViewController: UIViewController, modifications:((toViewController: UIViewController) -> UIViewController)) {
-        var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier)
         
         viewController = modifications(toViewController: viewController)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
     
     class func presentViewControllerModallyVithStoryboardIdentifier(identifier: String, parentViewController: UIViewController, modifications:((toViewController: UIViewController) -> UIViewController)) {
-        var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
-        if iOS8 {
+        var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier)
+        
+        if #available(iOS 8.0, *) {
             viewController.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
         } else {
             parentViewController.tabBarController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         }
+        
         viewController = modifications(toViewController: viewController)
         parentViewController.tabBarController?.presentViewController(viewController, animated: false, completion: nil)
     }
     
     class func getViewControllerWithStoryboardIdentifier(identifier: String, parentViewController: UIViewController) -> UIViewController {
-        return parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        return parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier)
     }
     
     class func calculcateHeightForPostCell(view:UIView, bodyText:String, finalModification:(height:CGFloat)->(CGFloat)) -> CGFloat {
-        var calculationBodyView = UITextView()
+        let calculationBodyView = UITextView()
         calculationBodyView.attributedText = NSAttributedString(string: bodyText)
         calculationBodyView.font = UIFont(name: "AvenirNext-Regular", size: 12.5)
         calculationBodyView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
         //        calculationBodyView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         var size:CGSize = CGSize()
         size = calculationBodyView.sizeThatFits(CGSize(width: view.frame.width-16, height: CGFloat.max))
-        var height = finalModification(height: size.height)
+        let height = finalModification(height: size.height)
         return height
     }
     
     class func animate(animations:(() -> ())) {
-        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: {
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             () -> Void in
             animations()
             }, completion: nil)
     }
     
     class func animateWithCompletion(animations:(() -> ()), completion:(() -> ())) {
-        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: {
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             () -> Void in
             animations()
             }, completion: {
@@ -79,7 +81,7 @@ public extension UIWindow {
     func capture() -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.frame.size, self.opaque, 0.0)
-        self.layer.renderInContext(UIGraphicsGetCurrentContext())
+        self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -94,7 +96,7 @@ public extension UIImage {
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.image = self
         UIGraphicsBeginImageContext(imageView.bounds.size)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return result
@@ -104,7 +106,7 @@ public extension UIImage {
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.image = self
         UIGraphicsBeginImageContext(imageView.bounds.size)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return result

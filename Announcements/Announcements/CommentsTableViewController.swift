@@ -26,7 +26,7 @@ class CommentsTableViewController: UITableViewController, RefreshDelegate, TextV
     }
     
     func refreshData(refreshControl: UIRefreshControl, tableView: UITableView) {
-        var parameters: Dictionary = ["startIndex": 0, "numberOfComments": 10, "postObjectId": post.objectId!] as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": 0, "numberOfComments": 10, "postObjectId": post.objectId!] as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getRangeOfCommentsForPost", withParameters: parameters) {
             (results, error) -> Void in
             if results != nil {
@@ -38,7 +38,7 @@ class CommentsTableViewController: UITableViewController, RefreshDelegate, TextV
     }
     
     func addData(refreshControl: UIRefreshControl, tableView: UITableView, startIndex: Int, numberOfPosts: Int) {
-        var parameters: Dictionary = ["startIndex": startIndex, "numberOfComments": numberOfPosts, "postObjectId": post.objectId!] as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": startIndex, "numberOfComments": numberOfPosts, "postObjectId": post.objectId!] as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getRangeOfCommentsForPost", withParameters: parameters) {
             (results, error) -> Void in
             if results != nil {
@@ -64,7 +64,7 @@ class CommentsTableViewController: UITableViewController, RefreshDelegate, TextV
     func didEnterText(viewController: TextViewController, text: String) {
         viewController.shouldShowActivityIndicator = true
         let id = post.objectId!
-        var parameters = ["commentText": text, "postObjectId": id] as [NSObject: AnyObject]
+        let parameters = ["commentText": text, "postObjectId": id] as [NSObject: AnyObject]
         PFCloud.callFunctionInBackground("postCommentAsUserOnPost", withParameters: parameters) {
             (results, error) -> Void in
             

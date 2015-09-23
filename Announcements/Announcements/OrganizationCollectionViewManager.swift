@@ -28,7 +28,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         self.refreshDelegate = refreshDelegate
         
         super.init()
-        var nib = UINib(nibName: "OrganizationCollectionViewCell", bundle: NSBundle.mainBundle())
+        let nib = UINib(nibName: "OrganizationCollectionViewCell", bundle: NSBundle.mainBundle())
         self.collectionView!.registerNib(nib, forCellWithReuseIdentifier: "Organization")
         
         collectionView.delegate = self
@@ -94,14 +94,14 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Organization", parentViewController: parentViewController) {
             (toViewController) -> UIViewController in
-            var viewController = toViewController as! OrganizationViewController
+            let viewController = toViewController as! OrganizationViewController
             viewController.organization = self.data[indexPath.row]
             return viewController
         }
     }
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        var collectionViewCell = cell as! OrganizationCollectionViewCell
+        let collectionViewCell = cell as! OrganizationCollectionViewCell
         collectionViewCell.organizationProfilePictureImageView.layer.cornerRadius = collectionViewCell.organizationProfilePictureImageView.bounds.width/2
     }
     

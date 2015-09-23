@@ -58,8 +58,8 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func editButtonTapped() {
-        if objc_getClass("UIAlertController") != nil {
-            var alertController = UIAlertController(title: "Edit Profile", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        if #available(iOS 8.0, *) {
+            let alertController = UIAlertController(title: "Edit Profile", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             
             alertController.addAction(UIAlertAction(title: "Change Profile Photo", style: UIAlertActionStyle.Default, handler: {
                 (alertAction) -> Void in
@@ -82,10 +82,9 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
             }))
             alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
             alertController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-            
             self.presentViewController(alertController, animated: true) { () -> Void in }
         } else {
-            var actionSheet = UIActionSheet()
+            let actionSheet = UIActionSheet()
             actionSheet.addButtonWithTitle("Change Profile Photo")
             actionSheet.addButtonWithTitle("Change Cover Photo")
             actionSheet.addButtonWithTitle("Edit Description")
@@ -93,28 +92,28 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
             actionSheet.cancelButtonIndex = 3
             actionSheet.delegate = self
             
-            actionSheet.showFromBarButtonItem(navigationItem.rightBarButtonItem, animated: true)
+            actionSheet.showFromBarButtonItem(navigationItem.rightBarButtonItem!, animated: true)
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         if currentAction == Action.ProfilePicture {
-            var cropViewController = RSKImageCropViewController(image: image)
+            let cropViewController = RSKImageCropViewController(image: image)
             cropViewController.delegate = self
             cropViewController.rotationEnabled = true
             picker.pushViewController(cropViewController, animated: true)
         } else {
-            var data = compressImage(100, minFileSizeInKilobytes: 40, image: image)
+            let data = compressImage(100, minFileSizeInKilobytes: 40, image: image)
             if let imageData = data {
-                println("Ended Compressing")
-                var parameters: Dictionary = ["userObjectId": PFUser.currentUser()!.objectId!, "photo": imageData] as [NSObject : AnyObject]
-                println("Started Save!")
+                print("Ended Compressing")
+                let parameters: Dictionary = ["userObjectId": PFUser.currentUser()!.objectId!, "photo": imageData] as [NSObject : AnyObject]
+                print("Started Save!")
                 PFCloud.callFunctionInBackground("updateUserCoverPhoto", withParameters: parameters, block: {
                     (result, error) -> Void in
                     picker.dismissViewControllerAnimated(true, completion: nil)
                     if let user = result as? PFUser {
-                        println("Saved!")
+                        print("Saved!")
                         self.userCoverPhotoImageView.image = image
                     }
                 })
@@ -142,7 +141,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         let maxFileSize = maxFileSizeInKilobytes*1024
         let minFileSize = minFileSizeInKilobytes*1024
         
-        if data.length < maxFileSize {
+        if data?.length < maxFileSize {
             return data
         }
         
@@ -153,22 +152,17 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         while low <= high {
             let mid = (high+low)/2.0
             currentImage = image.resize(CGFloat(mid))
-            var data = UIImageJPEGRepresentation(currentImage, 1)
-            println("High: \(high)")
-            println("Low: \(low)")
-            println("Mid: \(mid)")
-            println("File Size: \(data.length/1024)Kb")
-            println("")
-            if data.length < maxFileSize && data.length > minFileSize {
+            data = UIImageJPEGRepresentation(currentImage, 1)
+            if data?.length < maxFileSize && data?.length > minFileSize {
                 let end = NSDate()
                 let duration = end.timeIntervalSince1970 - start.timeIntervalSince1970
-                println("Duration: \(duration)s")
+                print("Duration: \(duration)s")
                 return data
             }
-            if data.length > maxFileSize {
+            if data?.length > maxFileSize {
                 high = mid
             }
-            if data.length < minFileSize {
+            if data?.length < minFileSize {
                 low = mid
             }
         }
@@ -177,16 +171,16 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     
     func imageCropViewController(controller: RSKImageCropViewController!, didCropImage croppedImage: UIImage!, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
         
-        var data = compressImage(50, minFileSizeInKilobytes: 20, image: croppedImage)
+        let data = compressImage(50, minFileSizeInKilobytes: 20, image: croppedImage)
         if let imageData = data {
-            println("Ended Compressing")
-            var parameters: Dictionary = ["userObjectId": PFUser.currentUser()!.objectId!, "photo": imageData] as [NSObject : AnyObject]
-            println("Started Save!")
+            print("Ended Compressing")
+            let parameters: Dictionary = ["userObjectId": PFUser.currentUser()!.objectId!, "photo": imageData] as [NSObject : AnyObject]
+            print("Started Save!")
             PFCloud.callFunctionInBackground("updateUserProfilePhoto", withParameters: parameters, block: {
                 (result, error) -> Void in
                 controller.dismissViewControllerAnimated(true, completion: nil)
                 if let user = result as? PFUser {
-                    println("Saved!")
+                    print("Saved!")
                     self.userProfilePictureImageView.image = croppedImage
                 }
             })
@@ -234,58 +228,67 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     func selectPhoto(action: Action) {
         currentAction = action
         
-        if objc_getClass("UIAlertController") != nil {
-            var alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+//        if objc_getClass("UIAlertController") != nil {
+        
             
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                alertController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: {
-                    (alertAction) -> Void in
-                    self.presentPickerViewController(UIImagePickerControllerSourceType.Camera)
-                }))
-            }
-            
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-                alertController.addAction(UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.Default, handler: {
-                    (alertAction) -> Void in
-                    self.presentPickerViewController(UIImagePickerControllerSourceType.PhotoLibrary)
-                }))
-            }
-            
-            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
-                (alertAction) -> Void in
+            if #available(iOS 8.0, *) {
+                var alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
-            }))
-            
-            alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
-            alertController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-            
-            self.presentViewController(alertController, animated: true) { () -> Void in }
-        } else {
-            cameraActionSheet = UIActionSheet()
-            var index = 0
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                cameraActionSheet!.addButtonWithTitle("Camera")
-                ++index
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                    alertController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: {
+                        (alertAction) -> Void in
+                        self.presentPickerViewController(UIImagePickerControllerSourceType.Camera)
+                    }))
+                }
+                
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+                    alertController.addAction(UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.Default, handler: {
+                        (alertAction) -> Void in
+                        self.presentPickerViewController(UIImagePickerControllerSourceType.PhotoLibrary)
+                    }))
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
+                    (alertAction) -> Void in
+                    
+                }))
+                
+                alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
+                alertController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+                
+                self.presentViewController(alertController, animated: true) { () -> Void in }
+                
+            } else {
+                cameraActionSheet = UIActionSheet()
+                var index = 0
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                    cameraActionSheet!.addButtonWithTitle("Camera")
+                    ++index
+                }
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+                    cameraActionSheet!.addButtonWithTitle("Photo Library")
+                    ++index
+                }
+                cameraActionSheet!.addButtonWithTitle("Cancel")
+                cameraActionSheet!.cancelButtonIndex = index
+                cameraActionSheet!.delegate = self
+                
+                cameraActionSheet!.showFromBarButtonItem(navigationItem.rightBarButtonItem!, animated: true)
             }
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-                cameraActionSheet!.addButtonWithTitle("Photo Library")
-                ++index
-            }
-            cameraActionSheet!.addButtonWithTitle("Cancel")
-            cameraActionSheet!.cancelButtonIndex = index
-            cameraActionSheet!.delegate = self
-            
-            cameraActionSheet!.showFromBarButtonItem(navigationItem.rightBarButtonItem, animated: true)
-        }
+        
+
+//        } else {
+//            
+//        }
     }
     
     func presentPickerViewController(sourceType: UIImagePickerControllerSourceType) {
-        var cameraRollStatus = ALAssetsLibrary.authorizationStatus()
-        var cameraStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+        let cameraRollStatus = ALAssetsLibrary.authorizationStatus()
+        let cameraStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
         
         if sourceType == UIImagePickerControllerSourceType.Camera {
             if !(cameraStatus == AVAuthorizationStatus.Denied) {
-                var imagePicker = UIImagePickerController()
+                let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = sourceType
                 
@@ -299,7 +302,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
             }
         } else {
             if !(cameraRollStatus == ALAuthorizationStatus.Denied) {
-                var imagePicker = UIImagePickerController()
+                let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = sourceType
                 
@@ -319,18 +322,21 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func presentAlertView(title: String, body: String, rootViewController: UIViewController) {
-        if objc_getClass("UIAlertController") != nil {
-            var alertController = UIAlertController(title: title, message: body, preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: {
-                (alertAction) -> Void in
-            }))
-            rootViewController.presentViewController(alertController, animated: true) { () -> Void in }
-        } else {
-            
-            var alertView = UIAlertView(title: title, message: body, delegate: nil, cancelButtonTitle: "Okay")
-            alertView.show()
-        }
+//        if objc_getClass("UIAlertController") != nil {
+            if #available(iOS 8.0, *) {
+                let alertController = UIAlertController(title: title, message: body, preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: {
+                    (alertAction) -> Void in
+                }))
+                rootViewController.presentViewController(alertController, animated: true) { () -> Void in }
+            } else {
+                let alertView = UIAlertView(title: title, message: body, delegate: nil, cancelButtonTitle: "Okay")
+                alertView.show()
+            }
+//        } else {
+//            
+//
+//        }
     }
     
     func changeCoverPhoto() {
@@ -340,7 +346,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     func editDescription() {
         Utilities.presentViewControllerModallyVithStoryboardIdentifier("TextViewController", parentViewController: self) {
             (toViewController) -> UIViewController in
-            var viewController = toViewController as! TextViewController
+            let viewController = toViewController as! TextViewController
             viewController.delegate = self
             viewController.maxCharacterCount = 50
             return viewController
@@ -359,7 +365,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     
     func didEnterText(viewController: TextViewController, text: String) {
         viewController.shouldShowActivityIndicator = true
-        var parameters = ["userObjectId": user.objectId!, "description": text] as [NSObject: AnyObject]
+        let parameters = ["userObjectId": user.objectId!, "description": text] as [NSObject: AnyObject]
         PFCloud.callFunctionInBackground("updateUserDescription", withParameters: parameters) {
             (results, error) -> Void in
             
@@ -379,7 +385,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func refreshData(refreshControl: UIRefreshControl, collectionView: UICollectionView) {
-        var parameters: Dictionary = ["startIndex": 0, "numberOfOrganizations": 10, "userObjectId": user.objectId!]  as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": 0, "numberOfOrganizations": 10, "userObjectId": user.objectId!]  as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getOrganizationsFollowedByUserInRange", withParameters: parameters) {
             (results, error) -> Void in
             if let organizations = results as? [Follower] {
@@ -394,7 +400,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func addData(refreshControl: UIRefreshControl, collectionView: UICollectionView, startIndex: Int, numberOfOrganizations: Int) {
-        var parameters: Dictionary = ["startIndex": startIndex, "numberOfOrganizations": numberOfOrganizations, "userObjectId": user.objectId!]  as [NSObject : AnyObject]
+        let parameters: Dictionary = ["startIndex": startIndex, "numberOfOrganizations": numberOfOrganizations, "userObjectId": user.objectId!]  as [NSObject : AnyObject]
         PFCloud.callFunctionInBackground("getOrganizationsFollowedByUserInRange", withParameters: parameters) {
             (results, error) -> Void in
             if results != nil {
@@ -408,7 +414,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func didScroll(scrollView: UIScrollView) {
-        let contentOffset = scrollView.contentOffset.y
+//        let contentOffset = scrollView.contentOffset.y
     }
     
     override func prefersStatusBarHidden() -> Bool {
