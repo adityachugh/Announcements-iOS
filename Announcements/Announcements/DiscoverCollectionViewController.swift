@@ -20,7 +20,7 @@ class DiscoverCollectionViewController: UICollectionViewController, UICollection
         
         // Register cell classes
         
-        organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView!, parentViewController: self, refreshDelegate: self)
+        organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView!, parentViewController: self, refreshDelegate: self, shouldRefresh: true)
         
     }
     

@@ -25,7 +25,7 @@ import UIKit
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.width/2
+//        organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.width/2
         organizationProfilePictureImageView.layer.masksToBounds = true
         
         followButton.backgroundColor = UIColor.clearColor()

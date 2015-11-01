@@ -21,7 +21,7 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     }
     
     override func viewWillAppear(animated: Bool) {
-        if postTableViewManager == nil {
+        if postTableViewManager == nil && User.currentUser() != nil {
             postTableViewManager = PostTableViewManager(tableView: tableView, parentViewController: self, refreshDelegate: self)
         }
     }

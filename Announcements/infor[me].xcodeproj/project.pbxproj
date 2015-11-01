@@ -18,6 +18,7 @@
 		382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */; };
 		38302D291B8E24CA002A548A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D281B8E24CA002A548A /* Organization.swift */; };
 		38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */; };
+		3831F4F71BC1D8C600FB6549 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */; };
 		383E763F1B83D7AD00A75432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383E763E1B83D7AD00A75432 /* Main.storyboard */; };
 		383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */; };
 		383E76451B841CCD00A75432 /* OrganizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */; };
@@ -29,6 +30,15 @@
 		383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */; };
 		383E76561B85548300A75432 /* FollowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383E76551B85548300A75432 /* FollowButton.xib */; };
 		383E76581B8555B600A75432 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76571B8555B600A75432 /* FollowButton.swift */; };
+		3858A9991BC1B41C00C6BED9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */; };
+		3858A99B1BC1C4E600C6BED9 /* SlantedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */; };
+		385C7B761BC1ED6400141E04 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */; };
+		385C7B781BCDC41E00141E04 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B771BCDC41E00141E04 /* SignUpViewController.swift */; };
+		385C7B7B1BCF19AF00141E04 /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B7A1BCF19AF00141E04 /* TextInputTableViewCell.swift */; };
+		385C7B7D1BCF19CA00141E04 /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385C7B7C1BCF19CA00141E04 /* TextInputTableViewCell.xib */; };
+		385C7B811BCF1C7D00141E04 /* NewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B801BCF1C7D00141E04 /* NewPostTableViewController.swift */; };
+		385C7B831BD2BFF000141E04 /* StatusIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385C7B821BD2BFF000141E04 /* StatusIndicator.xib */; };
+		385C7B851BD2C46200141E04 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B841BD2C46200141E04 /* StatusIndicator.swift */; };
 		3867009E1B8664D800193355 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009D1B8664D800193355 /* UserViewController.swift */; };
 		386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */; };
 		386700A21B8D461900193355 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386700A11B8D461900193355 /* Post.swift */; };
@@ -38,7 +48,11 @@
 		3877EE431B965F1100433E60 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877EE421B965F1100433E60 /* Comment.swift */; };
 		3877EE451B969BDA00433E60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877EE441B969BDA00433E60 /* User.swift */; };
 		3877EE471B96B63D00433E60 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877EE461B96B63D00433E60 /* Follower.swift */; };
+		3882B0C91BE6878D00002730 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3882B0C81BE6878D00002730 /* TextViewTableViewCell.swift */; };
+		3882B0CB1BE687B000002730 /* TextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3882B0CA1BE687B000002730 /* TextViewTableViewCell.xib */; };
 		389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */; };
+		389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */; };
+		389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
@@ -57,6 +71,7 @@
 		382AEF9F1B7EF846002A330D /* PopoverDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePicker.swift; sourceTree = "<group>"; };
 		38302D281B8E24CA002A548A /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		383E763E1B83D7AD00A75432 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +83,15 @@
 		383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewManager.swift; sourceTree = "<group>"; };
 		383E76551B85548300A75432 /* FollowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowButton.xib; sourceTree = "<group>"; };
 		383E76571B8555B600A75432 /* FollowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlantedView.swift; sourceTree = "<group>"; };
+		385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		385C7B771BCDC41E00141E04 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		385C7B7A1BCF19AF00141E04 /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
+		385C7B7C1BCF19CA00141E04 /* TextInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputTableViewCell.xib; sourceTree = "<group>"; };
+		385C7B801BCF1C7D00141E04 /* NewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostTableViewController.swift; sourceTree = "<group>"; };
+		385C7B821BD2BFF000141E04 /* StatusIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusIndicator.xib; sourceTree = "<group>"; };
+		385C7B841BD2C46200141E04 /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
 		3867009D1B8664D800193355 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewManager.swift; sourceTree = "<group>"; };
 		386700A11B8D461900193355 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -78,7 +102,11 @@
 		3877EE421B965F1100433E60 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		3877EE441B969BDA00433E60 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		3877EE461B96B63D00433E60 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		3882B0C81BE6878D00002730 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		3882B0CA1BE687B000002730 /* TextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewTableViewCell.xib; sourceTree = "<group>"; };
 		389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-1421757295538-9c80958e75b0.jpeg"; sourceTree = "<group>"; };
+		389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewController.swift; sourceTree = "<group>"; };
+		389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelTableViewController.swift; sourceTree = "<group>"; };
 		38FD45391B54527300896403 /* infor[me].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "infor[me].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +197,17 @@
 			name = CommentTableView;
 			sourceTree = "<group>";
 		};
+		385C7B791BCF196900141E04 /* Input TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				385C7B7A1BCF19AF00141E04 /* TextInputTableViewCell.swift */,
+				385C7B7C1BCF19CA00141E04 /* TextInputTableViewCell.xib */,
+				3882B0C81BE6878D00002730 /* TextViewTableViewCell.swift */,
+				3882B0CA1BE687B000002730 /* TextViewTableViewCell.xib */,
+			);
+			name = "Input TableViewCells";
+			sourceTree = "<group>";
+		};
 		386700C31B8D4AE300193355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,9 +246,20 @@
 		38FD453B1B54527300896403 /* Announcements */ = {
 			isa = PBXGroup;
 			children = (
+				385C7B791BCF196900141E04 /* Input TableViewCells */,
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
+				385C7B801BCF1C7D00141E04 /* NewPostTableViewController.swift */,
+				385C7B771BCDC41E00141E04 /* SignUpViewController.swift */,
+				385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */,
+				3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */,
+				3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */,
+				389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */,
+				389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */,
 				38FF93271B9938C500A98FC1 /* TextViewController.swift */,
 				3869BDD11B7D37E3007C97AE /* Utilities.swift */,
+				385C7B821BD2BFF000141E04 /* StatusIndicator.xib */,
+				385C7B841BD2C46200141E04 /* StatusIndicator.swift */,
+				3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */,
 				382AEF9B1B7EF3C2002A330D /* TabBarController.swift */,
 				38302D271B8E2435002A548A /* Data Classes */,
 				383E76501B850A4800A75432 /* PostTableView */,
@@ -309,10 +359,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */,
+				385C7B831BD2BFF000141E04 /* StatusIndicator.xib in Resources */,
 				382AEF9E1B7EF643002A330D /* PopoverDatePicker.xib in Resources */,
 				38FD45491B54527300896403 /* LaunchScreen.xib in Resources */,
+				3882B0CB1BE687B000002730 /* TextViewTableViewCell.xib in Resources */,
 				383E763F1B83D7AD00A75432 /* Main.storyboard in Resources */,
 				383E76471B84DFDC00A75432 /* OrganizationCollectionViewCell.xib in Resources */,
+				385C7B7D1BCF19CA00141E04 /* TextInputTableViewCell.xib in Resources */,
 				383E764F1B84F4D300A75432 /* PostWithPhotoTableViewCell.xib in Resources */,
 				383E76561B85548300A75432 /* FollowButton.xib in Resources */,
 				38FD45461B54527300896403 /* Images.xcassets in Resources */,
@@ -361,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385C7B851BD2C46200141E04 /* StatusIndicator.swift in Sources */,
 				383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */,
 				382AEF981B7EEB64002A330D /* PostTableViewManager.swift in Sources */,
 				38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */,
@@ -369,12 +423,22 @@
 				38FD453F1B54527300896403 /* AppDelegate.swift in Sources */,
 				3867009E1B8664D800193355 /* UserViewController.swift in Sources */,
 				382AEF9C1B7EF3C2002A330D /* TabBarController.swift in Sources */,
+				3831F4F71BC1D8C600FB6549 /* SignInViewController.swift in Sources */,
+				389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */,
+				385C7B811BCF1C7D00141E04 /* NewPostTableViewController.swift in Sources */,
+				385C7B781BCDC41E00141E04 /* SignUpViewController.swift in Sources */,
 				3869BDD41B7D487B007C97AE /* PostWithPhotoTableViewCell.swift in Sources */,
 				3877EE431B965F1100433E60 /* Comment.swift in Sources */,
+				3858A9991BC1B41C00C6BED9 /* OnboardingViewController.swift in Sources */,
 				38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */,
+				3882B0C91BE6878D00002730 /* TextViewTableViewCell.swift in Sources */,
+				385C7B761BC1ED6400141E04 /* MoreTableViewController.swift in Sources */,
+				385C7B7B1BCF19AF00141E04 /* TextInputTableViewCell.swift in Sources */,
 				3869BDD21B7D37E3007C97AE /* Utilities.swift in Sources */,
 				382AEF9A1B7EEE0A002A330D /* OrganizationViewController.swift in Sources */,
 				38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */,
+				389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */,
+				3858A99B1BC1C4E600C6BED9 /* SlantedView.swift in Sources */,
 				383E76451B841CCD00A75432 /* OrganizationCollectionViewCell.swift in Sources */,
 				383E76581B8555B600A75432 /* FollowButton.swift in Sources */,
 				383E764D1B84ED2500A75432 /* CommentTableViewCell.swift in Sources */,
@@ -514,7 +578,7 @@
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -542,7 +606,7 @@
 				PRODUCT_NAME = "infor[me]";
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

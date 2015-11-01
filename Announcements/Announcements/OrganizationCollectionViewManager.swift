@@ -22,7 +22,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     var scrollingDelegate: ScrollingDelegate?
     
     
-    init(collectionView: UICollectionView, parentViewController: UIViewController, refreshDelegate: CollectionViewRefreshDelegate) {
+    init(collectionView: UICollectionView, parentViewController: UIViewController, refreshDelegate: CollectionViewRefreshDelegate, shouldRefresh: Bool) {
         self.collectionView = collectionView
         self.parentViewController = parentViewController
         self.refreshDelegate = refreshDelegate
@@ -43,12 +43,13 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         
         collectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: "refreshTop", forControlEvents: UIControlEvents.ValueChanged)
-        refreshControl.beginRefreshing()
-        refreshTop()
+        if shouldRefresh {
+            refreshControl.beginRefreshing()
+            refreshTop()
+        }
         
         collectionView.bottomRefreshControl = bottomRefreshControl
         bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
-        bottomRefreshControl.triggerVerticalOffset = 80
     }
     
     func refreshTop() {
@@ -62,7 +63,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         startIndex = data.count
         refreshDelegate?.addData(bottomRefreshControl, collectionView: collectionView, startIndex: startIndex, numberOfOrganizations: numberOfOrganizations)
     }
-
+    
     
     func orientationChanged (notification: NSNotification) {
         collectionView.reloadData()
@@ -85,7 +86,7 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Organization", forIndexPath: indexPath) as! OrganizationCollectionViewCell
         cell.backgroundColor = UIColor.whiteColor()
-        cell.organizationProfilePictureImageView.layer.cornerRadius = cell.organizationProfilePictureImageView.bounds.width/2
+//        cell.organizationProfilePictureImageView.layer.cornerRadius = cell.organizationProfilePictureImageView.bounds.width/2
         cell.organization = data[indexPath.row]
         
         return cell
@@ -101,8 +102,8 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
     }
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        let collectionViewCell = cell as! OrganizationCollectionViewCell
-        collectionViewCell.organizationProfilePictureImageView.layer.cornerRadius = collectionViewCell.organizationProfilePictureImageView.bounds.width/2
+//        let collectionViewCell = cell as! OrganizationCollectionViewCell
+//        collectionViewCell.organizationProfilePictureImageView.layer.cornerRadius = collectionViewCell.organizationProfilePictureImageView.bounds.width/2
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

@@ -27,15 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
         setupBarButtonItemFont()
-
-        
-        
-        PFUser.logInWithUsernameInBackground("chughrajiv", password: "password") {
-            (aUser, error) -> Void in
-            
-        }
-        sleep(2)
         
         //Register subclasses
         
@@ -44,7 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Comment.registerSubclass()
         User.registerSubclass()
         Follower.registerSubclass()
+
+//        if let rootViewController = window?.rootViewController {
+//            Utilities.presentViewControllerModallyVithStoryboardIdentifier("DatePicker", parentViewController: rootViewController) { (toViewController) -> UIViewController in
+//                let datePickerViewController = toViewController
+//                
+//                return datePickerViewController
+//            }
+//        }
         
+//
+        displayOnboarding(false)
         
         
         // Register for Push Notitications
@@ -81,7 +84,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
+        
         return true
+    }
+    
+    func displayOnboarding(animated: Bool) {
+        if PFUser.currentUser() == nil {
+            if let parentViewController = window?.rootViewController {
+                window!.makeKeyAndVisible()
+                let viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier("Onboarding")
+                parentViewController.presentViewController(viewController, animated: animated, completion: nil)
+                
+//                Utilities.presentViewControllerModallyVithStoryboardIdentifier("Onboarding", parentViewController: parentViewController, modifications: {
+//                    (toViewController) -> UIViewController in
+//                    return toViewController
+//                }, animated: animated)
+            }
+        }
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {

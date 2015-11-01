@@ -20,6 +20,16 @@ class Utilities {
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    class func isValidEmail(testStr:String?) -> Bool {
+        if testStr != nil {
+            let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+            
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluateWithObject(testStr)
+        }
+        return false
+    }
+    
     class func presentViewControllerModallyVithStoryboardIdentifier(identifier: String, parentViewController: UIViewController, modifications:((toViewController: UIViewController) -> UIViewController)) {
         var viewController = parentViewController.storyboard!.instantiateViewControllerWithIdentifier(identifier)
         
@@ -30,7 +40,12 @@ class Utilities {
         }
         
         viewController = modifications(toViewController: viewController)
-        parentViewController.tabBarController?.presentViewController(viewController, animated: false, completion: nil)
+        if let tabBarController = parentViewController as? UITabBarController {
+            tabBarController.presentViewController(viewController, animated: false, completion: nil)
+        } else {
+            parentViewController.tabBarController?.presentViewController(viewController, animated: false, completion: nil)
+        }
+        
     }
     
     class func getViewControllerWithStoryboardIdentifier(identifier: String, parentViewController: UIViewController) -> UIViewController {

@@ -28,7 +28,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         if user == nil {
             user = User.currentUser()
         }
-        organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView, parentViewController: self, refreshDelegate: self)
+        organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView, parentViewController: self, refreshDelegate: self, shouldRefresh: true)
         organizationCollectionViewManager.scrollingDelegate = self
         setupUser()
         addEditButton()

@@ -43,7 +43,6 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         
         tableView.bottomRefreshControl = bottomRefreshControl
         bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
-        bottomRefreshControl.triggerVerticalOffset = 80
     }
     
     func registerNibs() {
@@ -111,19 +110,19 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var offset:CGFloat = -200.0
-        if isScrollingDown {
-            offset = 200.0
-        }
-        cell.alpha = 0
-        cell.frame = CGRectOffset(cell.frame, 0, offset)
-        Utilities.animate {
-            () -> () in
-            cell.alpha = 1
-            cell.frame = CGRectOffset(cell.frame, 0, -offset)
-        }
-    }
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        var offset:CGFloat = -200.0
+//        if isScrollingDown {
+//            offset = 200.0
+//        }
+//        cell.alpha = 0
+//        cell.frame = CGRectOffset(cell.frame, 0, offset)
+//        Utilities.animate {
+//            () -> () in
+//            cell.alpha = 1
+//            cell.frame = CGRectOffset(cell.frame, 0, -offset)
+//        }
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
