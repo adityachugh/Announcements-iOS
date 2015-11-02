@@ -12,7 +12,7 @@ class DiscoverCollectionViewController: UICollectionViewController, UICollection
     
     var orientations:UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation
     var organizationCollectionViewManager: OrganizationCollectionViewManager!
-    
+    var followingOrganizations: [Organization] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -21,7 +21,6 @@ class DiscoverCollectionViewController: UICollectionViewController, UICollection
         // Register cell classes
         
         organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView!, parentViewController: self, refreshDelegate: self, shouldRefresh: true)
-        
     }
     
     func refreshData(refreshControl: UIRefreshControl, collectionView: UICollectionView) {

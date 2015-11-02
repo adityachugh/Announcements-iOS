@@ -24,6 +24,8 @@ class PostTableViewCell: UITableViewCell {
                     (image, error) -> Void in
                     
                 })
+            } else {
+                organizationImageView.image = UIImage(named: "Organization_Placeholder")
             }
             
         }

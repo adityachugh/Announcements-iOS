@@ -17,6 +17,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var topOffset: NSLayoutConstraint!
+    @IBOutlet weak var slantedView: SlantedView!
     @IBOutlet weak var usernameStatusIndicator: StatusIndicator!
     @IBOutlet weak var emailStatusIndicator: StatusIndicator!
     
@@ -31,6 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return true
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,74 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func viewTapped(sender: AnyObject) {
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        self.topOffset.constant = 105
+        self.slantedView.setNeedsUpdateConstraints()
+        Utilities.animate {
+            () -> () in
+            self.slantedView.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func viewPanned(sender: AnyObject) {
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        self.topOffset.constant = 105
+        self.slantedView.setNeedsUpdateConstraints()
+        Utilities.animate {
+            () -> () in
+            self.slantedView.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == firstNameTextField {
+            self.topOffset.constant = 105-225
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        } else if textField == lastNameTextField {
+            self.topOffset.constant = 105-225
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        } else if textField == usernameTextField {
+            self.topOffset.constant = 105-265
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        } else if textField == emailTextField {
+            self.topOffset.constant = 105-305
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        } else if textField == passwordTextField {
+            self.topOffset.constant = 105-345
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        }
+        
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == firstNameTextField {
             firstNameTextField.resignFirstResponder()
@@ -69,6 +140,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
+            self.topOffset.constant = 105
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
         }
         return true
     }

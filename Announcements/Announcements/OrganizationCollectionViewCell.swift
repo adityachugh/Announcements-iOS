@@ -12,13 +12,13 @@ import UIKit
     
     var organization: Organization! {
         didSet {
+            organizationNameLabel.text = organization.name
             if let imageFile = organization.image {
                 organizationProfilePictureImageView.file = imageFile
                 organizationProfilePictureImageView.loadInBackground({ (image, error) -> Void in })
             } else {
-                organizationProfilePictureImageView.file = nil
+                organizationProfilePictureImageView.image = UIImage(named: "placeholder_profile_pic")
             }
-            organizationNameLabel.text = organization.name
         }
     }
     
@@ -28,13 +28,15 @@ import UIKit
 //        organizationProfilePictureImageView.layer.cornerRadius = organizationProfilePictureImageView.frame.width/2
         organizationProfilePictureImageView.layer.masksToBounds = true
         
-        followButton.backgroundColor = UIColor.clearColor()
-        followButton.layer.cornerRadius = followButton.frame.size.height/2
-        followButton.layer.borderWidth = 2
-        followButton.layer.borderColor = UIColor.AccentColor().CGColor
+//        followButton.hidden = true
+//        
+//        followButton.backgroundColor = UIColor.clearColor()
+//        followButton.layer.cornerRadius = followButton.frame.size.height/2
+//        followButton.layer.borderWidth = 2
+//        followButton.layer.borderColor = UIColor.AccentColor().CGColor
     }
     
     @IBOutlet var organizationProfilePictureImageView: PFImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
-    @IBOutlet weak var followButton: FollowButton!
+//    @IBOutlet weak var followButton: FollowButton!
 }

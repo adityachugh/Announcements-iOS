@@ -22,10 +22,10 @@ class Organization: PFObject, PFSubclassing {
     @NSManaged var coverPhoto: PFFile?
     @NSManaged var isTopLevel: Bool
     @NSManaged var name: String
-    @NSManaged var organizationType: String
     @NSManaged var parent: Organization
     @NSManaged var parentApprovalRequired: Bool
     @NSManaged var status: String
+    @NSManaged var organizationType: String
     
     
     override class func initialize() {

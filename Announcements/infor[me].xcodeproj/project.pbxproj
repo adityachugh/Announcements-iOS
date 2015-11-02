@@ -123,7 +123,7 @@
 		389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-1421757295538-9c80958e75b0.jpeg"; sourceTree = "<group>"; };
 		389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewController.swift; sourceTree = "<group>"; };
 		389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelTableViewController.swift; sourceTree = "<group>"; };
-		38FD45391B54527300896403 /* infor[me].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "infor[me].app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FD45391B54527300896403 /* infor(me).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "infor(me).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38FD45451B54527300896403 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		38FD453A1B54527300896403 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38FD45391B54527300896403 /* infor[me].app */,
+				38FD45391B54527300896403 /* infor(me).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 			);
 			name = "infor[me]";
 			productName = Announcements;
-			productReference = 38FD45391B54527300896403 /* infor[me].app */;
+			productReference = 38FD45391B54527300896403 /* infor(me).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -606,7 +606,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "infor[me]";
+				PRODUCT_NAME = "infor(me)";
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -635,7 +635,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "infor[me]";
+				PRODUCT_NAME = "infor(me)";
 				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;

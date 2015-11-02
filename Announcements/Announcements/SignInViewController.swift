@@ -11,21 +11,29 @@ import UIKit
 @IBDesignable
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
+    @IBOutlet weak var topOffset: NSLayoutConstraint!
+    @IBOutlet weak var slantedView: SlantedView!
+    
+    var defaultPosition = CGRect()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
         signInButton.layer.cornerRadius = 20
         
-        // Do any additional setup after loading the view.
+        defaultPosition = slantedView.frame
+        
     }
+    
+    
     
     @IBAction func signInTapped(sender: AnyObject) {
         PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) {
@@ -48,7 +56,47 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backButtonTapped(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == usernameTextField {
+            self.topOffset.constant = 105-225
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        } else if textField == passwordTextField {
+            self.topOffset.constant = 105-265
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
+        }
+    }
+    
+    @IBAction func viewTapped(sender: AnyObject) {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        self.topOffset.constant = 105
+        self.slantedView.setNeedsUpdateConstraints()
+        Utilities.animate {
+            () -> () in
+            self.slantedView.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func viewPanned(sender: AnyObject) {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        self.topOffset.constant = 105
+        self.slantedView.setNeedsUpdateConstraints()
+        Utilities.animate {
+            () -> () in
+            self.slantedView.layoutIfNeeded()
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == usernameTextField {
             usernameTextField.resignFirstResponder()
@@ -56,6 +104,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             return true
         } else {
             passwordTextField.resignFirstResponder()
+            self.topOffset.constant = 105
+            self.slantedView.setNeedsUpdateConstraints()
+            Utilities.animate {
+                () -> () in
+                self.slantedView.layoutIfNeeded()
+            }
             return false
         }
         

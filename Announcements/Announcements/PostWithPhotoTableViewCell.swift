@@ -32,6 +32,8 @@ class PostWithPhotoTableViewCell: UITableViewCell {
                     (image, error) -> Void in
                     
                 })
+            } else {
+                organizationImageView.image = UIImage(named: "Organization_Placeholder")
             }
         }
     }
@@ -59,17 +61,23 @@ class PostWithPhotoTableViewCell: UITableViewCell {
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {
-        if let viewController = parentViewController as? CommentsTableViewController {
+        if let parentVC = parentViewController as? CommentsTableViewController {
+            Utilities.presentViewControllerModallyVithStoryboardIdentifier("TextViewController", parentViewController: parentVC) {
+                (toViewController) -> UIViewController in
+                let viewController = toViewController as! TextViewController
+                viewController.delegate = parentVC
+                viewController.maxCharacterCount = 1000
+                return viewController
+            }
             
         } else {
             Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
                 let viewController = toViewController as! CommentsTableViewController
                 viewController.post = self.post
+                print("CommentTableView creation: \(viewController.post)")
                 return viewController
             }
         }
-        
-
     }
     
     @IBAction func organizationProfilePictureTapped(sender: UIButton) {

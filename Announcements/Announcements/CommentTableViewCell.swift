@@ -18,6 +18,8 @@ class CommentTableViewCell: UITableViewCell {
                     (image, error) -> Void in
                     
                 })
+            } else {
+                userProfilePictureImageView.image = UIImage(named: "Organization_Placeholder")
             }
             userNameLabel.text = "\(comment.createUser.firstName) \(comment.createUser.lastName)"
             timeLabel.text = comment.createdAt?.timeAgoSinceNow()

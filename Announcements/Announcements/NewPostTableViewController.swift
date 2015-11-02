@@ -10,6 +10,8 @@ import UIKit
 
 class NewPostTableViewController: UITableViewController {
     
+    var organization: Organization!
+    
     var titleTableViewCell: TextInputTableViewCell?
     var bodyTableViewCell: TextViewTableViewCell?
     
@@ -37,11 +39,31 @@ class NewPostTableViewController: UITableViewController {
     
     func submitPost() {
         if titleTableViewCell?.input == nil || titleTableViewCell?.input?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" {
-            
+            RKDropdownAlert.title("Submit Failed", message: "Please enter a title.", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
         } else if bodyTableViewCell?.body == nil || bodyTableViewCell?.body.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" {
-            
-        } else if startDateTableViewCell?.date == nil || startDateTableViewCell?.date < NSDate() {
-            
+            RKDropdownAlert.title("Submit Failed", message: "Please enter a body for the post.", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        } else if startDateTableViewCell?.date == nil {
+            RKDropdownAlert.title("Submit Failed", message: "Please select a start date.", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        } else if endDateTableViewCell?.date == nil {
+            RKDropdownAlert.title("Submit Failed", message: "Please select an end date.", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        }
+        else {
+            let endDate = endDateTableViewCell!.date!
+            let startDate = startDateTableViewCell!.date!
+            if endDate.isEarlierThan(startDate) {
+                RKDropdownAlert.title("Submit Failed", message: "The start date must be before the end date.", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+            } else {
+                let priority = 3-(priorityTableViewCell?.selectedSegment)!
+                let parameters: Dictionary = ["organizationObjectId": organization.objectId!, "title": titleTableViewCell!.input!, "body": bodyTableViewCell!.body!, "startDate": startDateTableViewCell!.date!, "endDate": endDateTableViewCell!.date!, "priority": priority, "notifyParent": notifyParentTableViewCell!.isOn]
+                PFCloud.callFunctionInBackground("uploadPostForOrganization", withParameters: parameters) {
+                    (results, error) -> Void in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        print("Submitted")
+                    }
+                }
+            }
         }
     }
     
@@ -50,17 +72,15 @@ class NewPostTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
-        case 0: return 3
+        case 0: return 2
         case 1: return 2
         case 2: return 2
         default: return 0
@@ -97,10 +117,10 @@ class NewPostTableViewController: UITableViewController {
                     bodyTableViewCell = cell
                     return cell
                 }
-            case 2:
-                let cell = tableView.dequeueReusableCellWithIdentifier("TextInput", forIndexPath: indexPath) as! TextInputTableViewCell
-                cell.title = "Image"
-                return cell
+//            case 2:
+//                let cell = tableView.dequeueReusableCellWithIdentifier("TextInput", forIndexPath: indexPath) as! TextInputTableViewCell
+//                cell.title = "Image"
+//                return cell
             default: _ = 0;
             }
         case 1: // Section 2
@@ -112,6 +132,7 @@ class NewPostTableViewController: UITableViewController {
                     let cell = tableView.dequeueReusableCellWithIdentifier("DatePicker", forIndexPath: indexPath) as! DatePickerTableViewCell
                     cell.title = "Start Date"
                     cell.parentViewController = self
+                    cell.minimumDate = NSDate()
                     startDateTableViewCell = cell
                     return cell
                 }
@@ -123,6 +144,7 @@ class NewPostTableViewController: UITableViewController {
                     cell.title = "End Date"
                     cell.parentViewController = self
                     endDateTableViewCell = cell
+                    cell.minimumDate = NSDate()
                     return cell
                 }
             default: _ = 0;
@@ -146,6 +168,7 @@ class NewPostTableViewController: UITableViewController {
                     let cell = tableView.dequeueReusableCellWithIdentifier("SegmentedControl", forIndexPath: indexPath) as! SegmentedControlTableViewCell
                     cell.title = "Priority"
                     cell.segments = ["Low", "Medium", "High"]
+                    cell.segmentedControl.selectedSegmentIndex = 0
                     priorityTableViewCell = cell
                     return cell
                 }

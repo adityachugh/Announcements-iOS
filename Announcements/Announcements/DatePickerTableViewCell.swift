@@ -13,6 +13,7 @@ class DatePickerTableViewCell: UITableViewCell, DatePickerViewControllerDelegate
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var minimumDate: NSDate?
     var parentViewController: UIViewController?
     var date: NSDate? {
         didSet {
@@ -44,6 +45,7 @@ class DatePickerTableViewCell: UITableViewCell, DatePickerViewControllerDelegate
                         toVC.date = self.date
                         toVC.datePickerMode = UIDatePickerMode.DateAndTime
                         toVC.minuteInterveral = 15
+                        toVC.minimumDate = self.minimumDate
                         return toVC
                     }
                     return toViewController

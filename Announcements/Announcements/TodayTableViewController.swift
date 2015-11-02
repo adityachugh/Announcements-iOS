@@ -30,9 +30,19 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
         let parameters: Dictionary = ["startIndex": 0, "numberOfPosts": 10, "date": date]
         PFCloud.callFunctionInBackground("getRangeOfPostsForDay", withParameters: parameters) {
             (results, error) -> Void in
-            self.postTableViewManager.data = results as! [Post]
-            tableView.reloadData()
-            refreshControl.endRefreshing()
+            if results != nil {
+                if (results as! [Post]).count > 0 {
+                    self.postTableViewManager.data = results as! [Post]
+                    tableView.reloadData()
+                    refreshControl.endRefreshing()
+                } else {
+                    RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+                    refreshControl.endRefreshing()
+                }
+            } else {
+                RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+                refreshControl.endRefreshing()
+            }
         }
     }
     

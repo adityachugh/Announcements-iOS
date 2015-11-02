@@ -13,29 +13,34 @@ class FollowButton: UIView {
     @IBOutlet private var view: UIView!
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
-    var isFollowing = false
-    
+    var followStatus: String = "NFO" {
+        didSet {
+            switch followStatus {
+            case "NFO":
+                setNotFollower()
+            case "FOL", "ADM":
+                setFollower()
+            case "PEN":
+                setPending()
+            case "REJ":
+                setRejected()
+            default:
+                setNotFollower()
+            }
+        }
+    }
+    var delegate: FollowButtonDelegate?
     override func awakeFromNib() {
         self.layer.borderColor = UIColor.clearColor().CGColor
         self.backgroundColor = UIColor.clearColor()
         hideActivityIndicator()
-        setFollow()
+        setNotFollower()
     }
     @IBAction func followButtonPressed(sender: AnyObject) {
-        isFollowing = !isFollowing
-        if !isFollowing {
-            setFollow()
-        } else {
-            showActivityIndicator()
-            Utilities.delayTime(1, closure: {
-                () -> () in
-                self.setUnfollow()
-                self.hideActivityIndicator()
-            })
-        }
+       delegate?.followButtonTapped(followStatus)
     }
     
-    private func setFollow() {
+    func setNotFollower() {
         Utilities.animate {
             () -> () in
             self.button.setTitle("Follow", forState: UIControlState.Normal)
@@ -48,10 +53,10 @@ class FollowButton: UIView {
         
     }
     
-    private func setUnfollow() {
+    func setFollower() {
         Utilities.animate {
             () -> () in
-            self.button.setTitle("Unfollow", forState: UIControlState.Normal)
+            self.button.setTitle("Following", forState: UIControlState.Normal)
             self.button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             self.button.backgroundColor = UIColor.AccentColor()
             self.button.layer.cornerRadius = self.button.frame.size.height/2
@@ -60,7 +65,31 @@ class FollowButton: UIView {
         }
     }
     
-    private func showActivityIndicator() {
+    func setRejected() {
+        Utilities.animate {
+            () -> () in
+            self.button.setTitle("Rejected", forState: UIControlState.Normal)
+            self.button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            self.button.backgroundColor = UIColor.redColor()
+            self.button.layer.cornerRadius = self.button.frame.size.height/2
+            self.button.layer.borderWidth = 0
+            self.button.layer.borderColor = UIColor.AccentColor().CGColor
+        }
+    }
+    
+    func setPending() {
+        Utilities.animate {
+            () -> () in
+            self.button.setTitle("Pending", forState: UIControlState.Normal)
+            self.button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            self.button.backgroundColor = UIColor.orangeColor()
+            self.button.layer.cornerRadius = self.button.frame.size.height/2
+            self.button.layer.borderWidth = 0
+            self.button.layer.borderColor = UIColor.AccentColor().CGColor
+        }
+    }
+    
+    func showActivityIndicator() {
         Utilities.animate {
             () -> () in
             self.button.alpha = 0
@@ -71,7 +100,7 @@ class FollowButton: UIView {
         }
     }
     
-    private func hideActivityIndicator() {
+    func hideActivityIndicator() {
         Utilities.animate {
             () -> () in
             self.button.alpha = 1
@@ -100,4 +129,8 @@ class FollowButton: UIView {
 //        UINib(nibName: "FollowButton", bundle: bundle)
 //    }
     
+}
+
+protocol FollowButtonDelegate {
+    func followButtonTapped(followStatus: String)
 }

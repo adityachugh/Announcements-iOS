@@ -38,12 +38,13 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         if let profilePhotoFile = user.profilePhoto {
             userProfilePictureImageView.file = profilePhotoFile
             userProfilePictureImageView.loadInBackground({ (image, error) -> Void in })
+        } else {
+            userProfilePictureImageView.image = UIImage(named: "Organization_Placeholder")
         }
         if let coverPhotoFile = user.coverPhoto {
             userCoverPhotoImageView.file = coverPhotoFile
             userCoverPhotoImageView.loadInBackground({ (image, error) -> Void in })
         }
-        
         navigationItem.title = "\(user.firstName) \(user.lastName)"
         userProfilePictureImageView.layer.cornerRadius = userProfilePictureImageView.frame.size.height / 2
         userProfilePictureImageView.layer.masksToBounds = true

@@ -162,6 +162,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Library" id="n6Y-kI-f05"/>
                     <connections>
+                        <outlet property="followButton" destination="I8b-FY-4Y5" id="CxA-Q6-xSP"/>
                         <outlet property="organizationFollowCountLabel" destination="0XE-uR-hTL" id="tGY-JE-Lok"/>
                         <outlet property="organizationHandleLabel" destination="YAw-wr-7od" id="dXO-8x-QTu"/>
                         <outlet property="organizationProfilePictureImageView" destination="gg3-Nw-eRX" id="RTJ-rA-tkI"/>
@@ -325,13 +326,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUK-QN-a6S">
                                         <rect key="frame" x="0.0" y="80" width="600" height="395"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications. Made simple." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-AR-kQC">
-                                                <rect key="frame" x="187" y="24" width="226" height="24"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-ig-Uqn">
                                                 <rect key="frame" x="0.0" y="129" width="600" height="77"/>
                                                 <subviews>
@@ -414,18 +408,20 @@
                                             </button>
                                         </subviews>
                                         <animations/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="ocK-AR-kQC" firstAttribute="top" secondItem="oUK-QN-a6S" secondAttribute="top" constant="24" id="7Nf-dY-8Md"/>
                                             <constraint firstItem="t6w-km-Kfy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wz9-ig-Uqn" secondAttribute="bottom" constant="8" id="Bd0-M8-JFa"/>
                                             <constraint firstAttribute="centerY" secondItem="Wz9-ig-Uqn" secondAttribute="centerY" constant="30.5" id="Beh-IO-8Z2"/>
                                             <constraint firstAttribute="trailing" secondItem="Wz9-ig-Uqn" secondAttribute="trailing" id="BrU-LD-px1"/>
                                             <constraint firstAttribute="centerX" secondItem="t6w-km-Kfy" secondAttribute="centerX" id="G3r-kU-QWT"/>
                                             <constraint firstAttribute="centerX" secondItem="Wz9-ig-Uqn" secondAttribute="centerX" id="GYK-jW-QoM"/>
-                                            <constraint firstAttribute="centerX" secondItem="ocK-AR-kQC" secondAttribute="centerX" id="RiP-pJ-l1O"/>
-                                            <constraint firstItem="Wz9-ig-Uqn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ocK-AR-kQC" secondAttribute="bottom" constant="8" id="Zbm-NW-MMS"/>
                                             <constraint firstItem="Wz9-ig-Uqn" firstAttribute="leading" secondItem="oUK-QN-a6S" secondAttribute="leading" id="adU-QB-gBh"/>
                                             <constraint firstAttribute="bottom" secondItem="t6w-km-Kfy" secondAttribute="bottom" constant="8" id="sbo-3j-Y3z"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Qhx-hF-2yY" appends="YES" id="APl-LT-sya"/>
+                                            <outletCollection property="gestureRecognizers" destination="KGi-Jw-Sdb" appends="YES" id="0kv-w3-Nll"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -444,18 +440,30 @@
                             <constraint firstItem="4aY-He-h1k" firstAttribute="leading" secondItem="W3Z-v1-KWR" secondAttribute="leading" id="8ZG-TJ-vDg"/>
                             <constraint firstItem="PTP-t5-0l9" firstAttribute="leading" secondItem="W3Z-v1-KWR" secondAttribute="leading" id="9ON-a2-p5h"/>
                             <constraint firstItem="PTP-t5-0l9" firstAttribute="top" secondItem="W3Z-v1-KWR" secondAttribute="top" id="F8j-pg-1H4"/>
-                            <constraint firstItem="4aY-He-h1k" firstAttribute="top" secondItem="PTP-t5-0l9" secondAttribute="bottom" id="Hyg-ii-G6S"/>
                             <constraint firstItem="v0s-Rc-5KM" firstAttribute="top" secondItem="4aY-He-h1k" secondAttribute="bottom" id="RqM-TD-OfG"/>
                             <constraint firstAttribute="trailing" secondItem="4aY-He-h1k" secondAttribute="trailing" id="xli-C2-Qlx"/>
+                            <constraint firstItem="4aY-He-h1k" firstAttribute="top" secondItem="zy5-P9-Q6M" secondAttribute="bottom" constant="105" id="yey-a2-9Vz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="Fcs-mq-ucM" id="esO-HT-pOv"/>
                         <outlet property="signInButton" destination="t6w-km-Kfy" id="4Dh-pR-093"/>
+                        <outlet property="slantedView" destination="4aY-He-h1k" id="PJB-xg-8Dh"/>
+                        <outlet property="topOffset" destination="yey-a2-9Vz" id="Gec-6c-4bN"/>
                         <outlet property="usernameTextField" destination="dLD-Ga-4xv" id="dCl-QC-Tue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBE-nB-URI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Qhx-hF-2yY">
+                    <connections>
+                        <action selector="viewPanned:" destination="Ou9-XN-28Y" id="FQo-r9-h00"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="KGi-Jw-Sdb">
+                    <connections>
+                        <action selector="viewTapped:" destination="Ou9-XN-28Y" id="qxi-Sl-pUR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2683" y="-1418"/>
         </scene>
@@ -1254,13 +1262,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rr-Cg-UzB">
                                         <rect key="frame" x="0.0" y="80" width="600" height="395"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications. Made simple." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qs-vz-GJe">
-                                                <rect key="frame" x="187" y="24" width="226" height="24"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="asu-Ye-7uY">
                                                 <rect key="frame" x="0.0" y="112" width="600" height="171"/>
                                                 <subviews>
@@ -1450,18 +1451,20 @@
                                             </button>
                                         </subviews>
                                         <animations/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="3qs-vz-GJe" firstAttribute="top" secondItem="3rr-Cg-UzB" secondAttribute="top" constant="24" id="6dK-yq-DkI"/>
-                                            <constraint firstItem="asu-Ye-7uY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3qs-vz-GJe" secondAttribute="bottom" constant="8" id="C5Z-aQ-Y3F"/>
                                             <constraint firstAttribute="centerX" secondItem="bKq-Hh-jtf" secondAttribute="centerX" id="Cmh-yK-yFW"/>
                                             <constraint firstAttribute="trailing" secondItem="asu-Ye-7uY" secondAttribute="trailing" id="Fws-Pr-Olw"/>
                                             <constraint firstItem="bKq-Hh-jtf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="asu-Ye-7uY" secondAttribute="bottom" constant="8" id="Uhb-op-N2r"/>
                                             <constraint firstAttribute="centerX" secondItem="asu-Ye-7uY" secondAttribute="centerX" id="Vei-Pv-ggx"/>
                                             <constraint firstAttribute="bottom" secondItem="bKq-Hh-jtf" secondAttribute="bottom" constant="8" id="dgn-ac-IBW"/>
-                                            <constraint firstAttribute="centerX" secondItem="3qs-vz-GJe" secondAttribute="centerX" id="eyH-vL-qaf"/>
                                             <constraint firstItem="asu-Ye-7uY" firstAttribute="leading" secondItem="3rr-Cg-UzB" secondAttribute="leading" id="jlj-L6-GoU"/>
                                             <constraint firstItem="asu-Ye-7uY" firstAttribute="centerY" secondItem="3rr-Cg-UzB" secondAttribute="centerY" id="xSI-Yc-1NZ"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="g6r-hO-80o" appends="YES" id="Opr-GA-B7n"/>
+                                            <outletCollection property="gestureRecognizers" destination="Pjo-pV-y1H" appends="YES" id="K83-42-3cu"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -1479,9 +1482,9 @@
                             <constraint firstAttribute="trailing" secondItem="t0z-NB-SwL" secondAttribute="trailing" id="9kC-p4-O5u"/>
                             <constraint firstItem="rUu-Iw-0nJ" firstAttribute="top" secondItem="rQg-R9-csf" secondAttribute="bottom" id="Bah-Eb-fXy"/>
                             <constraint firstItem="t0z-NB-SwL" firstAttribute="leading" secondItem="vmF-0y-2xV" secondAttribute="leading" id="JJZ-JL-H48"/>
+                            <constraint firstItem="rQg-R9-csf" firstAttribute="top" secondItem="lxm-kg-qvM" secondAttribute="bottom" constant="105" id="XLk-ge-PvY"/>
                             <constraint firstItem="rQg-R9-csf" firstAttribute="leading" secondItem="vmF-0y-2xV" secondAttribute="leading" id="c4x-cp-PTT"/>
                             <constraint firstItem="t0z-NB-SwL" firstAttribute="top" secondItem="vmF-0y-2xV" secondAttribute="top" id="mZK-dZ-xuX"/>
-                            <constraint firstItem="rQg-R9-csf" firstAttribute="top" secondItem="t0z-NB-SwL" secondAttribute="bottom" id="u57-jA-Fbm"/>
                             <constraint firstAttribute="trailing" secondItem="rQg-R9-csf" secondAttribute="trailing" id="vYw-qY-ooO"/>
                         </constraints>
                     </view>
@@ -1492,11 +1495,23 @@
                         <outlet property="lastNameTextField" destination="2zA-gy-qSF" id="Xdk-Uv-ivk"/>
                         <outlet property="passwordTextField" destination="kEx-wM-Ghu" id="fJc-8Z-DOB"/>
                         <outlet property="signUpButton" destination="bKq-Hh-jtf" id="km0-s0-AgV"/>
+                        <outlet property="slantedView" destination="rQg-R9-csf" id="kD8-Gm-4s2"/>
+                        <outlet property="topOffset" destination="XLk-ge-PvY" id="dMh-wP-GzN"/>
                         <outlet property="usernameStatusIndicator" destination="cDW-Tm-rmR" id="V7v-1b-Fqa"/>
                         <outlet property="usernameTextField" destination="ayr-Fo-jtg" id="MQd-n5-WkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1c-iq-pZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g6r-hO-80o">
+                    <connections>
+                        <action selector="viewTapped:" destination="qef-eq-6ZI" id="KUw-Hq-dqM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Pjo-pV-y1H">
+                    <connections>
+                        <action selector="viewPanned:" destination="qef-eq-6ZI" id="N8a-nx-lwo"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2683" y="-636"/>
         </scene>

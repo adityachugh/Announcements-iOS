@@ -20,7 +20,9 @@ class AdminPanelTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("New Post", parentViewController: self) {
             (toViewController) -> UIViewController in
-            return toViewController
+            let toVC = toViewController as! NewPostTableViewController
+            toVC.organization = self.organization
+            return toVC
         }
     }
 }

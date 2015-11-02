@@ -47,8 +47,9 @@ class AdminCollectionViewController: UICollectionViewController, CollectionViewR
         PFCloud.callFunctionInBackground("getOrganizationsThatUserIsAdminOf", withParameters: nil) {
             (results, error) -> Void in
             if results != nil {
-                for result in results as! [Organization] {
-                    self.adminCollectionViewManager.data.append(result)
+                let count = (results as! [Organization]).count
+                for var i = 0; i < count; ++i {
+                    self.adminCollectionViewManager.data.append((results as! [Organization])[i])
                 }
             }
             collectionView.reloadData()
