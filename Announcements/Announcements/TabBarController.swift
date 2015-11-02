@@ -55,7 +55,7 @@ class TabBarController: UITabBarController {
         today.tabBarItem = UITabBarItem(title: "Today", image: UIImage(named: "Today"), tag: 0)
         discover.tabBarItem = UITabBarItem(title: "Discover", image: UIImage(named: "Treasure Map"), tag: 1)
         navigationController.tabBarItem = UITabBarItem(title: "You", image: UIImage(named: "Me"), tag: 2)
-        more.tabBarItem = UITabBarItem(title: "More", image: UIImage(named: "More"), tag: 1)
+        more.tabBarItem = UITabBarItem(title: "More", image: UIImage(named: "more"), tag: 1)
         
         getAdmins()
     }
