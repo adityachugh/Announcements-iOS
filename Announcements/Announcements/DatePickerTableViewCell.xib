@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="jR3-7m-MDg" customClass="DatePickerTableViewCell" customModule="infor_me_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jR3-7m-MDg" id="fpH-PM-OfT">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNZ-CZ-DwP">
+                        <rect key="frame" x="16" y="10" width="43" height="24"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juJ-Vp-Utx">
+                        <rect key="frame" x="236" y="10" width="43" height="24"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="juJ-Vp-Utx" firstAttribute="centerY" secondItem="fpH-PM-OfT" secondAttribute="centerY" id="0kh-Py-fuf"/>
+                    <constraint firstItem="CNZ-CZ-DwP" firstAttribute="leading" secondItem="fpH-PM-OfT" secondAttribute="leadingMargin" constant="8" id="IXK-r3-txJ"/>
+                    <constraint firstItem="CNZ-CZ-DwP" firstAttribute="centerY" secondItem="fpH-PM-OfT" secondAttribute="centerY" id="Kfu-xq-Zqp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="juJ-Vp-Utx" secondAttribute="trailing" id="bYm-nJ-Xf7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="dateLabel" destination="juJ-Vp-Utx" id="xa4-O9-zxM"/>
+                <outlet property="titleLabel" destination="CNZ-CZ-DwP" id="MlI-Ta-i8S"/>
+            </connections>
+            <point key="canvasLocation" x="196" y="374"/>
+        </tableViewCell>
+    </objects>
+</document>

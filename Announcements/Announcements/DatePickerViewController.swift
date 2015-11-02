@@ -15,6 +15,9 @@ class DatePickerViewController: UIViewController {
     var maximumDate: NSDate?
     var delegate: DatePickerViewControllerDelegate?
     var backgroundImage: UIImage?
+    var datePickerMode: UIDatePickerMode?
+    var minuteInterveral: Int?
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var datePickerView: UIView!
@@ -29,6 +32,12 @@ class DatePickerViewController: UIViewController {
         }
         datePicker.minimumDate = self.minimumDate
         datePicker.maximumDate = self.maximumDate
+        if let dateMode = datePickerMode {
+            datePicker.datePickerMode = dateMode
+        }
+        if let interval = minuteInterveral {
+            datePicker.minuteInterval = interval
+        }
     }
     
     override func viewWillAppear(animated: Bool) {

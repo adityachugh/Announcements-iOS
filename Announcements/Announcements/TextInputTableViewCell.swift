@@ -70,8 +70,10 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(false, animated: false)
-        inputTextField.becomeFirstResponder()
+        super.setSelected(selected, animated: animated)
+        if selected {
+            inputTextField.becomeFirstResponder()
+        }
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

@@ -34,5 +34,10 @@ class TextViewTableViewCell: UITableViewCell {
 //            bodyTextView.placeholder = newValue
 //        }
 //    }
-    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            bodyTextView.becomeFirstResponder()
+        }
+    }
 }
