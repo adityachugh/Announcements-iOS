@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Comment.registerSubclass()
         User.registerSubclass()
         Follower.registerSubclass()
+        OrganizationLevelsConfig.registerSubclass()
 
 //        if let rootViewController = window?.rootViewController {
 //            Utilities.presentViewControllerModallyVithStoryboardIdentifier("DatePicker", parentViewController: rootViewController) { (toViewController) -> UIViewController in
@@ -83,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
         
-        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
         return true
     }

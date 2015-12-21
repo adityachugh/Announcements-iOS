@@ -71,7 +71,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
         delegate?.didEnterText(self, text: textView.text)
-        print((delegate as! CommentsTableViewController).post)
+//        print((delegate as! CommentsTableViewController).post)
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {

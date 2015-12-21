@@ -59,7 +59,9 @@ class PostTableViewCell: UITableViewCell {
     }
     
     @IBAction func shareButtonTapped(sender: UIButton) {
-        print("Share Tapped!")
+        let text = "\(post.title): \(post.body) \n\n via infor[me]"
+        let activityController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        parentViewController.presentViewController(activityController, animated: true, completion: nil)
     }
     
     @IBAction func commentButtonTapped(sender: UIButton) {

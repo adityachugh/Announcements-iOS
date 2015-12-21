@@ -19,6 +19,7 @@
 		38302D291B8E24CA002A548A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D281B8E24CA002A548A /* Organization.swift */; };
 		38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */; };
 		3831F4F71BC1D8C600FB6549 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */; };
+		383E5DE31C0365F2005DF406 /* CloudCodeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E5DE21C0365F2005DF406 /* CloudCodeFunctions.swift */; };
 		383E763F1B83D7AD00A75432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383E763E1B83D7AD00A75432 /* Main.storyboard */; };
 		383E76411B8409C900A75432 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */; };
 		383E76451B841CCD00A75432 /* OrganizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */; };
@@ -38,6 +39,9 @@
 		385455781BE6DA6300B372D7 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385455771BE6DA6300B372D7 /* SwitchTableViewCell.xib */; };
 		3854557A1BE6DBBD00B372D7 /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385455791BE6DBBD00B372D7 /* SegmentedControlTableViewCell.xib */; };
 		3854557C1BE6DBCF00B372D7 /* SegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854557B1BE6DBCF00B372D7 /* SegmentedControlTableViewCell.swift */; };
+		3855E6751C02B96900F4E692 /* OrganizationLevelsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855E6741C02B96900F4E692 /* OrganizationLevelsConfig.swift */; };
+		3855E6771C02C76200F4E692 /* ModifyOrganizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855E6761C02C76200F4E692 /* ModifyOrganizationTableViewController.swift */; };
+		3855E67B1C02C95C00F4E692 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3855E67A1C02C95C00F4E692 /* AdminTableViewController.swift */; };
 		3858A9991BC1B41C00C6BED9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */; };
 		3858A99B1BC1C4E600C6BED9 /* SlantedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */; };
 		385C7B761BC1ED6400141E04 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */; };
@@ -50,6 +54,7 @@
 		3867009E1B8664D800193355 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009D1B8664D800193355 /* UserViewController.swift */; };
 		386700A01B86650300193355 /* OrganizationCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */; };
 		386700A21B8D461900193355 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386700A11B8D461900193355 /* Post.swift */; };
+		386765481BEA51F500B70FEB /* ErrorMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386765471BEA51F500B70FEB /* ErrorMessageTableViewController.swift */; };
 		3869BDD21B7D37E3007C97AE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869BDD11B7D37E3007C97AE /* Utilities.swift */; };
 		3869BDD41B7D487B007C97AE /* PostWithPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */; };
 		386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */; };
@@ -61,6 +66,7 @@
 		389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */; };
 		389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */; };
 		389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */; };
+		38F39EA31BFA9F060011384B /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
@@ -80,6 +86,7 @@
 		38302D281B8E24CA002A548A /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		38302D2C1B8F5C7E002A548A /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		383E5DE21C0365F2005DF406 /* CloudCodeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCodeFunctions.swift; sourceTree = "<group>"; };
 		383E763E1B83D7AD00A75432 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +106,9 @@
 		385455771BE6DA6300B372D7 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		385455791BE6DBBD00B372D7 /* SegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
 		3854557B1BE6DBCF00B372D7 /* SegmentedControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlTableViewCell.swift; sourceTree = "<group>"; };
+		3855E6741C02B96900F4E692 /* OrganizationLevelsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationLevelsConfig.swift; sourceTree = "<group>"; };
+		3855E6761C02C76200F4E692 /* ModifyOrganizationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyOrganizationTableViewController.swift; sourceTree = "<group>"; };
+		3855E67A1C02C95C00F4E692 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlantedView.swift; sourceTree = "<group>"; };
 		385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +122,7 @@
 		3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollectionViewManager.swift; sourceTree = "<group>"; };
 		386700A11B8D461900193355 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		386700C41B8D518800193355 /* infor[me]-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "infor[me]-Bridging-Header.h"; sourceTree = "<group>"; };
+		386765471BEA51F500B70FEB /* ErrorMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageTableViewController.swift; sourceTree = "<group>"; };
 		3869BDD11B7D37E3007C97AE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3869BDD31B7D487B007C97AE /* PostWithPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWithPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		386EC8351B7532BE00921F4C /* UIColor+Announcements-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Announcements-iOS.swift"; sourceTree = "<group>"; };
@@ -123,7 +134,8 @@
 		389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-1421757295538-9c80958e75b0.jpeg"; sourceTree = "<group>"; };
 		389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewController.swift; sourceTree = "<group>"; };
 		389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelTableViewController.swift; sourceTree = "<group>"; };
-		38FD45391B54527300896403 /* infor(me).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "infor(me).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
+		38FD45391B54527300896403 /* informe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = informe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38FD45451B54527300896403 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -184,6 +196,7 @@
 				386700A11B8D461900193355 /* Post.swift */,
 				38302D281B8E24CA002A548A /* Organization.swift */,
 				3877EE421B965F1100433E60 /* Comment.swift */,
+				3855E6741C02B96900F4E692 /* OrganizationLevelsConfig.swift */,
 			);
 			name = "Data Classes";
 			sourceTree = "<group>";
@@ -192,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				38232C401B75123B00789340 /* TodayTableViewController.swift */,
+				386765471BEA51F500B70FEB /* ErrorMessageTableViewController.swift */,
 				382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */,
 				382AEF971B7EEB64002A330D /* PostTableViewManager.swift */,
 				38232C4B1B75192400789340 /* PostTableViewCell.xib */,
@@ -217,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				385C7B7A1BCF19AF00141E04 /* TextInputTableViewCell.swift */,
+				383E5DE21C0365F2005DF406 /* CloudCodeFunctions.swift */,
 				385C7B7C1BCF19CA00141E04 /* TextInputTableViewCell.xib */,
 				3882B0C81BE6878D00002730 /* TextViewTableViewCell.swift */,
 				3882B0CA1BE687B000002730 /* TextViewTableViewCell.xib */,
@@ -262,7 +277,7 @@
 		38FD453A1B54527300896403 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38FD45391B54527300896403 /* infor(me).app */,
+				38FD45391B54527300896403 /* informe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,11 +287,14 @@
 			children = (
 				385C7B791BCF196900141E04 /* Input TableViewCells */,
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
+				38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */,
 				385C7B801BCF1C7D00141E04 /* NewPostTableViewController.swift */,
+				3855E67A1C02C95C00F4E692 /* AdminTableViewController.swift */,
 				385C7B771BCDC41E00141E04 /* SignUpViewController.swift */,
 				385C7B751BC1ED6400141E04 /* MoreTableViewController.swift */,
 				3858A99A1BC1C4E600C6BED9 /* SlantedView.swift */,
 				3831F4F61BC1D8C600FB6549 /* SignInViewController.swift */,
+				3855E6761C02C76200F4E692 /* ModifyOrganizationTableViewController.swift */,
 				389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */,
 				389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */,
 				38FF93271B9938C500A98FC1 /* TextViewController.swift */,
@@ -339,7 +357,7 @@
 			);
 			name = "infor[me]";
 			productName = Announcements;
-			productReference = 38FD45391B54527300896403 /* infor(me).app */;
+			productReference = 38FD45391B54527300896403 /* informe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -356,6 +374,11 @@
 					38FD45381B54527300896403 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = WLR9RV28TP;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -452,6 +475,7 @@
 				3867009E1B8664D800193355 /* UserViewController.swift in Sources */,
 				385455761BE6DA4B00B372D7 /* SwitchTableViewCell.swift in Sources */,
 				382AEF9C1B7EF3C2002A330D /* TabBarController.swift in Sources */,
+				3855E6751C02B96900F4E692 /* OrganizationLevelsConfig.swift in Sources */,
 				3831F4F71BC1D8C600FB6549 /* SignInViewController.swift in Sources */,
 				389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */,
 				385C7B811BCF1C7D00141E04 /* NewPostTableViewController.swift in Sources */,
@@ -463,9 +487,12 @@
 				3882B0C91BE6878D00002730 /* TextViewTableViewCell.swift in Sources */,
 				385C7B761BC1ED6400141E04 /* MoreTableViewController.swift in Sources */,
 				385455701BE6C38E00B372D7 /* DatePickerTableViewCell.swift in Sources */,
+				383E5DE31C0365F2005DF406 /* CloudCodeFunctions.swift in Sources */,
+				3855E6771C02C76200F4E692 /* ModifyOrganizationTableViewController.swift in Sources */,
 				385C7B7B1BCF19AF00141E04 /* TextInputTableViewCell.swift in Sources */,
 				3869BDD21B7D37E3007C97AE /* Utilities.swift in Sources */,
 				382AEF9A1B7EEE0A002A330D /* OrganizationViewController.swift in Sources */,
+				386765481BEA51F500B70FEB /* ErrorMessageTableViewController.swift in Sources */,
 				38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */,
 				389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */,
 				3858A99B1BC1C4E600C6BED9 /* SlantedView.swift in Sources */,
@@ -479,6 +506,8 @@
 				3877EE471B96B63D00433E60 /* Follower.swift in Sources */,
 				38FF93281B9938C500A98FC1 /* TextViewController.swift in Sources */,
 				386700A21B8D461900193355 /* Post.swift in Sources */,
+				3855E67B1C02C95C00F4E692 /* AdminTableViewController.swift in Sources */,
+				38F39EA31BFA9F060011384B /* TermsConditionsViewController.swift in Sources */,
 				38302D291B8E24CA002A548A /* Organization.swift in Sources */,
 				382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */,
 				3877EE451B969BDA00433E60 /* User.swift in Sources */,
@@ -592,8 +621,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rajiv Chugh";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rajiv Chugh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -605,9 +634,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "infor(me)";
-				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.infor-me-";
+				PRODUCT_NAME = informe;
+				PROVISIONING_PROFILE = "1c2ea32d-5ca1-4975-8df4-18719c7d8ead";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -621,8 +650,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rajiv Chugh";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rajiv Chugh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -634,9 +663,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "infor(me)";
-				PROVISIONING_PROFILE = "fe1dc5cd-1856-4c9e-a9e7-6e9e0b8ebce5";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.infor-me-";
+				PRODUCT_NAME = informe;
+				PROVISIONING_PROFILE = "1c2ea32d-5ca1-4975-8df4-18719c7d8ead";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

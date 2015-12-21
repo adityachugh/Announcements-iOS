@@ -10,7 +10,7 @@ import UIKit
 
 class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-    
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var remainingCharacterCountLabel: UILabel!
@@ -59,9 +59,19 @@ class TextInputTableViewCell: UITableViewCell, UITextFieldDelegate {
             inputTextField.placeholder = newValue
         }
     }
+    var hideMaxCharacterCount = false {
+        didSet {
+            if hideMaxCharacterCount {
+                remainingCharacterCountLabel.hidden = true
+            } else {
+                remainingCharacterCountLabel.hidden = false
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         if maxCharacterCount == nil {
             remainingCharacterCountLabel.text = ""
         }

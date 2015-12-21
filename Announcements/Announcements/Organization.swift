@@ -26,6 +26,11 @@ class Organization: PFObject, PFSubclassing {
     @NSManaged var parentApprovalRequired: Bool
     @NSManaged var status: String
     @NSManaged var organizationType: String
+    @NSManaged var parentLevelConfig: OrganizationLevelsConfig?
+    @NSManaged var childLevelConfig: OrganizationLevelsConfig?
+    @NSManaged var levelConfig: OrganizationLevelsConfig
+    @NSManaged var hasAccessCode: Bool
+    @NSManaged var accessCode: Int
     
     
     override class func initialize() {

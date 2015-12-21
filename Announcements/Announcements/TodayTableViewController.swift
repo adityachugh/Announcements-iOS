@@ -9,7 +9,7 @@
 import UIKit
 //import Parse
 
-class TodayTableViewController: UITableViewController, RefreshDelegate, DatePickerViewControllerDelegate {
+class TodayTableViewController: ErrorMessageTableViewController, RefreshDelegate, DatePickerViewControllerDelegate {
     
     var postTableViewManager: PostTableViewManager!
     var date = NSDate()
@@ -18,6 +18,7 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
     var datePickerIsShowing = false
     
     override func viewDidLoad() {
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,14 +34,17 @@ class TodayTableViewController: UITableViewController, RefreshDelegate, DatePick
             if results != nil {
                 if (results as! [Post]).count > 0 {
                     self.postTableViewManager.data = results as! [Post]
+                    self.hideEmptyDataSetMessage()
                     tableView.reloadData()
                     refreshControl.endRefreshing()
                 } else {
-                    RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+                    self.showEmptyDataSetMessage("No Posts for Day")
+                    //                    RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
                     refreshControl.endRefreshing()
                 }
             } else {
-                RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+                self.showEmptyDataSetMessage("No Posts for Day")
+                //                RKDropdownAlert.title("No Posts", backgroundColor: UIColor.redColor(), textColor: UIColor.whiteColor())
                 refreshControl.endRefreshing()
             }
         }

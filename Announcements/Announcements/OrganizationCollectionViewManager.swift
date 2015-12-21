@@ -37,10 +37,6 @@ class OrganizationCollectionViewManager: NSObject, UICollectionViewDelegateFlowL
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
-        for cell in collectionView.visibleCells() as! [OrganizationCollectionViewCell] {
-            cell.organizationProfilePictureImageView.layer.cornerRadius = cell.organizationProfilePictureImageView.bounds.width/2
-        }
-        
         collectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: "refreshTop", forControlEvents: UIControlEvents.ValueChanged)
         if shouldRefresh {

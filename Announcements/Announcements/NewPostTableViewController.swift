@@ -8,9 +8,7 @@
 
 import UIKit
 
-class NewPostTableViewController: UITableViewController {
-    
-    var organization: Organization!
+class NewPostTableViewController: AdminTableViewController, UIAlertViewDelegate {
     
     var titleTableViewCell: TextInputTableViewCell?
     var bodyTableViewCell: TextViewTableViewCell?
@@ -60,11 +58,32 @@ class NewPostTableViewController: UITableViewController {
                     if error != nil {
                         print(error!)
                     } else {
-                        print("Submitted")
+                        let approvalRequired = self.organization.parentApprovalRequired
+                        let title = "Submitted"
+                        let message = approvalRequired ? "The post was successfuly submitted for approval." : "The post was successfuly submitted."
+                        if #available(iOS 8.0, *) {
+                            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: {
+                                (alertAction) -> Void in
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }))
+                            
+                            self.presentViewController(alert, animated: true, completion: { () -> Void in
+                                
+                            })
+                        } else {
+                            let alertView = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: "Okay")
+                            alertView.show()
+                        }
+                        
                     }
                 }
             }
         }
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,7 +102,7 @@ class NewPostTableViewController: UITableViewController {
         case 0: return 2
         case 1: return 2
         case 2: return 2
-        default: return 0
+        default: fatalError("Unkown section")
         }
     }
     

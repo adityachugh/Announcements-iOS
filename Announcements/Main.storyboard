@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O1i-6r-2g9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O1i-6r-2g9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
         <!--Today-->
         <scene sceneID="BaJ-2f-H1d">
             <objects>
-                <tableViewController id="7MS-Hn-ktk" customClass="TodayTableViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7MS-Hn-ktk" customClass="TodayTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="365" sectionHeaderHeight="22" sectionFooterHeight="22" id="9di-hG-6m2">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--Organization-->
         <scene sceneID="Ezk-yB-rb6">
             <objects>
-                <viewController storyboardIdentifier="Organization" title="Organization" id="weV-aD-mgE" customClass="OrganizationViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Organization" title="Organization" id="weV-aD-mgE" customClass="OrganizationViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4tn-sY-eUM"/>
                         <viewControllerLayoutGuide type="bottom" id="Ebz-oA-3eb"/>
@@ -87,7 +87,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-FY-4Y5" customClass="FollowButton" customModule="infor_me_" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-FY-4Y5" customClass="FollowButton" customModule="informe" customModuleProvider="target">
                                                 <rect key="frame" x="260" y="147" width="80" height="25"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +178,7 @@
         <!--Comments Table View Controller-->
         <scene sceneID="n3H-qJ-H9N">
             <objects>
-                <tableViewController storyboardIdentifier="Comments" id="Rkp-GT-o33" customClass="CommentsTableViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Comments" id="Rkp-GT-o33" customClass="CommentsTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2nW-oR-5tD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="scJ-8U-RHt">
             <objects>
-                <viewController id="SUw-CN-hsX" customClass="OnboardingViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SUw-CN-hsX" customClass="OnboardingViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lt6-S7-4rl"/>
                         <viewControllerLayoutGuide type="bottom" id="bjh-hn-tp1"/>
@@ -274,7 +274,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="NJN-OM-5oa">
             <objects>
-                <viewController id="Ou9-XN-28Y" customClass="SignInViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ou9-XN-28Y" customClass="SignInViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zy5-P9-Q6M"/>
                         <viewControllerLayoutGuide type="bottom" id="v0s-Rc-5KM"/>
@@ -320,7 +320,7 @@
                                     <constraint firstItem="fAB-Zu-ADO" firstAttribute="leading" secondItem="PTP-t5-0l9" secondAttribute="leading" constant="8" id="gqz-e6-71C"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-He-h1k" customClass="SlantedView" customModule="infor_me_" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-He-h1k" customClass="SlantedView" customModule="informe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="125" width="600" height="475"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUK-QN-a6S">
@@ -496,7 +496,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4og-LZ-VJl">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O1i-6r-2g9" customClass="TabBarController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O1i-6r-2g9" customClass="TabBarController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SEZ-e3-xuN">
@@ -520,7 +520,7 @@
         <!--Discover-->
         <scene sceneID="6jA-9Z-rwm">
             <objects>
-                <collectionViewController id="peC-tu-bzg" customClass="DiscoverCollectionViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="peC-tu-bzg" customClass="DiscoverCollectionViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0g5-eO-Nh0">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -549,7 +549,7 @@
         <!--More-->
         <scene sceneID="i5w-6e-gxb">
             <objects>
-                <tableViewController id="hzc-3O-oIs" customClass="MoreTableViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hzc-3O-oIs" customClass="MoreTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="YyI-Ld-ahy">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,38 +623,35 @@
         <!--Admin Panel Table View Controller-->
         <scene sceneID="NY0-zh-URH">
             <objects>
-                <tableViewController storyboardIdentifier="AdminPanel" id="pBD-xw-Yu7" customClass="AdminPanelTableViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="71d-Tj-dxo">
+                <tableViewController storyboardIdentifier="AdminPanel" id="pBD-xw-Yu7" customClass="AdminPanelTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="71d-Tj-dxo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="o2m-Pn-9cQ">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="kCU-7c-G0f" style="IBUITableViewCellStyleDefault" id="fs1-8L-2ne">
-                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fs1-8L-2ne" id="LBd-g6-lxq">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kCU-7c-G0f">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="H7I-Iu-OV6" style="IBUITableViewCellStyleDefault" id="sRm-Hm-kdN">
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sRm-Hm-kdN" id="jWh-pb-Ln3">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H7I-Iu-OV6">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="pBD-xw-Yu7" id="5JB-xv-oMi"/>
                             <outlet property="delegate" destination="pBD-xw-Yu7" id="kha-B9-saU"/>
@@ -668,7 +665,7 @@
         <!--New Post Table View Controller-->
         <scene sceneID="gck-wT-y65">
             <objects>
-                <tableViewController storyboardIdentifier="New Post" id="TNV-ph-ebv" customClass="NewPostTableViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NewPost" id="TNV-ph-ebv" customClass="NewPostTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="vLS-Wm-Aj1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -725,7 +722,7 @@
         <!--User-->
         <scene sceneID="oaw-Yi-5YC">
             <objects>
-                <viewController storyboardIdentifier="User" title="User" id="BXD-Bs-9zA" customClass="UserViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="User" title="User" id="BXD-Bs-9zA" customClass="UserViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bq6-5p-Lc5"/>
                         <viewControllerLayoutGuide type="bottom" id="WPU-Td-uAY"/>
@@ -843,7 +840,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="JgT-Ks-F61">
             <objects>
-                <viewController storyboardIdentifier="DatePicker" id="HUt-di-lUf" customClass="DatePickerViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePicker" id="HUt-di-lUf" customClass="DatePickerViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I0l-Di-T6a"/>
                         <viewControllerLayoutGuide type="bottom" id="8qP-Jy-kTO"/>
@@ -957,7 +954,7 @@
         <!--Text View Controller-->
         <scene sceneID="zv6-h1-EVG">
             <objects>
-                <viewController storyboardIdentifier="TextViewController" id="IHh-NM-xFA" customClass="TextViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TextViewController" id="IHh-NM-xFA" customClass="TextViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lo9-Zb-rVi"/>
                         <viewControllerLayoutGuide type="bottom" id="tdk-Zv-mvm"/>
@@ -1112,7 +1109,7 @@
         <!--Admin-->
         <scene sceneID="p5d-Ym-5RP">
             <objects>
-                <collectionViewController id="u0k-5L-jE9" customClass="AdminCollectionViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="u0k-5L-jE9" customClass="AdminCollectionViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZL1-I5-Aeo">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1210,7 +1207,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="Fgy-0R-NW0">
             <objects>
-                <viewController id="qef-eq-6ZI" customClass="SignUpViewController" customModule="infor_me_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qef-eq-6ZI" customClass="SignUpViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lxm-kg-qvM"/>
                         <viewControllerLayoutGuide type="bottom" id="rUu-Iw-0nJ"/>
@@ -1256,14 +1253,14 @@
                                     <constraint firstItem="2tP-Sp-0y1" firstAttribute="top" secondItem="t0z-NB-SwL" secondAttribute="top" constant="24" id="jiJ-tw-JID"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQg-R9-csf" customClass="SlantedView" customModule="infor_me_" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQg-R9-csf" customClass="SlantedView" customModule="informe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="125" width="600" height="475"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rr-Cg-UzB">
                                         <rect key="frame" x="0.0" y="80" width="600" height="395"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="asu-Ye-7uY">
-                                                <rect key="frame" x="0.0" y="112" width="600" height="171"/>
+                                                <rect key="frame" x="0.0" y="92" width="600" height="171"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEa-46-FgD">
                                                         <rect key="frame" x="200" y="38" width="200" height="1"/>
@@ -1359,7 +1356,7 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDW-Tm-rmR" customClass="StatusIndicator" customModule="infor_me_" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDW-Tm-rmR" customClass="StatusIndicator" customModule="informe" customModuleProvider="target">
                                                         <rect key="frame" x="564" y="52" width="20" height="20"/>
                                                         <animations/>
                                                         <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1368,7 +1365,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="Aey-pS-Hqg"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-cH-9Vq" customClass="StatusIndicator" customModule="infor_me_" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmH-cH-9Vq" customClass="StatusIndicator" customModule="informe" customModuleProvider="target">
                                                         <rect key="frame" x="564" y="99" width="20" height="20"/>
                                                         <animations/>
                                                         <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1449,17 +1446,33 @@
                                                     <action selector="signUpButtonTapped:" destination="qef-eq-6ZI" eventType="touchUpInside" id="Iud-qj-Dgc"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-l9-gFj">
+                                                <rect key="frame" x="157" y="318" width="286" height="24"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="By clicking Sign Up, you agree to the terms and conditions.">
+                                                    <color key="titleColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="ZSQ-y1-tDz" kind="presentation" id="58Y-ey-feW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="bKq-Hh-jtf" firstAttribute="top" secondItem="Jmh-l9-gFj" secondAttribute="bottom" constant="5" id="4Mv-hQ-LAJ"/>
                                             <constraint firstAttribute="centerX" secondItem="bKq-Hh-jtf" secondAttribute="centerX" id="Cmh-yK-yFW"/>
                                             <constraint firstAttribute="trailing" secondItem="asu-Ye-7uY" secondAttribute="trailing" id="Fws-Pr-Olw"/>
+                                            <constraint firstItem="Jmh-l9-gFj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3rr-Cg-UzB" secondAttribute="leading" constant="8" id="MAG-F3-ATi"/>
+                                            <constraint firstItem="Jmh-l9-gFj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="asu-Ye-7uY" secondAttribute="bottom" constant="5" id="Ryt-Yp-jAQ"/>
                                             <constraint firstItem="bKq-Hh-jtf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="asu-Ye-7uY" secondAttribute="bottom" constant="8" id="Uhb-op-N2r"/>
                                             <constraint firstAttribute="centerX" secondItem="asu-Ye-7uY" secondAttribute="centerX" id="Vei-Pv-ggx"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jmh-l9-gFj" secondAttribute="trailing" constant="8" id="aUy-Gr-BBf"/>
                                             <constraint firstAttribute="bottom" secondItem="bKq-Hh-jtf" secondAttribute="bottom" constant="8" id="dgn-ac-IBW"/>
                                             <constraint firstItem="asu-Ye-7uY" firstAttribute="leading" secondItem="3rr-Cg-UzB" secondAttribute="leading" id="jlj-L6-GoU"/>
-                                            <constraint firstItem="asu-Ye-7uY" firstAttribute="centerY" secondItem="3rr-Cg-UzB" secondAttribute="centerY" id="xSI-Yc-1NZ"/>
+                                            <constraint firstItem="Jmh-l9-gFj" firstAttribute="centerX" secondItem="3rr-Cg-UzB" secondAttribute="centerX" id="rLY-eC-U7I"/>
+                                            <constraint firstItem="asu-Ye-7uY" firstAttribute="centerY" secondItem="3rr-Cg-UzB" secondAttribute="centerY" priority="750" constant="-20" id="xSI-Yc-1NZ"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="g6r-hO-80o" appends="YES" id="Opr-GA-B7n"/>
@@ -1514,6 +1527,107 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2683" y="-636"/>
+        </scene>
+        <!--Terms and Conditions-->
+        <scene sceneID="jHa-hP-CkE">
+            <objects>
+                <viewController id="bEv-v6-lAy" customClass="TermsConditionsViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xy8-B8-1WD"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ob-wP-xAm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yDJ-JT-AYH">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-yM-oUt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cMa-yM-oUt" firstAttribute="top" secondItem="xy8-B8-1WD" secondAttribute="bottom" id="4Qh-xp-lcZ"/>
+                            <constraint firstAttribute="trailing" secondItem="cMa-yM-oUt" secondAttribute="trailing" id="Nuh-6G-ykZ"/>
+                            <constraint firstItem="4Ob-wP-xAm" firstAttribute="top" secondItem="cMa-yM-oUt" secondAttribute="bottom" id="RcQ-Gm-qw7"/>
+                            <constraint firstItem="cMa-yM-oUt" firstAttribute="centerY" secondItem="yDJ-JT-AYH" secondAttribute="centerY" id="dFU-qV-uZo"/>
+                            <constraint firstItem="cMa-yM-oUt" firstAttribute="centerX" secondItem="yDJ-JT-AYH" secondAttribute="centerX" id="l6G-oi-0MD"/>
+                            <constraint firstItem="cMa-yM-oUt" firstAttribute="leading" secondItem="yDJ-JT-AYH" secondAttribute="leading" id="oAP-8V-0LU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms and Conditions" id="r7x-3P-Bst">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Lpk-UE-C6W">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="bEv-v6-lAy" id="GpL-vA-0jj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="cMa-yM-oUt" id="9c3-fi-0O6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qas-jj-Y0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4047" y="-636"/>
+        </scene>
+        <!--NavigationController-->
+        <scene sceneID="0ig-9z-McC">
+            <objects>
+                <navigationController title="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ZSQ-y1-tDz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="Treasure Map" id="YHV-9R-VoP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iRb-oX-scS" userLabel="1ABC9C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bEv-v6-lAy" kind="relationship" relationship="rootViewController" id="tFd-aR-x1j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDv-TK-0TF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3368" y="-636"/>
+        </scene>
+        <!--Modify Organization Table View Controller-->
+        <scene sceneID="UxK-zB-qm6">
+            <objects>
+                <tableViewController storyboardIdentifier="ModifyOrganization" id="Jji-Nb-zYo" customClass="ModifyOrganizationTableViewController" customModule="informe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="t0K-A0-mqt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nli-bj-jlQ">
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nli-bj-jlQ" id="QyM-09-cjk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jji-Nb-zYo" id="6Dd-Mn-hc6"/>
+                            <outlet property="delegate" destination="Jji-Nb-zYo" id="p9X-m3-T27"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mr7-sP-bkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4848" y="2490"/>
         </scene>
     </scenes>
     <resources>

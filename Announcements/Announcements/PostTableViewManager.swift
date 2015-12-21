@@ -17,6 +17,8 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     var refreshControl = UIRefreshControl()
     var bottomRefreshControl = UIRefreshControl()
     
+//    var errorLabel: UILabel!
+    
     var data:[Post] = []
     var startIndex = 0
     var numberOfPosts = 10
@@ -28,6 +30,8 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         self.parentViewController = parentViewController
         self.refreshDelegate = refreshDelegate
         super.init()
+        
+//        errorLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -45,6 +49,33 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         bottomRefreshControl.addTarget(self, action: "refreshBottom", forControlEvents: UIControlEvents.ValueChanged)
     }
     
+//    func showEmptyDataSetMessage() {
+//        errorLabel.text = "No Posts for Day"
+//        errorLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
+//        errorLabel.sizeToFit()
+//        errorLabel.center = tableView.center
+//        tableView.addSubview(errorLabel)
+//        errorLabel.alpha = 0
+//        Utilities.animate {
+//            () -> () in
+//            self.errorLabel.alpha = 1
+//        }
+//    }
+//    
+//    func hideEmptyDataSetMessage() {
+//        errorLabel.text = "No Posts for Day"
+//        errorLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
+//        errorLabel.textColor = UIColor.grayColor()
+//        errorLabel.sizeToFit()
+//        errorLabel.center = tableView.center
+//        Utilities.animateWithCompletion({() -> () in
+//            self.errorLabel.alpha = 0
+//            }) {() -> () in
+//                self.errorLabel.removeFromSuperview()
+//        }
+//        
+//    }
+    
     func registerNibs() {
         tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "Post")
         tableView.registerNib(UINib(nibName: "PostWithPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PostWithPhoto")
@@ -53,6 +84,7 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
     }
     
     func refreshTop() {
+//        hideEmptyDataSetMessage()
         startIndex = 0
         refreshControl.beginRefreshing()
         refreshDelegate?.refreshData(refreshControl, tableView: tableView)
@@ -110,19 +142,19 @@ class PostTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        var offset:CGFloat = -200.0
-//        if isScrollingDown {
-//            offset = 200.0
-//        }
-//        cell.alpha = 0
-//        cell.frame = CGRectOffset(cell.frame, 0, offset)
-//        Utilities.animate {
-//            () -> () in
-//            cell.alpha = 1
-//            cell.frame = CGRectOffset(cell.frame, 0, -offset)
-//        }
-//    }
+    //    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    //        var offset:CGFloat = -200.0
+    //        if isScrollingDown {
+    //            offset = 200.0
+    //        }
+    //        cell.alpha = 0
+    //        cell.frame = CGRectOffset(cell.frame, 0, offset)
+    //        Utilities.animate {
+    //            () -> () in
+    //            cell.alpha = 1
+    //            cell.frame = CGRectOffset(cell.frame, 0, -offset)
+    //        }
+    //    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Utilities.presentViewControllerVithStoryboardIdentifier("Comments", parentViewController: parentViewController) { (toViewController) -> UIViewController in
