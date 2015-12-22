@@ -97,7 +97,6 @@ class ModifyOrganizationTableViewController: AdminTableViewController {
         tableView.registerNib(UINib(nibName: "DatePickerTableViewCell", bundle: nil), forCellReuseIdentifier: "DatePicker")
         tableView.registerNib(UINib(nibName: "SwitchTableViewCell", bundle: nil), forCellReuseIdentifier: "Switch")
         tableView.registerNib(UINib(nibName: "SegmentedControlTableViewCell", bundle: nil), forCellReuseIdentifier: "SegmentedControl")
-        
     }
     
     func setupTableView() {

@@ -67,6 +67,7 @@
 		389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */; };
 		389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */; };
 		38F39EA31BFA9F060011384B /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */; };
+		38F9373D1C289581007152F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9373C1C289581007152F3 /* ImagePicker.swift */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
@@ -135,6 +136,7 @@
 		389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewController.swift; sourceTree = "<group>"; };
 		389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelTableViewController.swift; sourceTree = "<group>"; };
 		38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
+		38F9373C1C289581007152F3 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		38FD45391B54527300896403 /* informe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = informe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */,
 				3867009D1B8664D800193355 /* UserViewController.swift */,
+				38F9373C1C289581007152F3 /* ImagePicker.swift */,
 				3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */,
 				383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */,
 				383E76461B84DFDC00A75432 /* OrganizationCollectionViewCell.xib */,
@@ -466,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				385C7B851BD2C46200141E04 /* StatusIndicator.swift in Sources */,
+				38F9373D1C289581007152F3 /* ImagePicker.swift in Sources */,
 				383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */,
 				382AEF981B7EEB64002A330D /* PostTableViewManager.swift in Sources */,
 				38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */,
