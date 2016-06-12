@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminTableViewController: UITableViewController {
+class OrganizationTableViewController: ErrorMessageTableViewController {
     
     var organization: Organization!
     

@@ -22,4 +22,19 @@ class CloudCodeFunctions {
 
     }
     
+    static func getFollowersForOrganizationInRange(organizationObjectId: String, startIndex: Int, numberOfUsers: Int, completion: ([Follower]?, NSError?)->()) {
+        let parameters: Dictionary<String, AnyObject> = ["organizationObjectId": organizationObjectId, "startIndex": startIndex, "numberOfUsers": numberOfUsers]
+        PFCloud.callFunctionInBackground("getFollowersForOrganizationInRange", withParameters: parameters) {
+            (result, error) -> Void in
+            completion(result as! [Follower]?, error)
+        }
+    }
+    
+    static func removeFollowerFromOrganization(organizationObjectId: String, selectedFollowerToRemoveObjectId: String, completion: (Bool?, NSError?)->()) {
+        let parameters: Dictionary<String, AnyObject> = ["organizationObjectId": organizationObjectId, "selectedFollowerToRemoveObjectId": selectedFollowerToRemoveObjectId]
+        PFCloud.callFunctionInBackground("removeFollowerFromOrganization", withParameters: parameters) {
+            (result, error) -> Void in
+            completion(result as! Bool?, error)
+        }
+    }
 }

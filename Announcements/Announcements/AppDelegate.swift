@@ -13,8 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
         Parse.enableLocalDatastore()
         
@@ -26,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
-        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-        
-        setupBarButtonItemFont()
-        
-        //Register subclasses
-        
         Post.registerSubclass()
         Organization.registerSubclass()
         Comment.registerSubclass()
@@ -39,6 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Follower.registerSubclass()
         OrganizationLevelsConfig.registerSubclass()
 
+        displayOnboarding(false)
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
+        return true
+    }
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        
+        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
+        setupBarButtonItemFont()
+        
+        //Register subclasses
+        
 //        if let rootViewController = window?.rootViewController {
 //            Utilities.presentViewControllerModallyVithStoryboardIdentifier("DatePicker", parentViewController: rootViewController) { (toViewController) -> UIViewController in
 //                let datePickerViewController = toViewController
@@ -48,8 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
 //
-        displayOnboarding(false)
-        
         
         // Register for Push Notitications
         if application.applicationState != UIApplicationState.Background {
@@ -57,8 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // "content_available" was used to trigger a background push (introduced in iOS 7).
             // In that case, we skip tracking here to avoid double counting the app-open.
             
-            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
-            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            let preBackgroundPush = !application.respondsToSelector(Selector("backgroundRefreshStatus"))
+            let oldPushHandlerOnly = !self.respondsToSelector(#selector(UIApplicationDelegate.application(_:didReceiveRemoteNotification:fetchCompletionHandler:)))
             var pushPayload = false
             if let options = launchOptions {
                 pushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil

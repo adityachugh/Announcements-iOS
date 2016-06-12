@@ -28,6 +28,8 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         if user == nil {
             user = User.currentUser()
         }
+        print(User.currentUser())
+        user.fetchIfNeededInBackground()
         organizationCollectionViewManager = OrganizationCollectionViewManager(collectionView: collectionView, parentViewController: self, refreshDelegate: self, shouldRefresh: true)
         organizationCollectionViewManager.scrollingDelegate = self
         setupUser()
@@ -35,6 +37,7 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
     }
     
     func setupUser() {
+        print(user.profilePhoto)
         if let profilePhotoFile = user.profilePhoto {
             userProfilePictureImageView.file = profilePhotoFile
             userProfilePictureImageView.loadInBackground({ (image, error) -> Void in })
@@ -49,7 +52,8 @@ class UserViewController: UIViewController, CollectionViewRefreshDelegate, Scrol
         userProfilePictureImageView.layer.cornerRadius = userProfilePictureImageView.frame.size.height / 2
         userProfilePictureImageView.layer.masksToBounds = true
         userHandleLabel.text = "@\(user.username!)"
-        organizationsCountLabel.text = "\(user.organizationsFollowedCount) Organizations"
+//        organizationsCountLabel.text = "\(user.organizationsFollowedCount) Organizations"
+        organizationsCountLabel.text = "3 Organizations"
     }
     
     func addEditButton() {

@@ -1,0 +1,33 @@
+PODS:
+  - Bolts/Tasks (1.4.0)
+  - CCBottomRefreshControl (0.5.1):
+    - Masonry (~> 0.6.2)
+  - DateTools (1.7.0)
+  - Masonry (0.6.3)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+  - ParseUI (1.1.6):
+    - Bolts/Tasks (~> 1.2)
+    - Parse (~> 1.8)
+  - RKDropdownAlert (0.3.0)
+  - RSKImageCropper (1.3.2)
+
+DEPENDENCIES:
+  - CCBottomRefreshControl
+  - DateTools
+  - Parse
+  - ParseUI
+  - RKDropdownAlert
+  - RSKImageCropper
+
+SPEC CHECKSUMS:
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  CCBottomRefreshControl: 57a596348855260f627ffc2b311328ed15b94877
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  RSKImageCropper: 28632b527aac06bb2c289c71c5c800c1b81326ed
+
+COCOAPODS: 0.38.2

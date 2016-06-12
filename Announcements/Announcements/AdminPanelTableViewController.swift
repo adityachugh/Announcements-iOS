@@ -37,8 +37,10 @@ class AdminPanelTableViewController: UITableViewController {
         
         modifyOrganization = AdminAction(title: "Modify \(levelName)", storyboardIdentifier: "ModifyOrganization")
         newPost = AdminAction(title: "New \(levelName) Post", storyboardIdentifier: "NewPost")
-        allPosts = AdminAction(title: "All \(levelName) Posts", storyboardIdentifier: "AllPosts")
-        organizationAdmins = AdminAction(title: "View \(levelName) Admins", storyboardIdentifier: "ViewAdmins")
+        allPosts = AdminAction(title: "All \(levelName) Posts", storyboardIdentifier: "")
+        //        allPosts = AdminAction(title: "All \(levelName) Posts", storyboardIdentifier: "AllPosts")
+        organizationAdmins = AdminAction(title: "View \(levelName) Admins", storyboardIdentifier: "")
+        //        organizationAdmins = AdminAction(title: "View \(levelName) Admins", storyboardIdentifier: "ViewAdmins")
         organizationFollowers = AdminAction(title: "View \(levelName) Followers", storyboardIdentifier: "ViewFollowers")
         
         adminPanel = [[modifyOrganization], [newPost, allPosts], [organizationAdmins, organizationFollowers]]
@@ -48,9 +50,13 @@ class AdminPanelTableViewController: UITableViewController {
             if childLevelName[childLevelName.characters.count-1] == "S" || childLevelName[childLevelName.characters.count-1] == "s" {
                 plural = "\(childLevelName)es"
             }
-            childOrganizations = AdminAction(title: "View \(plural)", storyboardIdentifier: "ViewChildOrganizations")
-            addChildOrganization = AdminAction(title: "Add New \(childLevelName)", storyboardIdentifier: "AddNewChild")
-            pendingPosts = AdminAction(title: "View Pending \(childLevelName) Posts", storyboardIdentifier: "ViewPendingPosts")
+            
+            childOrganizations = AdminAction(title: "View \(plural)", storyboardIdentifier: "")
+            addChildOrganization = AdminAction(title: "Add New \(childLevelName)", storyboardIdentifier: "")
+            pendingPosts = AdminAction(title: "View Pending \(childLevelName) Posts", storyboardIdentifier: "")
+            //            childOrganizations = AdminAction(title: "View \(plural)", storyboardIdentifier: "ViewChildOrganizations")
+            //            addChildOrganization = AdminAction(title: "Add New \(childLevelName)", storyboardIdentifier: "AddNewChild")
+            //            pendingPosts = AdminAction(title: "View Pending \(childLevelName) Posts", storyboardIdentifier: "ViewPendingPosts")
             
             adminPanel = [[modifyOrganization], [newPost, allPosts], [childOrganizations, addChildOrganization, pendingPosts], [organizationAdmins, organizationFollowers]]
         } else {
@@ -60,11 +66,23 @@ class AdminPanelTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let adminAction = adminPanel[indexPath.section][indexPath.row]
-        Utilities.presentViewControllerVithStoryboardIdentifier(adminAction.storyboardIdentifier, parentViewController: self) {
-            (toViewController) -> UIViewController in
-            let toVC = toViewController as! AdminTableViewController
-            toVC.organization = self.organization
-            return toVC
+        if adminAction.storyboardIdentifier == "" {
+            if #available(iOS 8.0, *) {
+                let alert = UIAlertController(title: "In Development", message: "This screen is still in development.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertView(title: "In Development", message: "This screen is still in development.", delegate: nil, cancelButtonTitle: "Okay")
+                alert.show()
+            }
+            
+        } else {
+            Utilities.presentViewControllerVithStoryboardIdentifier(adminAction.storyboardIdentifier, parentViewController: self) {
+                (toViewController) -> UIViewController in
+                let toVC = toViewController as! OrganizationTableViewController
+                toVC.organization = self.organization
+                return toVC
+            }
         }
     }
     

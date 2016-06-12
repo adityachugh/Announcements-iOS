@@ -13,15 +13,19 @@ import AssetsLibrary
 class ImagePicker: NSObject, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var presentingViewController: UIViewController!
-    var completion: (UIImage?)->()!
+    var completion: (UIImage?, UIImagePickerController?)->()!
     var cameraActionSheet: UIActionSheet!
+    var presentationBarButtonItem: UIBarButtonItem?
+    let imagePickerController = UIImagePickerController()
     
-    init(presentingViewController: UIViewController, completion:(UIImage?)->()) {
+    init(presentingViewController: UIViewController, presentationBarButtonItem: UIBarButtonItem?, completion:(UIImage?, UIImagePickerController?)->()) {
         self.presentingViewController = presentingViewController
+        self.presentationBarButtonItem = presentationBarButtonItem
         self.completion = completion
+        super.init()
     }
     
-    func setup() {
+    func show() {
         if #available(iOS 8.0, *) {
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             
@@ -45,8 +49,9 @@ class ImagePicker: NSObject, UIActionSheetDelegate, UIImagePickerControllerDeleg
             }))
             
             alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
-            alertController.popoverPresentationController?.barButtonItem = presentingViewController.navigationItem.rightBarButtonItem
-            
+            if let presentationBarButtonItem = presentationBarButtonItem {
+                alertController.popoverPresentationController?.barButtonItem = presentationBarButtonItem
+            }
             presentingViewController.presentViewController(alertController, animated: true) { () -> Void in }
             
         } else {
@@ -64,13 +69,18 @@ class ImagePicker: NSObject, UIActionSheetDelegate, UIImagePickerControllerDeleg
             cameraActionSheet!.cancelButtonIndex = index
             cameraActionSheet!.delegate = self
             
-            cameraActionSheet!.showFromBarButtonItem(presentingViewController.navigationItem.rightBarButtonItem!, animated: true)
+            if let presentationBarButtonItem = presentationBarButtonItem {
+                cameraActionSheet!.showFromBarButtonItem(presentationBarButtonItem, animated: true)
+            } else {
+                cameraActionSheet.showInView(presentingViewController.view)
+            }
         }
 
     }
     
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        print("Tapped")
         if actionSheet == cameraActionSheet {
             switch buttonIndex {
             case 0:
@@ -78,57 +88,40 @@ class ImagePicker: NSObject, UIActionSheetDelegate, UIImagePickerControllerDeleg
             case 1:
                 presentPickerViewController(UIImagePickerControllerSourceType.SavedPhotosAlbum)
             default:
-                fatalError()
+                _ = 0
             }
         }
     }
     
     func actionSheetCancel(actionSheet: UIActionSheet) {
-        completion(nil)
+        completion(nil, nil)
     }
     
     func presentPickerViewController(sourceType: UIImagePickerControllerSourceType) {
         let cameraRollStatus = ALAssetsLibrary.authorizationStatus()
         let cameraStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
         
-        if sourceType == UIImagePickerControllerSourceType.Camera {
-            if !(cameraStatus == AVAuthorizationStatus.Denied) {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = sourceType
-                
-                presentingViewController.presentViewController(imagePicker, animated: true, completion: { () -> Void in })
-            } else {
-                if Utilities.iOS8 {
-                    presentAlertView("Error", body: "infor[me] does not have permission to use the Camera. You can give infor[me] permission by going to Settings > infor[me] > Camera.")
-                } else {
-                    presentAlertView("Error", body: "infor[me] does not have permission to use the Camera. You can give infor[me] permission by going to Settings > Privacy > Camera > infor[me].")
-                }
-            }
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = sourceType
+        
+        if sourceType == UIImagePickerControllerSourceType.Camera && (cameraStatus == AVAuthorizationStatus.Denied) {
+            presentAlertView("Error", body: "infor[me] does not have permission to use the Camera. You can give infor[me] permission by going to Settings > Privacy > Camera > infor[me].")
+        } else if cameraRollStatus == ALAuthorizationStatus.Denied {
+            presentAlertView("Error", body: "infor[me] does not have permission to access your Photos. You can give infor[me] permission by going to Settings > infor[me] > Photos.")
         } else {
-            if !(cameraRollStatus == ALAuthorizationStatus.Denied) {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = sourceType
-                
-                presentingViewController.presentViewController(imagePicker, animated: true, completion: { () -> Void in })
-            } else {
-                if #available(iOS 8.0, *) {
-                    presentAlertView("Error", body: "infor[me] does not have permission to access Photos. You can give infor[me] permission by going to Settings > infor[me] > Photos.")
-                } else {
-                    presentAlertView("Error", body: "infor[me] does not have permission to access Photos. You can give infor[me] permission by going to Settings > Privacy > Photos > infor[me].")
-                }
-            }
+            print("Presenting ImagePicker")
+            self.presentingViewController.presentViewController(self.imagePickerController, animated: true, completion: { () -> Void in })
         }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        completion(image)
+        completion(image, picker)
     }
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+        completion(nil, nil)
     }
     
     func presentAlertView(title: String, body: String) {

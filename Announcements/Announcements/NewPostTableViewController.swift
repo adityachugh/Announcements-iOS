@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewPostTableViewController: AdminTableViewController, UIAlertViewDelegate {
+class NewPostTableViewController: OrganizationTableViewController, UIAlertViewDelegate {
     
     var titleTableViewCell: TextInputTableViewCell?
     var bodyTableViewCell: TextViewTableViewCell?

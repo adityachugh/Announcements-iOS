@@ -11,6 +11,7 @@
 		38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38232C401B75123B00789340 /* TodayTableViewController.swift */; };
 		38232C4A1B75190500789340 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38232C491B75190500789340 /* PostTableViewCell.swift */; };
 		38232C4C1B75192400789340 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38232C4B1B75192400789340 /* PostTableViewCell.xib */; };
+		382337E71C2C8F66007E9409 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382337E61C2C8F66007E9409 /* ImagePreviewViewController.swift */; };
 		382AEF981B7EEB64002A330D /* PostTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF971B7EEB64002A330D /* PostTableViewManager.swift */; };
 		382AEF9A1B7EEE0A002A330D /* OrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */; };
 		382AEF9C1B7EF3C2002A330D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382AEF9B1B7EF3C2002A330D /* TabBarController.swift */; };
@@ -31,6 +32,8 @@
 		383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */; };
 		383E76561B85548300A75432 /* FollowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383E76551B85548300A75432 /* FollowButton.xib */; };
 		383E76581B8555B600A75432 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383E76571B8555B600A75432 /* FollowButton.swift */; };
+		384CB3A11C6153AF00472CE2 /* FollowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CB3A01C6153AF00472CE2 /* FollowerTableViewController.swift */; };
+		384CB3A31C62B65A00472CE2 /* AdminUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CB3A21C62B65A00472CE2 /* AdminUserTableViewController.swift */; };
 		3854556E1BE6C37000B372D7 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3854556D1BE6C37000B372D7 /* DatePickerTableViewCell.xib */; };
 		385455701BE6C38E00B372D7 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3854556F1BE6C38E00B372D7 /* DatePickerTableViewCell.swift */; };
 		385455721BE6D9F700B372D7 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385455711BE6D9F700B372D7 /* ImageTableViewCell.xib */; };
@@ -66,8 +69,11 @@
 		389168671B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */; };
 		389D385D1BB23A380003C42B /* AdminCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */; };
 		389D385F1BB9B9520003C42B /* AdminPanelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */; };
+		38DAD0251C2CC31B0042C76C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DAD0241C2CC31B0042C76C /* ImagePicker.swift */; };
+		38E990F21C344A6C005B98A0 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E990F11C344A6C005B98A0 /* UserTableViewCell.xib */; };
+		38E990F41C344A8C005B98A0 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E990F31C344A8C005B98A0 /* UserTableViewCell.swift */; };
+		38E990F81C3878C2005B98A0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E990F71C3878C2005B98A0 /* UserTableViewController.swift */; };
 		38F39EA31BFA9F060011384B /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */; };
-		38F9373D1C289581007152F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F9373C1C289581007152F3 /* ImagePicker.swift */; };
 		38FD453F1B54527300896403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FD453E1B54527300896403 /* AppDelegate.swift */; };
 		38FD45461B54527300896403 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45451B54527300896403 /* Images.xcassets */; };
 		38FD45491B54527300896403 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FD45471B54527300896403 /* LaunchScreen.xib */; };
@@ -79,6 +85,7 @@
 		38232C401B75123B00789340 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		38232C491B75190500789340 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		38232C4B1B75192400789340 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		382337E61C2C8F66007E9409 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		382AEF971B7EEB64002A330D /* PostTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewManager.swift; sourceTree = "<group>"; };
 		382AEF991B7EEE0A002A330D /* OrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewController.swift; sourceTree = "<group>"; };
 		382AEF9B1B7EF3C2002A330D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -99,6 +106,8 @@
 		383E76531B850C3D00A75432 /* CommentsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewManager.swift; sourceTree = "<group>"; };
 		383E76551B85548300A75432 /* FollowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowButton.xib; sourceTree = "<group>"; };
 		383E76571B8555B600A75432 /* FollowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		384CB3A01C6153AF00472CE2 /* FollowerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewController.swift; sourceTree = "<group>"; };
+		384CB3A21C62B65A00472CE2 /* AdminUserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminUserTableViewController.swift; sourceTree = "<group>"; };
 		3854556D1BE6C37000B372D7 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		3854556F1BE6C38E00B372D7 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		385455711BE6D9F700B372D7 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -135,8 +144,11 @@
 		389168661B75401500351191 /* photo-1421757295538-9c80958e75b0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-1421757295538-9c80958e75b0.jpeg"; sourceTree = "<group>"; };
 		389D385C1BB23A380003C42B /* AdminCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCollectionViewController.swift; sourceTree = "<group>"; };
 		389D385E1BB9B9520003C42B /* AdminPanelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelTableViewController.swift; sourceTree = "<group>"; };
+		38DAD0241C2CC31B0042C76C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		38E990F11C344A6C005B98A0 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		38E990F31C344A8C005B98A0 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		38E990F71C3878C2005B98A0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
-		38F9373C1C289581007152F3 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		38FD45391B54527300896403 /* informe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = informe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD453D1B54527300896403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38FD453E1B54527300896403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +301,12 @@
 			children = (
 				385C7B791BCF196900141E04 /* Input TableViewCells */,
 				383E763E1B83D7AD00A75432 /* Main.storyboard */,
+				382337E61C2C8F66007E9409 /* ImagePreviewViewController.swift */,
+				384CB3A01C6153AF00472CE2 /* FollowerTableViewController.swift */,
+				38E990F71C3878C2005B98A0 /* UserTableViewController.swift */,
+				384CB3A21C62B65A00472CE2 /* AdminUserTableViewController.swift */,
+				38E990F11C344A6C005B98A0 /* UserTableViewCell.xib */,
+				38E990F31C344A8C005B98A0 /* UserTableViewCell.swift */,
 				38F39EA21BFA9F060011384B /* TermsConditionsViewController.swift */,
 				385C7B801BCF1C7D00141E04 /* NewPostTableViewController.swift */,
 				3855E67A1C02C95C00F4E692 /* AdminTableViewController.swift */,
@@ -305,6 +323,7 @@
 				385C7B841BD2C46200141E04 /* StatusIndicator.swift */,
 				3858A9981BC1B41C00C6BED9 /* OnboardingViewController.swift */,
 				382AEF9B1B7EF3C2002A330D /* TabBarController.swift */,
+				38DAD0241C2CC31B0042C76C /* ImagePicker.swift */,
 				38302D271B8E2435002A548A /* Data Classes */,
 				383E76501B850A4800A75432 /* PostTableView */,
 				383E76511B850AA100A75432 /* CommentTableView */,
@@ -333,7 +352,6 @@
 			children = (
 				383E76401B8409C900A75432 /* DiscoverCollectionViewController.swift */,
 				3867009D1B8664D800193355 /* UserViewController.swift */,
-				38F9373C1C289581007152F3 /* ImagePicker.swift */,
 				3867009F1B86650300193355 /* OrganizationCollectionViewManager.swift */,
 				383E76441B841CCD00A75432 /* OrganizationCollectionViewCell.swift */,
 				383E76461B84DFDC00A75432 /* OrganizationCollectionViewCell.xib */,
@@ -424,6 +442,7 @@
 				385455781BE6DA6300B372D7 /* SwitchTableViewCell.xib in Resources */,
 				3854557A1BE6DBBD00B372D7 /* SegmentedControlTableViewCell.xib in Resources */,
 				38232C4C1B75192400789340 /* PostTableViewCell.xib in Resources */,
+				38E990F21C344A6C005B98A0 /* UserTableViewCell.xib in Resources */,
 				383E76491B84EADE00A75432 /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,9 +487,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384CB3A31C62B65A00472CE2 /* AdminUserTableViewController.swift in Sources */,
 				385C7B851BD2C46200141E04 /* StatusIndicator.swift in Sources */,
-				38F9373D1C289581007152F3 /* ImagePicker.swift in Sources */,
 				383E76541B850C3D00A75432 /* CommentsTableViewManager.swift in Sources */,
+				38E990F41C344A8C005B98A0 /* UserTableViewCell.swift in Sources */,
 				382AEF981B7EEB64002A330D /* PostTableViewManager.swift in Sources */,
 				38302D2D1B8F5C7E002A548A /* DatePickerViewController.swift in Sources */,
 				386EC8361B7532BE00921F4C /* UIColor+Announcements-iOS.swift in Sources */,
@@ -487,6 +507,7 @@
 				3869BDD41B7D487B007C97AE /* PostWithPhotoTableViewCell.swift in Sources */,
 				3877EE431B965F1100433E60 /* Comment.swift in Sources */,
 				3858A9991BC1B41C00C6BED9 /* OnboardingViewController.swift in Sources */,
+				38E990F81C3878C2005B98A0 /* UserTableViewController.swift in Sources */,
 				38232C411B75123B00789340 /* TodayTableViewController.swift in Sources */,
 				3882B0C91BE6878D00002730 /* TextViewTableViewCell.swift in Sources */,
 				385C7B761BC1ED6400141E04 /* MoreTableViewController.swift in Sources */,
@@ -509,11 +530,14 @@
 				385455741BE6DA1A00B372D7 /* ImageTableViewCell.swift in Sources */,
 				3877EE471B96B63D00433E60 /* Follower.swift in Sources */,
 				38FF93281B9938C500A98FC1 /* TextViewController.swift in Sources */,
+				384CB3A11C6153AF00472CE2 /* FollowerTableViewController.swift in Sources */,
 				386700A21B8D461900193355 /* Post.swift in Sources */,
 				3855E67B1C02C95C00F4E692 /* AdminTableViewController.swift in Sources */,
 				38F39EA31BFA9F060011384B /* TermsConditionsViewController.swift in Sources */,
 				38302D291B8E24CA002A548A /* Organization.swift in Sources */,
 				382AEFA01B7EF846002A330D /* PopoverDatePicker.swift in Sources */,
+				38DAD0251C2CC31B0042C76C /* ImagePicker.swift in Sources */,
+				382337E71C2C8F66007E9409 /* ImagePreviewViewController.swift in Sources */,
 				3877EE451B969BDA00433E60 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,7 +649,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Rajiv Chugh";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rajiv Chugh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,7 +664,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.infor-me-";
 				PRODUCT_NAME = informe;
-				PROVISIONING_PROFILE = "1c2ea32d-5ca1-4975-8df4-18719c7d8ead";
+				PROVISIONING_PROFILE = "28b60264-9f4a-4518-8121-fda6287ff227";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -654,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Rajiv Chugh";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajiv Chugh (7A6NXXTQUZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rajiv Chugh";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,7 +693,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mindbendstudio.infor-me-";
 				PRODUCT_NAME = informe;
-				PROVISIONING_PROFILE = "1c2ea32d-5ca1-4975-8df4-18719c7d8ead";
+				PROVISIONING_PROFILE = "28b60264-9f4a-4518-8121-fda6287ff227";
 				SWIFT_OBJC_BRIDGING_HEADER = "Announcements/infor[me]-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ModifyOrganizationTableViewController: AdminTableViewController {
+class ModifyOrganizationTableViewController: OrganizationTableViewController {
     
     var nameTableViewCell: TextInputTableViewCell!
     var handleTableViewCell: TextInputTableViewCell!
     var descriptionTableViewCell: TextInputTableViewCell!
     
-    var profilePhotoTableViewCell: UITableViewCell!
-    var coverPhotoTableViewCell: UITableViewCell!
+    var profilePhotoTableViewCell: ImageTableViewCell!
+    var coverPhotoTableViewCell: ImageTableViewCell!
     
     var organizationTypeTableViewCell: SegmentedControlTableViewCell!
     var hasAccessCodeTableViewCell: SwitchTableViewCell!
@@ -97,6 +97,7 @@ class ModifyOrganizationTableViewController: AdminTableViewController {
         tableView.registerNib(UINib(nibName: "DatePickerTableViewCell", bundle: nil), forCellReuseIdentifier: "DatePicker")
         tableView.registerNib(UINib(nibName: "SwitchTableViewCell", bundle: nil), forCellReuseIdentifier: "Switch")
         tableView.registerNib(UINib(nibName: "SegmentedControlTableViewCell", bundle: nil), forCellReuseIdentifier: "SegmentedControl")
+        tableView.registerNib(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "Image")
     }
     
     func setupTableView() {
@@ -114,15 +115,50 @@ class ModifyOrganizationTableViewController: AdminTableViewController {
         descriptionTableViewCell.title = "Description"
         descriptionTableViewCell.input = organization.organizationDescription
         
-        profilePhotoTableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "ProfilePicture")
-        profilePhotoTableViewCell.textLabel?.text = "Profile Photo"
-        profilePhotoTableViewCell.textLabel?.font = UIFont(name: "AvenirNext-Medium", size: 17.0)
-        profilePhotoTableViewCell.accessoryType = .DisclosureIndicator
+        profilePhotoTableViewCell = tableView.dequeueReusableCellWithIdentifier("Image") as! ImageTableViewCell
+        profilePhotoTableViewCell.title = "Profile Photo"
+        profilePhotoTableViewCell.currentImage = organization.image
+        profilePhotoTableViewCell.parentViewController = self
+        profilePhotoTableViewCell.action = {
+            parentViewController in
+            
+            let imagePicker = ImagePicker(presentingViewController: parentViewController, presentationBarButtonItem: nil, completion: { (image, imagePickerController) -> () in
+                print("Image recieved")
+            })
+            imagePicker.show()
+            
+            return nil
+        }
         
-        coverPhotoTableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "CoverPhoto")
-        coverPhotoTableViewCell.textLabel?.text = "Cover Photo"
-        coverPhotoTableViewCell.textLabel?.font = UIFont(name: "AvenirNext-Medium", size: 17.0)
-        coverPhotoTableViewCell.accessoryType = .DisclosureIndicator
+        coverPhotoTableViewCell = tableView.dequeueReusableCellWithIdentifier("Image") as! ImageTableViewCell
+        coverPhotoTableViewCell.title = "Cover Photo"
+        coverPhotoTableViewCell.currentImage = organization.coverPhoto
+        
+        coverPhotoTableViewCell.parentViewController = self
+        coverPhotoTableViewCell.action = {
+            parentViewController in
+            
+            let imagePicker = ImagePicker(presentingViewController: self.coverPhotoTableViewCell.previewViewController, presentationBarButtonItem: self.navigationItem.rightBarButtonItem) {
+                (image, imagePickerController) -> () in
+//                if let image = image {
+//                    PFCloud.callFunctionInBackground("updateOrganizationCoverPhoto", withParameters: ["organizationObjectId": self.organization.objectId!, "photo": image], block: {
+//                        (result, error) -> Void in
+//                        if error == nil { if let result = result as? Organization {
+//                            self.organization = result
+//                            }
+//                        } else {
+//                        }
+//                        imagePickerController?.dismissViewControllerAnimated(true, completion: nil)
+//                        imagePickerController?.presentingViewController?.navigationController?.popToViewController(self, animated: true)
+//                        
+//                    })
+//                }
+                print("Image recieved")
+            }
+            imagePicker.show()
+            
+            return nil
+        }
         
         organizationTypeTableViewCell = tableView.dequeueReusableCellWithIdentifier("SegmentedControl") as! SegmentedControlTableViewCell
         organizationTypeTableViewCell.title = "\(organization.levelConfig.levelName) Type"

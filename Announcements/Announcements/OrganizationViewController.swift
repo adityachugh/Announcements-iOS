@@ -10,6 +10,7 @@ import UIKit
 
 class OrganizationViewController: UIViewController, ScrollingDelegate, RefreshDelegate, FollowButtonDelegate {
     
+    @IBOutlet var organizationCoverPictureImageView: PFImageView!
     @IBOutlet weak var organizationFollowCountLabel: UILabel!
     @IBOutlet weak var organizationProfilePictureImageView: PFImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -29,9 +30,20 @@ class OrganizationViewController: UIViewController, ScrollingDelegate, RefreshDe
         
         if let imageFile = organization.image {
             organizationProfilePictureImageView.file = imageFile
+            organizationProfilePictureImageView.loadInBackground()
         } else {
             organizationProfilePictureImageView.file = nil
             organizationProfilePictureImageView.image = UIImage(named: "Organization_Placeholder")
+        }
+        
+        organizationCoverPictureImageView.image = nil
+        organizationCoverPictureImageView.backgroundColor = UIColor.PrimaryColor()
+        if let imageFile = organization.coverPhoto {
+            organizationCoverPictureImageView.file = imageFile
+            organizationCoverPictureImageView.loadInBackground()
+        } else {
+            organizationCoverPictureImageView.file = nil
+            organizationCoverPictureImageView.image = UIImage(named: "Organization_Placeholder")
         }
         title = organization.name
         organizationHandleLabel.text = "@\(organization.handle)"
